@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1111,
+    "name": "Putin",
+    "coordinates": {
+      "x": -500,
+      "y": 600.5
+    },
+    "creationDate": "2021-02-16T11:11:35.1231231",
+    "height": 1000,
+    "birthday": "7-10-1952",
+    "weight": 50,
+    "nationality": "GERMANY",
+    "location": {
+      "x": 100,
+      "y": 2000,
+      "name": "Palace in Crime"
+    }
+  },
+  {
+    "id": 1234,
+    "name": "Biden",
+    "coordinates": {
+      "x": -400,
+      "y": 500.5
+    },
+    "creationDate": "2021-02-17T12:01:30.1231231",
+    "height": 800,
+    "birthday": "20-11-1942",
+    "weight": 60,
+    "nationality": "CHINA",
+    "location": {
+      "x": 200,
+      "y": 1000,
+      "name": "Trump's Tower"
+    }
+  },
+  {
+    "id": 2000,
+    "name": "Marcon",
+    "coordinates": {
+      "x": -300,
+      "y": 450.5
+    },
+    "creationDate": "2021-02-17T13:25:30.1231231",
+    "height": 1500,
+    "birthday": "21-12-1977",
+    "weight": 45,
+    "nationality": "FRANCE",
+    "location": {
+      "x": 250,
+      "y": 1050,
+      "name": "Europe"
+    }
+  }
+]
