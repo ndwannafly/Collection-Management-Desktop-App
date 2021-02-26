@@ -1,12 +1,9 @@
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.text.DateFormat;
+import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -16,13 +13,12 @@ import java.util.*;
  * This class builds the collection.
  */
 public class CollectionManager {
-    public static HashSet<Long> IDChecker = new HashSet<Long>();
-    private CommandAsker commandAsker = new CommandAsker();
-    private LocalDateTime DateNow = LocalDateTime.now();
-    private HashSet<Person> listPerson = new HashSet<Person>();
-    private FileParser fileParser = new FileParser();
 
-    static final String FILE_PATH = "D:\\first course 2020-2021\\semester 2\\Programming\\lab5\\src\\main\\java\\Data\\";
+    public static HashSet<Long> IDChecker = new HashSet<>();
+    private final CommandAsker commandAsker = new CommandAsker();
+    private final LocalDateTime DateNow = LocalDateTime.now();
+    private HashSet<Person> listPerson = new HashSet<>();
+    private final FileParser fileParser = new FileParser();
 
     public void readInputFromJsonFile(String InputFileName){
         listPerson = fileParser.parse(InputFileName);
@@ -36,7 +32,7 @@ public class CollectionManager {
         System.out.println("info - display info of the collection ( type, creationDate, number of elements...");
         System.out.println("show - display all the elements of the collection");
         System.out.println("add {element} - add new element into the collection");
-        System.out.println("update_id {id}        -      update new values for element has corresponding id");
+        System.out.println("update {id}        -      update new values for element has corresponding id");
         System.out.println("remove_by_id {id}     -    remove element has corresponding id from the collection");
         System.out.println("clear - clear collection");
         System.out.println("save -  save the collection into file");
@@ -51,17 +47,15 @@ public class CollectionManager {
      */
     public void info(){
         System.out.println("Collection's type : HashSet");
-        System.out.println("initialization date: " + DateNow);
-        System.out.println(listPerson.size());
+        System.out.println("Initialization date: " + DateNow);
+        System.out.println("Number of elements " + listPerson.size());
     }
 
     /**
      * display all elements in string representation
      */
     public void show(){
-        listPerson.forEach(p->{
-            System.out.println(p.toString());
-        });
+        listPerson.forEach(p-> System.out.println(p.toString()));
     }
 
     /**
@@ -69,27 +63,35 @@ public class CollectionManager {
      */
     public void add (Person P){
         listPerson.add(P);
+        System.out.println("Successfully added new person. Let's look at our newbie");
+        System.out.println(P.toString());
     }
 
     /**
      * this command finds the element which has corresponding id, then update this element's values
      * @param id - id of element has to be updated
      */
-    public void update_id(long id) throws ParseException {
+    public boolean update(long id) {
+        boolean flag = false;
         for(Person person : listPerson){
            if (person.getId() == id){
+               flag = true;
                listPerson.remove(person);
                listPerson.add(commandAsker.createPerson());
            }
         }
+        return flag;
     }
 
-    public void remove_by_id (long id){
+    public boolean remove_by_id (long id){
+        boolean flag = false;
         for(Person person : listPerson){
             if(person.getId() == id){
+                flag = true;
                 listPerson.remove(person);
             }
         }
+        return flag;
     }
 
     public void clear(){
@@ -104,7 +106,7 @@ public class CollectionManager {
             jsonObject.put("id",person.getId());
             jsonObject.put("name", person.getName());
 
-            /**
+            /*
              * write coordinate objects into file
              */
             JSONObject coordinatesObj = new JSONObject();
@@ -112,7 +114,7 @@ public class CollectionManager {
             coordinatesObj.put("y",person.getCoordinates().getY());
             jsonObject.put("coordinates", coordinatesObj);
 
-            /**
+            /*
              * write creation date into file
              */
             LocalDateTime date = person.getCreationDate();
@@ -122,13 +124,13 @@ public class CollectionManager {
 
             jsonObject.put("height", person.getHeight());
 
-            /**
+            /*
              * write Date birthday into file
              */
             Date dateBirthday = person.getBirthday();
             SimpleDateFormat birthdayFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
             String stringDate = birthdayFormatter.format(dateBirthday);
-            System.out.println(stringDate);
+            //System.out.println(stringDate);
             jsonObject.put("birthday",stringDate);
 
             jsonObject.put("weight", person.getWeight());
@@ -141,20 +143,48 @@ public class CollectionManager {
             locationObj.put("name", person.getLocation().getName());
             jsonObject.put("location", locationObj);
             PersonList.add(jsonObject);
-
-
         }
-        try (FileWriter file = new FileWriter(FILE_PATH + "outputData.json")){
-            file.write(PersonList.toJSONString());
-            file.flush();
-        } catch (IOException e) {
+
+        /*
+            write into output file
+         */
+        try {
+            PrintWriter printWriter = new PrintWriter(OutputFileName);
+            System.out.println("working with printWriter");
+            printWriter.write(PersonList.toJSONString());
+            printWriter.flush();
+            printWriter.close();
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
-
-    public void execute_script(String file_name){
-        // TO-DO execute commands from script file
-
+    public void execute_script(File FileName) throws ParseException {
+        System.out.println("Executing script file " + FileName.getAbsolutePath());
+        Scanner sc = null;
+        try {
+            sc = new Scanner(FileName);
+        } catch (FileNotFoundException fileNotFoundException) {
+            System.out.println("Script file doesn't exist");
+        }
+        while(true){
+            assert sc != null;
+            if (!sc.hasNextLine()) break;
+            String[] userCommand = sc.nextLine().trim().split(" ");
+            if(userCommand.length > 2 ){
+                System.out.println("Can't execute! Invalid command! Valid command should contain 1 or 2 arguments.");
+                continue;
+            }
+            if (!Commander.NameCommandValidCheck(userCommand)){
+                System.out.println("Can't execute! The command is not supported.");
+                continue;
+            }
+            if(!Commander.CategorizeCommand(userCommand)){
+                System.out.println("Can't execute! Because of incorrectly command's argument!");
+                continue;
+            }
+            Commander.updateHistory(userCommand);
+            System.out.println("-------------------");
+        }
     }
 
     public void exit(){
@@ -162,23 +192,11 @@ public class CollectionManager {
     }
 
     public void remove_greater(Person P){
-        Iterator<Person> itPerson = listPerson.iterator();
-        while(itPerson.hasNext()){
-            Person person = itPerson.next();
-            if(person.compareTo(P)>0){
-                itPerson.remove();
-            }
-        }
+        listPerson.removeIf(person -> person.compareTo(P) > 0);
     }
 
     public void remove_lower(Person P){
-        Iterator<Person> itPerson = listPerson.iterator();
-        while(itPerson.hasNext()){
-            Person person = itPerson.next();
-            if(person.compareTo(P)<0){
-                itPerson.remove();
-            }
-        }
+        listPerson.removeIf(person -> person.compareTo(P) < 0);
     }
 
     public void history(ArrayDeque<String> dq){
@@ -188,14 +206,12 @@ public class CollectionManager {
     }
 
     public void group_counting_by_id(){
-        /**
+        /*
          * such a wonderful command while all the IDs are unique??? I love automatic generating variant <3
          * because the IDs are unique so groups are unique so size of each group equals to 1
          * Result = size of collection ))
          */
-        listPerson.forEach(person -> {
-            System.out.println("Group of id " + person.getId() + " 1 \n" );
-        });
+        listPerson.forEach(person -> System.out.println("Group of id " + person.getId() +  " has 1 element" ));
     }
 
     public int count_less_than_birthday (Date birthday){
@@ -209,29 +225,15 @@ public class CollectionManager {
     }
 
     public void print_field_ascending_height(){
-        ArrayList<Long> heightArray = new ArrayList<Long>();
-        listPerson.forEach(person -> {
-            heightArray.add(person.getHeight());
-        });
+        ArrayList<Long> heightArray = new ArrayList<>();
+        listPerson.forEach(person -> heightArray.add(person.getHeight()));
 
         Collections.sort(heightArray);
         System.out.println("list all the values of height-field of all elements in ascending order\n");
-        heightArray.forEach( h->{
-            System.out.println(h);
-        });
+        heightArray.forEach(System.out::println);
     }
     public void printCollection(){
-        listPerson.forEach(p->{
-            System.out.println(p.toString());
-        });
+        listPerson.forEach(p-> System.out.println(p.toString()));
     }
 
-    public boolean IDChecker(Long id){
-        for(Person person : listPerson){
-            if(person.getId() == id) {
-                return false;
-            }
-        }
-        return true;
-    }
 }

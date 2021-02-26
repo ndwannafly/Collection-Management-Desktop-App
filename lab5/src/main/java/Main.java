@@ -1,12 +1,8 @@
 import java.text.ParseException;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
 // TO-DO
-//      1. handle valid input, ask user reinsert if input is invalid
-//      2. handle exception
-//      3. handle LOOP read file
-//      4. use command line argument
+//      1. use command line argument  -
+//      2. Use Scanner to read JsonFile
+//      3. Make static for some command
 public class Main {
     static final String FILE_PATH = "D:\\first course 2020-2021\\semester 2\\Programming\\lab5\\src\\main\\java\\Data\\";
     public static void main(String[] args) {
@@ -22,3 +18,4 @@ public class Main {
         }
     }
 }
+//

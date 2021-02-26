@@ -1,11 +1,2 @@
-info
-show
-remove_greater
-remove_lower
-history
-group_counting_by_id
-count_less_than_birthday
-20/12/2000
-print_field_ascending_height
-remove_by_id 1234
-save
+execute_script B.txt
+execute_script C.txt

@@ -1,5 +1,9 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 public class InputChecker {
-    public InputChecker(){};
+    public InputChecker(){}
 
     private  static final double eps = 1E-6;
     public boolean IntegerValidCheck(String s, int min, int max){
@@ -30,7 +34,7 @@ public class InputChecker {
 
     public boolean LongValidCheck(String s, Long min, Long max){
         try{
-            Long x = Long.parseLong(s);
+            long x = Long.parseLong(s);
             if(x >= min && x <= max) return true;
             System.out.println("Input is invalid. Please enter the long number in correct range");
             return false;
@@ -40,7 +44,15 @@ public class InputChecker {
         }
     }
 
-    public boolean CountryEnumValidCheck(String s){
-        return true;
+    public boolean BirthdayValidCheck(String s){
+        SimpleDateFormat birthdayFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+        try {
+            birthdayFormatter.parse(s);
+            return true;
+        } catch (ParseException e) {
+            System.out.println("please insert correct birthday's format!");
+            return false;
+        }
+
     }
 }

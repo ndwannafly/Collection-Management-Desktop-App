@@ -1,28 +1,23 @@
-import java.security.spec.RSAOtherPrimeInfo;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class CommandAsker {
     /*
         TO-DO:
-            1. handle check IDAsker
-            2. handle check name
-            3. handle check
+            1. handle birthday asker
+            2. Create IDAsker and IDGenerator
      */
-    private InputChecker inputChecker = new InputChecker();
-    private  static final double eps = 1E-6;
+    private final InputChecker inputChecker = new InputChecker();
 
-    public CommandAsker(){};
-
-
-    private  static Scanner scanner = new Scanner(System.in);
-    static final String FILE_PATH = "D:\\first course 2020-2021\\semester 2\\Programming\\lab5\\src\\main\\java\\Data\\";
+    public CommandAsker(){}
 
 
-    public Person createPerson() throws ParseException {
+    private  static final Scanner scanner = new Scanner(System.in);
+
+
+    public Person createPerson() {
         Person newPerson = new Person();
         System.out.println("Let's create new person");
 
@@ -43,6 +38,7 @@ public class CommandAsker {
         newPerson.setNationality(CountryAsker());
 
         newPerson.setLocation(LocationAsker());
+        System.out.println("Successfully created new person. Let's welcome to our newbie!");
         return newPerson;
     }
 
@@ -55,6 +51,7 @@ public class CommandAsker {
         }
         else{
             CollectionManager.IDChecker.add(newID);
+            System.out.println("ID = " + newID + " is successfully generated!");
             return newID;
         }
     }
@@ -71,11 +68,10 @@ public class CommandAsker {
             String[] inputNumber = scanner.nextLine().trim().split(" ");
             if(inputNumber.length != 2 ){
                 System.out.println("please insert exactly two number!");
-                continue;
             }
             else{
-                if(inputChecker.IntegerValidCheck(inputNumber[0],-801,Integer.MAX_VALUE) == false) continue;
-                if(inputChecker.DoubleValidCheck(inputNumber[1], Double.MIN_VALUE, 687.0) == false ) continue;
+                if(!inputChecker.IntegerValidCheck(inputNumber[0], -801, Integer.MAX_VALUE)) continue;
+                if(!inputChecker.DoubleValidCheck(inputNumber[1], Double.MIN_VALUE, 687.0)) continue;
                 int x = Integer.parseInt(inputNumber[0]);
                 Double y = Double.parseDouble(inputNumber[1]);
                 return new Coordinates(x, y);
@@ -93,10 +89,9 @@ public class CommandAsker {
             String[] inputNumber = scanner.nextLine().trim().split(" ");
             if(inputNumber.length != 1 ){
                 System.out.println("Please insert exactly one number!");
-                continue;
             }
             else{
-                if(inputChecker.LongValidCheck(inputNumber[0], Long.MIN_VALUE, Long.MAX_VALUE) == false ) continue;
+                if(!inputChecker.LongValidCheck(inputNumber[0], Long.MIN_VALUE, Long.MAX_VALUE)) continue;
                 return Long.parseLong(inputNumber[0]);
             }
         }
@@ -108,24 +103,21 @@ public class CommandAsker {
             String[] inputNumber = scanner.nextLine().trim().split(" ");
             if(inputNumber.length != 1){
                 System.out.println("Please insert one date only!");
-                continue;
             }
             else {
                 SimpleDateFormat birthdayFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
-                System.out.println("number of date: " + inputNumber.length);
                 try {
-                    Date birthday = birthdayFormatter.parse(inputNumber[0]);
-                    return birthday;
+                    return birthdayFormatter.parse(inputNumber[0]);
                 } catch (ParseException e){
                     System.out.println("Input is invalid. Correct birthday's format is dd-MM-yyyy");
-                    continue;
                 }
             }
         }
     }
 
     public Integer WeightAsker(){
-        return intAsker(Integer.MIN_VALUE,Integer.MAX_VALUE);
+        System.out.println("Insert weight: ");
+        return intAsker(0,Integer.MAX_VALUE);
     }
 
     public Country CountryAsker(){
@@ -136,39 +128,27 @@ public class CommandAsker {
                 System.out.println("Please insert exactly one country!");
                 continue;
             }
-            Country countryEnum = Country.valueOf(inputNumber[0]);
-            return countryEnum;
+            try {
+                return Country.valueOf(inputNumber[0]);
+            } catch(IllegalArgumentException e){
+                System.out.println("Invalid country! The country is not in the list!");
+                System.out.println("Please insert one of these following countries");
+                for (Country country : Country.values()){
+                    System.out.println(country);
+                }
+            }
         }
     }
 
     public Location LocationAsker(){
         System.out.println("Insert Location: ");
         System.out.println("Insert X: ");
-        Integer LocationX = scanner.nextInt();
+        Integer LocationX = intAsker(Integer.MIN_VALUE,Integer.MAX_VALUE);
         System.out.println("Insert Y: ");
-        long LocationY = scanner.nextLong();
+        long LocationY = LongAsker(Long.MIN_VALUE, Long.MAX_VALUE);
         System.out.println("Insert name: ");
-        String name = scanner.next();
+        String name = scanner.nextLine();
         return new Location(LocationX, LocationY, name);
-    }
-
-    public String fileNameAsker(){
-        System.out.println("Insert File Name");
-        return FILE_PATH + scanner.next();
-    }
-
-    public Double doubleAsker(Double min, Double max){
-        while(true){
-            String[] inputNumber = scanner.nextLine().trim().split(" ");
-            if(inputNumber.length != 1 ){
-                System.out.println("please enter exactly one double number: ");
-                continue;
-            }
-            else{
-                if(inputChecker.DoubleValidCheck(inputNumber[0],min,max) == false) continue;
-                return Double.parseDouble(inputNumber[0]);
-            }
-        }
     }
 
     public Integer intAsker(int min, int max){
@@ -176,10 +156,9 @@ public class CommandAsker {
             String[] inputNumber = scanner.nextLine().trim().split(" ");
             if(inputNumber.length != 1 ){
                 System.out.println("please enter exactly one integer: ");
-                continue;
             }
             else{
-                int x = 0 ;
+                int x;
                 try {
                     x = Integer.parseInt(inputNumber[0]);
                     if( x < min ) continue;
@@ -187,7 +166,26 @@ public class CommandAsker {
                     return x;
                 } catch (NumberFormatException e){
                     System.out.println("please insert an integer number");
-                    continue;
+                }
+            }
+        }
+    }
+
+    public Long LongAsker(long min, long max){
+        while(true){
+            String[] inputNumber = scanner.nextLine().trim().split(" ");
+            if(inputNumber.length != 1 ){
+                System.out.println("please enter exactly one Long number: ");
+            }
+            else{
+                long x;
+                try {
+                    x = Long.parseLong(inputNumber[0]);
+                    if( x < min ) continue;
+                    if( x > max) continue;
+                    return x;
+                } catch (NumberFormatException e){
+                    System.out.println("please insert an Long number");
                 }
             }
         }

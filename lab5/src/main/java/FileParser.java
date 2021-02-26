@@ -3,7 +3,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -22,31 +21,29 @@ public class FileParser {
     */
     @SuppressWarnings("unchecked")
     public HashSet<Person> parse(String InputFileName){
-        HashSet<Person> collectionInput = new HashSet<Person>();
+        HashSet<Person> collectionInput = new HashSet<>();
         JSONParser jsonParser = new JSONParser();
 
-        /*read input file*/
         try (FileReader reader = new FileReader(InputFileName)) {
             Object obj = jsonParser.parse(reader);
             JSONArray personList = (JSONArray) obj;
             collectionInput = saveIntoCollection(personList);
-            //System.out.println(personList);
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
+        } catch (ParseException | IOException e) {
             e.printStackTrace();
         }
 
         return collectionInput;
     }
 
-    /* this method is used to save object we get from JsonFile */
+    /**
+     * This method is used to convert JSONArray to HashSet then save into Collection
+     * @param jsArr
+     * @return HashSet is converted JSONArray
+     */
     @SuppressWarnings("unchecked")
     private HashSet<Person> saveIntoCollection(JSONArray jsArr){
-        HashSet<Person> HS = new HashSet<Person>();
+        HashSet<Person> HS = new HashSet<>();
         jsArr.forEach(p -> {
             try {
                 HS.add(convertJsonObjIntoPerson((JSONObject) p));
@@ -57,6 +54,12 @@ public class FileParser {
         return HS;
     }
 
+    /**
+     * This method convert JsonObj to Person
+     * @param jsonObject
+     * @return Person which is converted from JsonObject
+     * @throws java.text.ParseException
+     */
     private Person convertJsonObjIntoPerson(JSONObject jsonObject) throws java.text.ParseException {
         Person p = new Person();
         // set ID
@@ -81,6 +84,7 @@ public class FileParser {
 
         // date in String
         String dateString = (String)jsonObject.get("creationDate");
+
         //build formatter
         DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
         //Parse String to LocalDateTime
