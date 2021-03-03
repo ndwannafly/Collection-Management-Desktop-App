@@ -15,7 +15,10 @@ import java.util.HashSet;
 import java.util.Locale;
 
 
-/*this class is used to parse Jsonfile and save data into Collection*/
+/**
+ * @author Nguyen Ngoc Duc
+ * this class is used to parse Jsonfile and save data into Collection
+ */
 
 public class FileParser {
     /*

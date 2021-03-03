@@ -3,6 +3,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
+/**
+ * @author Nguyen Ngoc Duc
+ * This class is used to check for validity of user's input
+ */
 public class InputChecker {
     public InputChecker(){}
 
