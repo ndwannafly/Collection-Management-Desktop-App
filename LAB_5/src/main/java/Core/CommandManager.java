@@ -80,11 +80,11 @@ public class CommandManager {
     public boolean save(String fileName){
         return SaveCommand.execute(fileName);
     }
-
+/*
     public boolean executeScript(String argument){
         return ExecuteScriptCommand.execute(argument);
     }
-
+*/
     public boolean exit(){
         return ExitCommand.execute();
     }

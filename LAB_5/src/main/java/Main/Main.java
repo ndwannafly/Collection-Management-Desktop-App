@@ -13,14 +13,32 @@ import java.util.Scanner;
  */
 public class Main {
     static final String FILE_PATH = "D:\\first course 2020-2021\\semester 2\\Programming\\LAB_5\\src\\main\\java\\File\\";
-    public static void main(String[] args) {
-        String inputFile = args[0];
-        String outputFile = args[1];
+    static String inputFile;
+    static String outputFile;
 
+    public static void main(String[] args) {
+        try {
+            inputFile = args[0];
+        } catch(ArrayIndexOutOfBoundsException e){
+            System.out.println("Please insert file input via command line argument!");
+            System.exit(-1);
+        }
+        try {
+            outputFile = args[1];
+        } catch(ArrayIndexOutOfBoundsException e) {
+            System.out.println("Please insert file output via command line argument!");
+            System.exit(-1);
+        }
         System.out.println("Welcome to my program!");
+        System.out.println(" +\"\"\"\"\"+ ");
+        System.out.println("[| o o |]");
+        System.out.println(" |  ^  | ");
+        System.out.println(" | '-' | ");
+        System.out.println(" +-----+ ");
+        System.out.println("-----------------------");
+        System.out.println("If you have problems, help command will save your life!");
         CollectionManager collectionManager = new CollectionManager();
         collectionManager.readInputFromJsonFile(FILE_PATH + inputFile);
-        //collectionManager.readInputFromJsonFile(FILE_PATH + "InputData.Json");
         InputChecker inputChecker = new InputChecker();
         CommandAsker commandAsker = new CommandAsker(inputChecker);
         CommandManager commandManager = new CommandManager(

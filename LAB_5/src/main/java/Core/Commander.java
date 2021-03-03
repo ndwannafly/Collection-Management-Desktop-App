@@ -12,29 +12,9 @@ public class Commander {
     private CommandManager commandManager;
     private String outputFile;
     private Scanner userScanner;
-    private static final ArrayList<String> validCommand = new ArrayList<>();
     private Deque<String> historyRecorder = new ArrayDeque<>(14);
 
-    static{
-        validCommand.add("help");
-        validCommand.add("info");
-        validCommand.add("show");
-        validCommand.add("add");
-        validCommand.add("update");
-        validCommand.add("remove_by_id");
-        validCommand.add("clear");
-        validCommand.add("save");
-        validCommand.add("execute_script");
-        validCommand.add("exit");
-        validCommand.add("remove_greater");
-        validCommand.add("remove_lower");
-        validCommand.add("history");
-        validCommand.add("group_counting_by_id");
-        validCommand.add("count_less_than_birthday");
-        validCommand.add("print_field_ascending_height");
-    }
-
-    static final String FILE_PATH = "D:\\first course 2020-2021\\semester 2\\Programming\\lab5\\src\\main\\java\\Data\\";
+    static final String FILE_PATH = "D:\\first course 2020-2021\\semester 2\\Programming\\LAB_5\\src\\main\\java\\File\\";
     public Commander(CommandManager C, Scanner sc, String oFile){
         this.commandManager = C;
         this.outputFile = oFile;
@@ -76,14 +56,6 @@ public class Commander {
                 return false;
             }
         }
-/*        try {
-            if (inStack.get(fileName)) {
-                System.out.println("To avoid infinite recursion. File " + fileName + " can't be executed.");
-                return false;
-            }
-        }catch (NullPointerException nullPointerException){
-            nullPointerException.printStackTrace();
-        }*/
         inStack.put(fileName, true);
         File scriptFile = new File(FILE_PATH + fileName);
         Scanner fileScanner;
