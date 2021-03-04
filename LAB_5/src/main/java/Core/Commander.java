@@ -8,7 +8,7 @@ import java.text.ParseException;
 import java.util.*;
 
 public class Commander {
-    public static HashMap<String, Boolean> inStack = new HashMap<>();
+    private  HashMap<String, Boolean> inStack = new HashMap<>();
     private CommandManager commandManager;
     private String outputFile;
     private Scanner userScanner;
