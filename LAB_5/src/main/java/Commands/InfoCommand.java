@@ -3,7 +3,7 @@ package Commands;
 import Core.CollectionManager;
 
 public class InfoCommand extends AbstractCommand{
-    private CollectionManager collectionManager;
+    private final CollectionManager collectionManager;
 
     public InfoCommand(CollectionManager C){
         this.collectionManager = C;

@@ -4,8 +4,8 @@ import Core.CollectionManager;
 import Core.CommandAsker;
 
 public class RemoveGreaterCommand extends AbstractCommand{
-    private CollectionManager collectionManager;
-    private CommandAsker commandAsker;
+    private final CollectionManager collectionManager;
+    private final CommandAsker commandAsker;
     public RemoveGreaterCommand(CollectionManager C, CommandAsker asker){
         this.collectionManager = C;
         this.commandAsker = asker;

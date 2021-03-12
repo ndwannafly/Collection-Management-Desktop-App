@@ -1,8 +1,8 @@
 package Data;
 
 public class Coordinates {
-    private int x;
-    private Double y;
+    private final int x;
+    private final Double y;
 
     public Coordinates(int x, Double y){
         this.x = x;

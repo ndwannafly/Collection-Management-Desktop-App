@@ -5,7 +5,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class SaveCommand extends AbstractCommand{
-    private CollectionManager collectionManager;
+    private final CollectionManager collectionManager;
 
     public SaveCommand(CollectionManager C){
         this.collectionManager = C;

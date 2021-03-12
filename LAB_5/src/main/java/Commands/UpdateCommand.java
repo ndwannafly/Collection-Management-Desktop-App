@@ -15,9 +15,9 @@ public class UpdateCommand extends AbstractCommand{
     }
     @Override
     public boolean execute(String argument) {
-        if(inputChecker.LongValidCheck(argument,(long)0,Long.MAX_VALUE)){
+        if(inputChecker.longValidCheck(argument,(long)0,Long.MAX_VALUE)){
             Long id = Long.parseLong(argument);
-            if(!collectionManager.removeById(id)){
+            if(collectionManager.removeById(id)){
                 System.out.println("Id doesn't exist. Please insert the existing id!");
                 return false;
             }

@@ -5,7 +5,7 @@ import Core.CollectionManager;
 import java.util.ArrayList;
 
 public class PrintFieldAscendingHeightCommand extends AbstractCommand{
-    private CollectionManager collectionManager;
+    private final CollectionManager collectionManager;
 
     public PrintFieldAscendingHeightCommand(CollectionManager C){
         this.collectionManager = C;
@@ -13,7 +13,7 @@ public class PrintFieldAscendingHeightCommand extends AbstractCommand{
     @Override
     public boolean execute() {
         ArrayList<Long> heightArray = collectionManager.getArrayHeight();
-        heightArray.forEach(p -> System.out.println(p));
+        heightArray.forEach(System.out::println);
         return true;
     }
 }

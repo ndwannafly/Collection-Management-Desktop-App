@@ -1,9 +1,9 @@
 package Data;
 
 public class Location {
-    private Integer x;
-    private long y;
-    private String name;
+    private final Integer x;
+    private final long y;
+    private final String name;
 
     public Location(Integer x, long y, String name){
         this.x = x;

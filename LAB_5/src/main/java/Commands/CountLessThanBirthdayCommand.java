@@ -19,7 +19,7 @@ public class CountLessThanBirthdayCommand extends AbstractCommand{
     @Override
     public boolean execute(String argument) {
         try{
-            if(!inputChecker.BirthdayValidCheck(argument)) return false;
+            if(!inputChecker.birthdayValidCheck(argument)) return false;
         } catch(ArrayIndexOutOfBoundsException e){
             System.out.println("Please insert birthday in the same line with the command!");
             return false;

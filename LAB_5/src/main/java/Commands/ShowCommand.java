@@ -3,7 +3,7 @@ package Commands;
 import Core.CollectionManager;
 
 public class ShowCommand extends AbstractCommand{
-    private CollectionManager collectionManager;
+    private final CollectionManager collectionManager;
 
     public ShowCommand(CollectionManager C){
         this.collectionManager = C;

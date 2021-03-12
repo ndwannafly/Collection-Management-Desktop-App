@@ -4,25 +4,23 @@ import Commands.*;
 
 public class CommandManager {
 
-    private Command AddCommand;
-    private Command ClearCommand;
-    private Command CountLessThanBirthdayCommand;
-    private Command ExecuteScriptCommand;
-    private Command ExitCommand;
-    private Command GroupCountingByIDCommand;
-    private Command HelpCommand;
-    private Command HistoryCommand;
-    private Command InfoCommand;
-    private Command PrintFieldAscendingHeightCommand;
-    private Command RemoveByIdCommand;
-    private Command RemoveGreaterCommand;
-    private Command RemoveLowerCommand;
-    private Command SaveCommand;
-    private Command ShowCommand;
-    private Command UpdateCommand;
+    private final Command AddCommand;
+    private final Command ClearCommand;
+    private final Command CountLessThanBirthdayCommand;
+    private final Command ExitCommand;
+    private final Command GroupCountingByIDCommand;
+    private final Command HelpCommand;
+    private final Command InfoCommand;
+    private final Command PrintFieldAscendingHeightCommand;
+    private final Command RemoveByIdCommand;
+    private final Command RemoveGreaterCommand;
+    private final Command RemoveLowerCommand;
+    private final Command SaveCommand;
+    private final Command ShowCommand;
+    private final Command UpdateCommand;
 
     public CommandManager(Command addCommand, Command clearCommand, Command countLessThanBirthdayCommand,
-                          Command executeScriptCommand, Command exitCommand, Command groupCountingByIDCommand,
+                          Command exitCommand, Command groupCountingByIDCommand,
                           Command helpCommand, Command infoCommand, Command printFieldAscendingHeightCommand,
                           Command removeByIdCommand, Command removeGreaterCommand, Command removeLowerCommand,
                           Command saveCommand, Command showCommand, Command updateCommand){
@@ -30,7 +28,6 @@ public class CommandManager {
         this.AddCommand = addCommand;
         this.ClearCommand = clearCommand;
         this.CountLessThanBirthdayCommand = countLessThanBirthdayCommand;
-        this.ExecuteScriptCommand = executeScriptCommand;
         this.ExitCommand = exitCommand;
         this.GroupCountingByIDCommand = groupCountingByIDCommand;
         this.HelpCommand = helpCommand;
@@ -81,9 +78,6 @@ public class CommandManager {
         return SaveCommand.execute(fileName);
     }
 
-    public boolean executeScript(String argument){
-        return ExecuteScriptCommand.execute(argument);
-    }
 
     public boolean exit(){
         return ExitCommand.execute();

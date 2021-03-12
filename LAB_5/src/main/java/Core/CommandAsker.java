@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 public class CommandAsker {
-    private InputChecker inputChecker;
+    private final InputChecker inputChecker;
 
     public CommandAsker(InputChecker ic){
         this.inputChecker = ic;
@@ -22,32 +22,32 @@ public class CommandAsker {
         Person newPerson = new Person();
         System.out.println("Let's create new person");
 
-        newPerson.setId(IdAsker());
+        newPerson.setId(idAsker());
 
-        newPerson.setName(NameAsker());
+        newPerson.setName(nameAsker());
 
-        newPerson.setCoordinates(CoordinatesAsker());
+        newPerson.setCoordinates(coordinatesAsker());
 
-        newPerson.setCreationDate(DateAsker());
+        newPerson.setCreationDate(dateAsker());
 
-        newPerson.setHeight(HeightAsker());
+        newPerson.setHeight(heightAsker());
 
-        newPerson.setBirthday(BirthdayAsker());
+        newPerson.setBirthday(birthdayAsker());
 
-        newPerson.setWeight(WeightAsker());
+        newPerson.setWeight(weightAsker());
 
-        newPerson.setNationality(CountryAsker());
+        newPerson.setNationality(countryAsker());
 
-        newPerson.setLocation(LocationAsker());
+        newPerson.setLocation(locationAsker());
         return newPerson;
     }
 
-    public Long IdAsker(){
+    public Long idAsker(){
         System.out.println("Id is automatically generated.");
         Long newID = new Random().nextLong();
         if(CollectionManager.IDChecker.contains(newID) || newID < 0){
             System.out.println("Input is invalid. Let's generate the new one!");
-            return IdAsker();
+            return idAsker();
         }
         else{
             CollectionManager.IDChecker.add(newID);
@@ -56,12 +56,12 @@ public class CommandAsker {
         }
     }
 
-    public String NameAsker(){
+    public String nameAsker(){
         System.out.println("Insert name: ");
         return (scanner.nextLine());
     }
 
-    public Coordinates CoordinatesAsker(){
+    public Coordinates coordinatesAsker(){
         System.out.println("Insert coordinates: ");
         while(true){
             System.out.println("Insert x and y:");
@@ -70,8 +70,8 @@ public class CommandAsker {
                 System.out.println("please insert exactly two number!");
             }
             else{
-                if(!inputChecker.IntegerValidCheck(inputNumber[0], -801, Integer.MAX_VALUE)) continue;
-                if(!inputChecker.DoubleValidCheck(inputNumber[1], Double.MIN_VALUE, 687.0)) continue;
+                if(!inputChecker.integerValidCheck(inputNumber[0], -801, Integer.MAX_VALUE)) continue;
+                if(!inputChecker.doubleValidCheck(inputNumber[1], Double.MIN_VALUE, 687.0)) continue;
                 int x = Integer.parseInt(inputNumber[0]);
                 Double y = Double.parseDouble(inputNumber[1]);
                 return new Coordinates(x, y);
@@ -79,11 +79,11 @@ public class CommandAsker {
         }
     }
 
-    public LocalDateTime DateAsker(){
+    public LocalDateTime dateAsker(){
         return java.time.LocalDateTime.now();
     }
 
-    public Long HeightAsker(){
+    public Long heightAsker(){
         while(true) {
             System.out.println("Insert height: ");
             String[] inputNumber = scanner.nextLine().trim().split(" ");
@@ -91,13 +91,13 @@ public class CommandAsker {
                 System.out.println("Please insert exactly one number!");
             }
             else{
-                if(!inputChecker.LongValidCheck(inputNumber[0], Long.MIN_VALUE, Long.MAX_VALUE)) continue;
+                if(!inputChecker.longValidCheck(inputNumber[0], Long.MIN_VALUE, Long.MAX_VALUE)) continue;
                 return Long.parseLong(inputNumber[0]);
             }
         }
     }
 
-    public Date BirthdayAsker() {
+    public Date birthdayAsker() {
         while(true) {
             System.out.println("Insert birthday: ");
             String[] inputNumber = scanner.nextLine().trim().split(" ");
@@ -115,12 +115,12 @@ public class CommandAsker {
         }
     }
 
-    public Integer WeightAsker(){
+    public Integer weightAsker(){
         System.out.println("Insert weight: ");
         return intAsker(0,Integer.MAX_VALUE);
     }
 
-    public Country CountryAsker(){
+    public Country countryAsker(){
         while(true) {
             System.out.println("Insert Country: ");
             String[] inputNumber = scanner.nextLine().trim().split(" ");
@@ -140,12 +140,12 @@ public class CommandAsker {
         }
     }
 
-    public Location LocationAsker(){
+    public Location locationAsker(){
         System.out.println("Insert Location: ");
         System.out.println("Insert X: ");
         Integer LocationX = intAsker(Integer.MIN_VALUE,Integer.MAX_VALUE);
         System.out.println("Insert Y: ");
-        long LocationY = LongAsker(Long.MIN_VALUE, Long.MAX_VALUE);
+        long LocationY = longAsker(Long.MIN_VALUE, Long.MAX_VALUE);
         System.out.println("Insert name: ");
         String name = scanner.nextLine();
         return new Location(LocationX, LocationY, name);
@@ -171,7 +171,7 @@ public class CommandAsker {
         }
     }
 
-    public Long LongAsker(long min, long max){
+    public Long longAsker(long min, long max){
         while(true){
             String[] inputNumber = scanner.nextLine().trim().split(" ");
             if(inputNumber.length != 1 ){

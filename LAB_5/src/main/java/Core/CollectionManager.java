@@ -13,7 +13,7 @@ import java.util.*;
 
 public class CollectionManager {
     private HashSet<Person> listPerson = new HashSet<>();
-    private FileParser fileParser = new FileParser();
+    private final FileParser fileParser = new FileParser();
     public static HashSet<Long> IDChecker = new HashSet<>();
     private final LocalDateTime creationDate = LocalDateTime.now();
     public void readInputFromJsonFile(String InputFileName){
@@ -62,14 +62,14 @@ public class CollectionManager {
 
     public boolean removeById(Long id){
         boolean flag = false;
-        for(Person person : listPerson){
+        for(Iterator<Person> iterator = listPerson.iterator(); iterator.hasNext();){
+            Person person = iterator.next();
             if(person.getId() == id){
                 flag = true;
-                listPerson.remove(person);
-                break;
+                iterator.remove();
             }
         }
-        return flag;
+        return !flag;
     }
 
     public void removeLower(Person P){

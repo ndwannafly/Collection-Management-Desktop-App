@@ -24,7 +24,6 @@ public class FileParser {
     /*
         Constructor
     */
-    @SuppressWarnings("unchecked")
     public HashSet<Person> parse(String InputFileName){
         HashSet<Person> collectionInput = new HashSet<>();
         JSONParser jsonParser = new JSONParser();
@@ -43,7 +42,7 @@ public class FileParser {
 
     /**
      * This method is used to convert JSONArray to HashSet then save into Collection
-     * @param jsArr
+     * @param jsArr json array
      * @return HashSet is converted JSONArray
      */
     @SuppressWarnings("unchecked")
@@ -61,9 +60,9 @@ public class FileParser {
 
     /**
      * This method convert JsonObj to Person
-     * @param jsonObject
+     * @param jsonObject json object
      * @return Person which is converted from JsonObject
-     * @throws java.text.ParseException
+     * @throws java.text.ParseException throw if occurs error
      */
     private Person convertJsonObjIntoPerson(JSONObject jsonObject) throws java.text.ParseException {
         Person p = new Person();

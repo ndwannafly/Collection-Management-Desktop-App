@@ -3,7 +3,7 @@ package Commands;
 import Core.CollectionManager;
 
 public class GroupCountingByIDCommand extends AbstractCommand{
-    private CollectionManager collectionManager;
+    private final CollectionManager collectionManager;
 
     public GroupCountingByIDCommand(CollectionManager C){
         this.collectionManager = C;

@@ -11,7 +11,7 @@ public class InputChecker {
     public InputChecker(){}
 
     private  static final double eps = 1E-6;
-    public boolean IntegerValidCheck(String s, int min, int max){
+    public boolean integerValidCheck(String s, int min, int max){
         try{
             int x = Integer.parseInt(s);
             if(x >= min && x <= max) return true;
@@ -23,7 +23,7 @@ public class InputChecker {
         }
     }
 
-    public boolean DoubleValidCheck(String s, Double min, Double max){
+    public boolean doubleValidCheck(String s, Double min, Double max){
         try{
             Double x = Double.parseDouble(s);
             if( x - min > eps && max - x > eps){
@@ -37,7 +37,7 @@ public class InputChecker {
         }
     }
 
-    public boolean LongValidCheck(String s, Long min, Long max){
+    public boolean longValidCheck(String s, Long min, Long max){
         try{
             long x = Long.parseLong(s);
             if(x >= min && x <= max) return true;
@@ -49,7 +49,7 @@ public class InputChecker {
         }
     }
 
-    public boolean BirthdayValidCheck(String s){
+    public boolean birthdayValidCheck(String s){
         SimpleDateFormat birthdayFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
         try {
             birthdayFormatter.parse(s);

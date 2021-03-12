@@ -5,5 +5,5 @@ public enum Country {
     FRANCE,
     SPAIN,
     CHINA,
-    ITALY;
+    ITALY
 }
