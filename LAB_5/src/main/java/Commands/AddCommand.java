@@ -3,8 +3,8 @@ package Commands;
 import Core.*;
 
 public class AddCommand extends AbstractCommand{
-    private CollectionManager collectionManager;
-    private CommandAsker commandAsker;
+    private final CollectionManager collectionManager;
+    private final CommandAsker commandAsker;
 
     public AddCommand(CollectionManager cm, CommandAsker ca){
         this.collectionManager = cm;

@@ -20,6 +20,7 @@ public class Commander {
 
     public void interactiveMode(){
         while(true) {
+            if(!userScanner.hasNextLine()) System.exit(-1);
             String[] userCommand  = userScanner.nextLine().trim().split(" ");
             if(userCommand.length > 2 ){
                 System.out.println("Invalid command! Valid command should contain 1 or 2 arguments." +

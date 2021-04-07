@@ -1,8 +1,6 @@
 package Commands;
 
 import Core.CollectionManager;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
 public class SaveCommand extends AbstractCommand{
     private final CollectionManager collectionManager;

@@ -5,6 +5,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -33,6 +34,8 @@ public class FileParser {
             JSONArray personList = (JSONArray) obj;
             collectionInput = saveIntoCollection(personList);
 
+        } catch(FileNotFoundException f){
+            System.out.println("find not found!");
         } catch (ParseException | IOException e) {
             e.printStackTrace();
         }

@@ -30,7 +30,7 @@ public class Main {
         System.out.println("-----------------------");
         System.out.println("If you have problems, help command will save your life!");
         CollectionManager collectionManager = new CollectionManager();
-        collectionManager.readInputFromJsonFile(FILE_PATH + fileName);
+        collectionManager.readInputFromJsonFile(fileName);
         InputChecker inputChecker = new InputChecker();
         CommandAsker commandAsker = new CommandAsker(inputChecker);
         CommandManager commandManager = new CommandManager(

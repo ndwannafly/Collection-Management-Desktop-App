@@ -5,9 +5,9 @@ import Core.CommandAsker;
 import Core.InputChecker;
 
 public class UpdateCommand extends AbstractCommand{
-    private CollectionManager collectionManager;
-    private InputChecker inputChecker;
-    private CommandAsker commandAsker;
+    private final CollectionManager collectionManager;
+    private final InputChecker inputChecker;
+    private final CommandAsker commandAsker;
     public UpdateCommand(CollectionManager C, InputChecker checker, CommandAsker asker){
         this.collectionManager = C;
         this.inputChecker = checker;

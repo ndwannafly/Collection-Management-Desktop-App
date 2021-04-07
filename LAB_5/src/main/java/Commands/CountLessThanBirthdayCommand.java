@@ -9,8 +9,8 @@ import java.util.Date;
 import java.util.Locale;
 
 public class CountLessThanBirthdayCommand extends AbstractCommand{
-    private CollectionManager collectionManager;
-    private InputChecker inputChecker;
+    private final CollectionManager collectionManager;
+    private final InputChecker inputChecker;
     public CountLessThanBirthdayCommand(CollectionManager cm, InputChecker ic){
         this.collectionManager = cm;
         this.inputChecker = ic;
