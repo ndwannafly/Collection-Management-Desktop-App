@@ -25,16 +25,13 @@ public class InfoCommand extends Command implements Serializable {
 
     @Override
     public void execute(String[] args) throws IOException {
-          if(args.length != 1){
-              System.out.println("Client: Invalid command's format! Fail to execute HelpCommand!");
-          }
-          else{
-              receiver.info();
-          }
+
+        if(args.length != 1) {
+            System.out.println("Client: Invalid command's format! Fail to execute InfoCommand!");
+        }
+        else{
+            receiver.info();
+        }
     }
 
-    @Override
-    public String toString() {
-        return "It's Info!";
-    }
 }

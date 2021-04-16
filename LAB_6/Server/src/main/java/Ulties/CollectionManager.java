@@ -9,14 +9,13 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Locale;
+import java.util.*;
 
 public class CollectionManager {
 
     private static HashSet<Person> listPerson = new HashSet<>();
     private static final FileParser fileParser = new FileParser();
+    private static LocalDateTime creationDate = LocalDateTime.now();
     private static String fileName;
     public static HashSet<Long> IDChecker = new HashSet<>();
 
@@ -28,10 +27,40 @@ public class CollectionManager {
         listPerson = fileParser.parse(fileName);
     }
 
-    public static int getPerson(){
+    public static int getNumberOfPerson(){
         return listPerson.size();
     }
 
+    public static LocalDateTime getCreationDate(){
+        return creationDate;
+    }
+
+    public static String info(){
+        String response = "";
+        response += "Collection's type: " + listPerson.getClass().getSimpleName() + '\n';
+        response += "Initialization date: "  + CollectionManager.getCreationDate() + '\n';
+        response += "Collection's size: " + CollectionManager.getNumberOfPerson();
+        return response;
+    }
+
+    public static String show(){
+            StringBuilder str = new StringBuilder();
+            if(listPerson.size() == 0){
+                str.append("Collection is empty!");
+            }
+            else{
+                ArrayList<Person> personArrayList = new ArrayList<>(listPerson);
+                Collections.sort(personArrayList);
+                for (Person p : personArrayList) {
+                    str.append(p.toString());
+                }
+            }
+            return String.valueOf(str);
+    }
+
+    public static void clear(){
+        listPerson.clear();
+    }
     @SuppressWarnings("unchecked")
     public static void save(){
         JSONArray PersonList = new JSONArray();

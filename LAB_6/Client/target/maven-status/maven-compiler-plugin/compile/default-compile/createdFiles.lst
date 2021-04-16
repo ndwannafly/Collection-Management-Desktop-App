@@ -1,0 +1,5 @@
+Ulties\ConsoleManager.class
+Ulties\Invoker.class
+Ulties\Receiver.class
+Commands\SerializedCommands\SerializedSimplyCommand.class
+Commands\SpecificCommands\InfoCommand.class

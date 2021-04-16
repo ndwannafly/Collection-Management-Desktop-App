@@ -11,20 +11,18 @@ import java.nio.channels.DatagramChannel;
 
 public class ClearCommand extends Command implements Serializable {
 
-    private Receiver receiver;
 
     public ClearCommand(){
 
     }
 
-    public ClearCommand(Receiver receiver){
-        this.receiver = receiver;
-    }
 
 
     @Override
     public void execute(Object o, DatagramSocket datagramSocket, DatagramPacket datagramPacket) {
-
+        System.out.println("Server: execute clear command!");
+        Receiver receiver = new Receiver(datagramSocket, datagramPacket);
+        receiver.clear();
     }
 
 

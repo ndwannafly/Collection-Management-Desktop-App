@@ -24,6 +24,11 @@ public class ExitCommand extends Command implements Serializable {
 
     @Override
     public void execute(String[] args) {
-
+        if(args.length != 1) {
+            System.out.println("Client: Invalid command's format! Fail to execute InfoCommand!");
+        }
+        else{
+            receiver.exit();
+        }
     }
 }

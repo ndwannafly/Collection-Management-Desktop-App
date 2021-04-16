@@ -33,7 +33,7 @@ public class Communicator {
        try{
            datagramChannel = DatagramChannel.open();
            datagramChannel.bind(null);
-           datagramChannel.configureBlocking(false);
+           //datagramChannel.configureBlocking(false);
        } catch (IOException e) {
            e.printStackTrace();
        }

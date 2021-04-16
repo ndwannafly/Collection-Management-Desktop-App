@@ -6,6 +6,7 @@ import Commands.SerializedCommands.SerializedCombinedCommand;
 import Commands.SerializedCommands.SerializedObjectCommand;
 import Commands.SerializedCommands.SerializedSimplyCommand;
 
+import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
@@ -18,7 +19,7 @@ public class CommandDecoder {
         this.datagramPacket = datagramPacket;
     }
 
-    public void decode(Object o){
+    public void decode(Object o) throws IOException {
         if(o instanceof SerializedSimplyCommand){
             SerializedSimplyCommand simplyCommand = (SerializedSimplyCommand) o;
             Command command = simplyCommand.getCommand();
@@ -32,12 +33,14 @@ public class CommandDecoder {
             String arg = argumentCommand.getArg();
             command.execute(arg, datagramSocket, datagramPacket);
         }
+
         if(o instanceof SerializedObjectCommand){
             SerializedObjectCommand objectCommand = (SerializedObjectCommand) o;
             Command command = objectCommand.getCommand();
             Object object = objectCommand.getObject();
             command.execute(object, datagramSocket, datagramPacket);
         }
+
         if(o instanceof SerializedCombinedCommand){
             SerializedCombinedCommand combinedCommand = (SerializedCombinedCommand) o;
             Command command = combinedCommand.getCommand();

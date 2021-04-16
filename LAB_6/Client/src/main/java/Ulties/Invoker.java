@@ -16,15 +16,13 @@ public class Invoker {
         commands.put(name, command);
     }
 
-    public void executeCommand(String[] name) throws IOException {
-        if(name.length > 0){
-            Command command = commands.get(name[0]);
-            System.out.println("CLIENT: Command's name: " + name[0]);
-            command.execute(name);
-            addCommandToHistory(name[0]);
-        }
-        else{
-            System.out.println("Client: Error! You didn't invert command!");
+    public void executeCommand(String[] userCommand) throws IOException {
+        try {
+            Command command = commands.get(userCommand[0]);
+            command.execute(userCommand);
+            addCommandToHistory(userCommand[0]);
+        } catch(NullPointerException e){
+            System.out.println("Command is not supported! Insert help to see the guideline!");
         }
     }
 

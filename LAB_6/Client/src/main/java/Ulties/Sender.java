@@ -14,13 +14,13 @@ import java.nio.channels.DatagramChannel;
 public class Sender {
     private final DatagramChannel datagramChannel;
     private final Communicator communicator;
-    private final ByteArrayOutputStream byteStream = new ByteArrayOutputStream(4096);
     public Sender(Communicator communicator){
         this.communicator = communicator;
         this.datagramChannel = communicator.getDatagramChannel();
     }
 
     public void sendObject(SerializedArgumentCommand serializedCommand) throws IOException {
+        ByteArrayOutputStream byteStream = new ByteArrayOutputStream(4096);
         ObjectOutputStream out = new ObjectOutputStream(byteStream);
         out.writeObject(serializedCommand);
         out.flush();
@@ -31,6 +31,7 @@ public class Sender {
     }
 
     public void sendObject(SerializedCombinedCommand serializedCommand) throws IOException {
+        ByteArrayOutputStream byteStream = new ByteArrayOutputStream(4096);
         ObjectOutputStream out = new ObjectOutputStream(byteStream);
         out.writeObject(serializedCommand);
         out.flush();
@@ -40,6 +41,7 @@ public class Sender {
     }
 
     public void sendObject(SerializedObjectCommand serializedCommand) throws IOException {
+        ByteArrayOutputStream byteStream = new ByteArrayOutputStream(4096);
         ObjectOutputStream out = new ObjectOutputStream(byteStream);
         out.writeObject(serializedCommand);
         out.flush();
@@ -49,6 +51,7 @@ public class Sender {
     }
 
     public void sendObject(SerializedSimplyCommand serializedCommand) throws IOException {
+        ByteArrayOutputStream byteStream = new ByteArrayOutputStream(4096);
         ObjectOutputStream out = new ObjectOutputStream(byteStream);
         out.writeObject(serializedCommand);
         out.flush();

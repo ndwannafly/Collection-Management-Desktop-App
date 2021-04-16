@@ -41,11 +41,15 @@ public class ConsoleManager {
         invoker.register("update", new UpdateCommand(receiver));
 
         Scanner userInput = new Scanner(System.in);
-        while(userInput.hasNextLine()){
-            invoker.executeCommand(userInput.nextLine().trim().split(" "));
+        while(true){
+            if(!userInput.hasNextLine()){
+                System.exit(-1);
+            }
+            String[] userCommand = userInput.nextLine().trim().split(" ");
+            invoker.executeCommand(userCommand);
+
         }
 
-        communicator.endCommunication();
     }
 
 }

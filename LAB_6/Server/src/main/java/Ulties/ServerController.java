@@ -12,6 +12,11 @@ import java.nio.channels.DatagramChannel;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
+
+/**
+ * TO-DO List:
+ *              1. Complete the receiver
+ */
 public class ServerController {
 
     private int port;
@@ -23,19 +28,20 @@ public class ServerController {
         try {
             DatagramSocket serverSocket = new DatagramSocket(port);
             while(true) {
-                byte[] receivedBuffer = new byte[512];
+                byte[] receivedBuffer = new byte[4096];
                 DatagramPacket receivedPacket = new DatagramPacket(receivedBuffer, receivedBuffer.length);
-                System.out.println("Server: start listening! Number of Person: " + CollectionManager.getPerson());
+                System.out.println("Server: start listening! Number of Person: " + CollectionManager.getNumberOfPerson());
                 serverSocket.receive(receivedPacket);
                 //String msg = new String(receivedPacket.getData(), StandardCharsets.ISO_8859_1);
                 //System.out.println("SERVER: RECEIVED " + msg);
+                //System.out.println(Arrays.toString(receivedBuffer));
                 ByteArrayInputStream receivedByteArray = new ByteArrayInputStream(receivedPacket.getData());
                 ObjectInputStream in = new ObjectInputStream(receivedByteArray);
                 Object object = in.readObject();
-                SerializedSimplyCommand receivedCommand = (SerializedSimplyCommand) object;
-                System.out.println(receivedCommand.getID());
-                //CommandDecoder commandDecoder = new CommandDecoder(serverSocket, receivedPacket);
-                //commandDecoder.decode(object);
+/*                SerializedSimplyCommand receivedCommand = (SerializedSimplyCommand) object;
+                System.out.println(receivedCommand.getID());*/
+                CommandDecoder commandDecoder = new CommandDecoder(serverSocket, receivedPacket);
+                commandDecoder.decode(object);
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
