@@ -16,7 +16,6 @@ D:\first course 2020-2021\semester 2\Programming\LAB_6\Server\src\main\java\Ulti
 D:\first course 2020-2021\semester 2\Programming\LAB_6\Server\src\main\java\Commands\SpecificCommands\InfoCommand.java
 D:\first course 2020-2021\semester 2\Programming\LAB_6\Server\src\main\java\Commands\SerializedCommands\SerializedArgumentCommand.java
 D:\first course 2020-2021\semester 2\Programming\LAB_6\Server\src\main\java\Commands\SpecificCommands\UpdateCommand.java
-D:\first course 2020-2021\semester 2\Programming\LAB_6\Server\src\main\java\Commands\SpecificCommands\ExitCommand.java
 D:\first course 2020-2021\semester 2\Programming\LAB_6\Server\src\main\java\Commands\SpecificCommands\HelpCommand.java
 D:\first course 2020-2021\semester 2\Programming\LAB_6\Server\src\main\java\Commands\SpecificCommands\ClearCommand.java
 D:\first course 2020-2021\semester 2\Programming\LAB_6\Server\src\main\java\Ulties\Receiver.java

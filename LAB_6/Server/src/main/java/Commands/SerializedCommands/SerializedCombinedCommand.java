@@ -9,6 +9,7 @@ public class SerializedCombinedCommand implements Serializable {
     private Command command;
     private Object object;
     private String arg;
+    private static final long serialVersionUID = 1234567L;
 
     public SerializedCombinedCommand (Command command, Object object, String arg){
         this.command = command;

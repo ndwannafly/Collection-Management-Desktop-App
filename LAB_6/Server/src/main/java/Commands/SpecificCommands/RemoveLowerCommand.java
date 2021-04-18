@@ -3,6 +3,7 @@ package Commands.SpecificCommands;
 import Commands.Command;
 import Ulties.Receiver;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -11,20 +12,18 @@ import java.nio.channels.DatagramChannel;
 
 public class RemoveLowerCommand extends Command implements Serializable {
 
-    private Receiver receiver;
+    private static final long serialVersionUID = 1234567L;
 
     public RemoveLowerCommand(){
 
     }
 
-    public RemoveLowerCommand(Receiver receiver){
-        this.receiver = receiver;
-    }
 
 
     @Override
-    public void execute(Object o, DatagramSocket datagramSocket, DatagramPacket datagramPacket) {
-
+    public void execute(Object o, DatagramSocket datagramSocket, DatagramPacket datagramPacket) throws IOException {
+        Receiver receiver = new Receiver(datagramSocket, datagramPacket);
+        receiver.removeLower(o);
     }
 
 }

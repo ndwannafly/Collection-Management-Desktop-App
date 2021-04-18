@@ -11,15 +11,12 @@ import java.nio.channels.DatagramChannel;
 
 public class HelpCommand extends Command implements Serializable {
 
-    private Receiver receiver;
+    private static final long serialVersionUID = 1234567L;
 
     public HelpCommand(){
 
     }
 
-    public HelpCommand(Receiver receiver){
-        this.receiver = receiver;
-    }
 
 
     @Override

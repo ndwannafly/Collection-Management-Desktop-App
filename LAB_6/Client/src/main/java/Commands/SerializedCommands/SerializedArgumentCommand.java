@@ -6,9 +6,12 @@ import java.io.Serializable;
 
 public class SerializedArgumentCommand implements Serializable {
     private Command command;
+    private String arg;
+    private static final long serialVersionUID = 1234567L;
 
-    public SerializedArgumentCommand(Command command){
+    public SerializedArgumentCommand(Command command, String arg){
         this.command = command;
+        this.arg = arg;
     }
 
     public Command getCommand(){

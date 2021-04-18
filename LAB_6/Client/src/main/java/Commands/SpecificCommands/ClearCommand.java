@@ -9,6 +9,7 @@ import java.io.Serializable;
 public class ClearCommand extends Command implements Serializable {
 
     private Receiver receiver;
+    private static final long serialVersionUID = 1234567L;
 
     public ClearCommand(){
 

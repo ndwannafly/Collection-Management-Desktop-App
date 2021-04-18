@@ -15,7 +15,7 @@ public class CollectionManager {
 
     private static HashSet<Person> listPerson = new HashSet<>();
     private static final FileParser fileParser = new FileParser();
-    private static LocalDateTime creationDate = LocalDateTime.now();
+    private static final LocalDateTime creationDate = LocalDateTime.now();
     private static String fileName;
     public static HashSet<Long> IDChecker = new HashSet<>();
 
@@ -58,8 +58,72 @@ public class CollectionManager {
             return String.valueOf(str);
     }
 
-    public static void clear(){
+    public static String clear(){
         listPerson.clear();
+        return "Collection is clear!";
+    }
+
+    public static String add(Object o){
+        listPerson.add((Person) o);
+        return "New person is added into collection!";
+    }
+
+    public static String countLessThanBirthDay(Date birthday){
+        int res = 0;
+        for (Person person : listPerson){
+            if(birthday.after(person.getBirthday())) ++res;
+        }
+        return String.valueOf(res);
+    }
+
+    public static String groupByCountingID(){
+        StringBuilder stringBuilder = new StringBuilder();
+        listPerson.forEach(person -> stringBuilder.append("Group of id ").append(person.getId()).append(" has 1 element\n"));
+        return String.valueOf(stringBuilder);
+    }
+
+    public static String printFieldAscendingHeight(){
+        ArrayList<Long> heightArray = new ArrayList<>();
+        listPerson.forEach(p -> heightArray.add(p.getHeight()));
+        Collections.sort(heightArray);
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        heightArray.forEach(h -> stringBuilder.append(h).append('\n'));
+        return String.valueOf(stringBuilder);
+    }
+
+    public static String removeByID(long id){
+        for(Iterator<Person> iterator = listPerson.iterator(); iterator.hasNext();){
+            Person person = iterator.next();
+            if(person.getId() == id){
+                iterator.remove();
+                return "Person has ID = " + id + " is removed!";
+            }
+        }
+        return "ID doesn't exist!";
+    }
+
+    public static String removeGreater(Person p){
+        listPerson.removeIf(person -> person.compareTo(p) > 0);
+        return "Removed all greater people!";
+    }
+
+    public static String removeLower(Person p){
+        listPerson.removeIf(person -> person.compareTo(p) < 0);
+        return "Removed all lower people";
+    }
+
+    public static String update(long id, Object o){
+        for(Iterator<Person> iterator = listPerson.iterator(); iterator.hasNext();){
+            Person person = iterator.next();
+            if(person.getId() == id){
+                iterator.remove();
+                listPerson.add((Person) o);
+                return "Person has ID = " + id + " is updated!";
+            }
+        }
+        return "ID doesn't exist!";
     }
     @SuppressWarnings("unchecked")
     public static void save(){

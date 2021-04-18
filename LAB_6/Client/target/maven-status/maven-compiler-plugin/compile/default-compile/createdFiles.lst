@@ -1,5 +1,11 @@
-Ulties\ConsoleManager.class
-Ulties\Invoker.class
+Data\Location.class
+Data\Person.class
+Ulties\CommandAsker.class
 Ulties\Receiver.class
 Commands\SerializedCommands\SerializedSimplyCommand.class
+Ulties\InputChecker.class
+Data\Country.class
+Ulties\ConsoleManager.class
+Ulties\Invoker.class
+Data\Coordinates.class
 Commands\SpecificCommands\InfoCommand.class

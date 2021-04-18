@@ -3,6 +3,7 @@ package Commands.SpecificCommands;
 import Commands.Command;
 import Ulties.Receiver;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -11,20 +12,19 @@ import java.nio.channels.DatagramChannel;
 
 public class GroupCountingByIDCommand extends Command implements Serializable {
 
-    private Receiver receiver;
+    private static final long serialVersionUID = 1234567L;
 
     public GroupCountingByIDCommand(){
 
     }
 
-    public GroupCountingByIDCommand(Receiver receiver){
-        this.receiver = receiver;
-    }
 
 
     @Override
-    public void execute(Object o, DatagramSocket datagramSocket, DatagramPacket datagramPacket) {
-
+    public void execute(Object o, DatagramSocket datagramSocket, DatagramPacket datagramPacket) throws IOException {
+        System.out.println("Server: Execute GroupCountingByIDCommand");
+        Receiver receiver = new Receiver(datagramSocket, datagramPacket);
+        receiver.groupByCountingID();
     }
 
 
