@@ -1,6 +1,7 @@
 package Commands.SpecificCommands;
 
 import Commands.Command;
+import Ulties.Logging;
 import Ulties.Receiver;
 
 import java.io.IOException;
@@ -9,6 +10,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.SocketAddress;
 import java.nio.channels.DatagramChannel;
+import java.util.logging.Level;
 
 public class PrintFieldAscendingHeightCommand extends Command implements Serializable {
 
@@ -23,6 +25,7 @@ public class PrintFieldAscendingHeightCommand extends Command implements Seriali
     @Override
     public void execute(Object o, DatagramSocket datagramSocket, DatagramPacket datagramPacket) throws IOException {
         Receiver receiver = new Receiver(datagramSocket, datagramPacket);
+        Logging.log(Level.INFO, "Server is executing PrintFieldAscendingHeightCommand....");
         receiver.printFieldAscendingHeight();
     }
 

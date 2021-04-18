@@ -1,6 +1,7 @@
 package Commands.SpecificCommands;
 
 import Commands.Command;
+import Ulties.Logging;
 import Ulties.Receiver;
 
 import java.io.IOException;
@@ -9,6 +10,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.SocketAddress;
 import java.nio.channels.DatagramChannel;
+import java.util.logging.Level;
 
 public class ClearCommand extends Command implements Serializable {
 
@@ -22,7 +24,7 @@ public class ClearCommand extends Command implements Serializable {
 
     @Override
     public void execute(Object o, DatagramSocket datagramSocket, DatagramPacket datagramPacket) throws IOException {
-        System.out.println("Server: execute clear command!");
+        Logging.log(Level.INFO, "Server is executing ClearCommand....");
         Receiver receiver = new Receiver(datagramSocket, datagramPacket);
         receiver.clear();
     }

@@ -10,7 +10,9 @@ import java.net.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
 import java.nio.charset.StandardCharsets;
+import java.text.ParseException;
 import java.util.Arrays;
+import java.util.logging.Level;
 
 
 /**
@@ -30,11 +32,9 @@ public class ServerController {
             while(true) {
                 byte[] receivedBuffer = new byte[4096];
                 DatagramPacket receivedPacket = new DatagramPacket(receivedBuffer, receivedBuffer.length);
-                System.out.println("Server: start listening! Number of Person: " + CollectionManager.getNumberOfPerson());
+                Logging.log(Level.INFO, "Server has started listening on port " + port);
                 serverSocket.receive(receivedPacket);
-                //String msg = new String(receivedPacket.getData(), StandardCharsets.ISO_8859_1);
-                //System.out.println("SERVER: RECEIVED " + msg);
-                //System.out.println(Arrays.toString(receivedBuffer));
+                Logging.log(Level.INFO, "Server received request from Client!");
                 ByteArrayInputStream receivedByteArray = new ByteArrayInputStream(receivedPacket.getData());
                 ObjectInputStream in = new ObjectInputStream(receivedByteArray);
                 Object object = in.readObject();
@@ -43,7 +43,7 @@ public class ServerController {
                 CommandDecoder commandDecoder = new CommandDecoder(serverSocket, receivedPacket);
                 commandDecoder.decode(object);
             }
-        } catch (IOException | ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException | ParseException e) {
             e.printStackTrace();
         }
 

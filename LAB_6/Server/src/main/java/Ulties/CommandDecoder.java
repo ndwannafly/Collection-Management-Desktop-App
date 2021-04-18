@@ -9,6 +9,7 @@ import Commands.SerializedCommands.SerializedSimplyCommand;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
+import java.text.ParseException;
 
 public class CommandDecoder {
     private DatagramSocket datagramSocket;
@@ -19,7 +20,7 @@ public class CommandDecoder {
         this.datagramPacket = datagramPacket;
     }
 
-    public void decode(Object o) throws IOException {
+    public void decode(Object o) throws IOException, ParseException {
         if(o instanceof SerializedSimplyCommand){
             SerializedSimplyCommand simplyCommand = (SerializedSimplyCommand) o;
             Command command = simplyCommand.getCommand();

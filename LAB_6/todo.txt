@@ -1,5 +1,5 @@
 1. Using StreamAPI
-2. Using Java Util Logging
+2. Using Java Util Logging ++++ done
 3. Handle multi-client
-4. Connect idChecker of clients and server.
+4. Connect idChecker of clients and server. (swing framework)
 5. Run it on putty
