@@ -45,18 +45,10 @@ public class CollectionManager {
     }
 
     public static String show(){
-            StringBuilder str = new StringBuilder();
-            if(listPerson.size() == 0){
-                str.append("Collection is empty!");
-            }
-            else{
-                ArrayList<Person> personArrayList = new ArrayList<>(listPerson);
-                Collections.sort(personArrayList);
-                for (Person p : personArrayList) {
-                    str.append(p.toString());
-                }
-            }
-            return String.valueOf(str);
+        StringBuilder str = new StringBuilder();
+        if(listPerson.size() == 0)  str.append("Collection is empty!");
+        else listPerson.stream().sorted().forEach(p -> str.append(p.toString()));
+        return String.valueOf(str);
     }
 
     public static String clear(){
@@ -70,27 +62,20 @@ public class CollectionManager {
     }
 
     public static String countLessThanBirthDay(Date birthday){
-        int res = 0;
-        for (Person person : listPerson){
-            if(birthday.after(person.getBirthday())) ++res;
-        }
-        return String.valueOf(res);
+        return String.valueOf(listPerson.stream().filter(p -> birthday.after(p.getBirthday())).count());
     }
 
     public static String groupByCountingID(){
         StringBuilder stringBuilder = new StringBuilder();
-        listPerson.forEach(person -> stringBuilder.append("Group of id ").append(person.getId()).append(" has 1 element\n"));
+        listPerson.forEach(p -> stringBuilder.append(p.getId()).append(" has 1 element\n"));
         return String.valueOf(stringBuilder);
     }
 
     public static String printFieldAscendingHeight(){
-        ArrayList<Long> heightArray = new ArrayList<>();
-        listPerson.forEach(p -> heightArray.add(p.getHeight()));
-        Collections.sort(heightArray);
-
         StringBuilder stringBuilder = new StringBuilder();
 
-        heightArray.forEach(h -> stringBuilder.append(h).append('\n'));
+        listPerson.stream().sorted().forEach(p -> stringBuilder.append(p.getHeight()).append('\n'));
+
         return String.valueOf(stringBuilder);
     }
 
@@ -178,7 +163,6 @@ public class CollectionManager {
          */
         try {
             PrintWriter printWriter = new PrintWriter(fileName);
-            System.out.println("working with printWriter");
             printWriter.write(PersonList.toJSONString());
             printWriter.flush();
             printWriter.close();

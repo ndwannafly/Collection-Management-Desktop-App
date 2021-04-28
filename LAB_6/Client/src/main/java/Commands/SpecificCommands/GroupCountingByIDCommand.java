@@ -20,7 +20,7 @@ public class GroupCountingByIDCommand extends Command implements Serializable {
     }
     @Override
     public void aboutCommand() {
-
+        System.out.println("group_counting_by_id        - group elements by their ID, print number of element of each group");
     }
 
     @Override

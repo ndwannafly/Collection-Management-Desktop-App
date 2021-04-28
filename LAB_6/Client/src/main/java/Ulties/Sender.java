@@ -8,15 +8,25 @@ import Commands.SerializedCommands.SerializedSimplyCommand;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.net.SocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
+import java.nio.channels.Selector;
 
 public class Sender {
-    private final DatagramChannel datagramChannel;
-    private final Communicator communicator;
-    public Sender(Communicator communicator){
-        this.communicator = communicator;
-        this.datagramChannel = communicator.getDatagramChannel();
+    private DatagramChannel datagramChannel;
+    private SocketAddress socketAddress;
+
+    public Sender(SocketAddress socketAddress){
+        this.socketAddress = socketAddress;
+    }
+
+    public void setDatagramChannel(DatagramChannel datagramChannel) {
+        this.datagramChannel = datagramChannel;
+    }
+
+    public void setSocketAddress(SocketAddress socketAddress) {
+        this.socketAddress = socketAddress;
     }
 
     public void sendObject(SerializedArgumentCommand serializedCommand) throws IOException {
@@ -26,7 +36,7 @@ public class Sender {
         out.flush();
         byte[] dataBytes = byteStream.toByteArray();
         ByteBuffer dataBuffer = ByteBuffer.wrap(dataBytes);
-        datagramChannel.send(dataBuffer, communicator.getSocketAddress());
+        datagramChannel.send(dataBuffer, socketAddress);
         //System.out.println("Client: message sent " + dataBytes);
     }
 
@@ -37,7 +47,7 @@ public class Sender {
         out.flush();
         byte[] dataBytes = byteStream.toByteArray();
         ByteBuffer dataBuffer = ByteBuffer.wrap(dataBytes);
-        datagramChannel.send(dataBuffer, communicator.getSocketAddress());
+        datagramChannel.send(dataBuffer, socketAddress);
     }
 
     public void sendObject(SerializedObjectCommand serializedCommand) throws IOException {
@@ -47,7 +57,7 @@ public class Sender {
         out.flush();
         byte[] dataBytes = byteStream.toByteArray();
         ByteBuffer dataBuffer = ByteBuffer.wrap(dataBytes);
-        datagramChannel.send(dataBuffer, communicator.getSocketAddress());
+        datagramChannel.send(dataBuffer, socketAddress);
     }
 
     public void sendObject(SerializedSimplyCommand serializedCommand) throws IOException {
@@ -57,6 +67,6 @@ public class Sender {
         out.flush();
         byte[] dataBytes = byteStream.toByteArray();
         ByteBuffer dataBuffer = ByteBuffer.wrap(dataBytes);
-        datagramChannel.send(dataBuffer, communicator.getSocketAddress());
+        datagramChannel.send(dataBuffer, socketAddress);
     }
 }

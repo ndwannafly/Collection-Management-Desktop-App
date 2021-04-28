@@ -1,5 +1,13 @@
-1. Using StreamAPI
+1. Using StreamAPI ++++ done
 2. Using Java Util Logging ++++ done
-3. Handle multi-client
-4. Connect idChecker of clients and server. (swing framework)
-5. Run it on putty
+3. Handle multi-client - doing (non-blocking datagramchannel)  ++++ done
+4. Connect idChecker between clients and server. (swing framework) no-need
+5. Script_mode - done
+6. handle if server suddently shutdown ( setTimeOut)
+7. Run it on putty  (later)
+
+8. Review to defend
+
+java -jar target/Server-1.0-SNAPSHOT.jar "copy.json" 2001
+
+java -jar target/Client-1.0-SNAPSHOT.jar "localhost" 0

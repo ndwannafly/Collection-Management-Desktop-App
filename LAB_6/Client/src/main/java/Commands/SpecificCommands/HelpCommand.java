@@ -20,7 +20,7 @@ public class HelpCommand extends Command implements Serializable {
 
     @Override
     public void aboutCommand() {
-        System.out.println("help:           - display which commands can be executed.");
+        System.out.println("help:                   - display which commands can be executed.");
     }
 
     @Override

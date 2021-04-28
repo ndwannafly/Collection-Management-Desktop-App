@@ -18,9 +18,16 @@ public class Invoker {
 
     public void executeCommand(String[] userCommand) throws IOException {
         try {
-            Command command = commands.get(userCommand[0]);
-            command.execute(userCommand);
+            //System.out.println("here");
+            if(userCommand[0].equals("history")){
+                commandHistory.forEach(System.out::println);
+            }
+            else {
+                Command command = commands.get(userCommand[0]);
+                command.execute(userCommand);
+            }
             addCommandToHistory(userCommand[0]);
+
         } catch(NullPointerException e){
             System.out.println("Command is not supported! Insert help to see the guideline!");
         }

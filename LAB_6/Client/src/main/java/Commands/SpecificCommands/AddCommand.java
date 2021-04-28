@@ -20,7 +20,7 @@ public class AddCommand extends Command implements Serializable {
 
     @Override
     public void aboutCommand() {
-
+        System.out.println("add {element}               - add new element into the collection");
     }
 
     @Override

@@ -20,7 +20,7 @@ public class UpdateCommand extends Command implements Serializable {
     }
     @Override
     public void aboutCommand() {
-
+        System.out.println("update {id}                 - update new values for element has corresponding id");
     }
 
     @Override

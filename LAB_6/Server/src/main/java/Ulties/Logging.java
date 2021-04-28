@@ -13,8 +13,7 @@ public class Logging {
     private Logging() throws IOException {
         logger = Logger.getLogger(Logging.class.getName());
         String logFile = "myLogServer.txt";
-        File f = new File(logFile);
-        PrintWriter printWriter = new PrintWriter(f);
+        PrintWriter printWriter = new PrintWriter(logFile);
         printWriter.print("");
         printWriter.close();
         fileHandler = new FileHandler(logFile, true);

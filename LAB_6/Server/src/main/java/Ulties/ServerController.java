@@ -22,13 +22,16 @@ import java.util.logging.Level;
 public class ServerController {
 
     private int port;
+
     public ServerController(String p){
         this.port = Integer.parseInt(p);
     }
 
+
     public void run(){
         try {
             DatagramSocket serverSocket = new DatagramSocket(port);
+
             while(true) {
                 byte[] receivedBuffer = new byte[4096];
                 DatagramPacket receivedPacket = new DatagramPacket(receivedBuffer, receivedBuffer.length);
@@ -37,13 +40,18 @@ public class ServerController {
                 Logging.log(Level.INFO, "Server received request from Client!");
                 ByteArrayInputStream receivedByteArray = new ByteArrayInputStream(receivedPacket.getData());
                 ObjectInputStream in = new ObjectInputStream(receivedByteArray);
-                Object object = in.readObject();
+                try {
+                    Object object = in.readObject();
 /*                SerializedSimplyCommand receivedCommand = (SerializedSimplyCommand) object;
                 System.out.println(receivedCommand.getID());*/
-                CommandDecoder commandDecoder = new CommandDecoder(serverSocket, receivedPacket);
-                commandDecoder.decode(object);
+                    CommandDecoder commandDecoder = new CommandDecoder(serverSocket, receivedPacket);
+                    commandDecoder.decode(object);
+                } catch(ParseException | ClassNotFoundException e){
+                    e.printStackTrace();
+                    break;
+                }
             }
-        } catch (IOException | ClassNotFoundException | ParseException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

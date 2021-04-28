@@ -20,7 +20,8 @@ public class RemoveGreaterCommand extends Command implements Serializable {
     }
     @Override
     public void aboutCommand() {
-
+        System.out.println("remove_greater {element}    - remove all elements from the collection, which are greater than " +
+                "specific element");
     }
 
     @Override

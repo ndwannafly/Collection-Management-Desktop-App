@@ -20,7 +20,7 @@ public class ExitCommand extends Command implements Serializable {
 
     @Override
     public void aboutCommand() {
-
+        System.out.println("exit                        - exit the program without saving to file");
     }
 
     @Override

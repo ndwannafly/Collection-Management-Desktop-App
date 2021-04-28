@@ -4,10 +4,11 @@ import java.io.IOException;
 
 public class Client {
 
-    private static String host = "localhost";
-    private static String port = "123";
 
     public static void main(String[] args) {
+
+        String host = args[0];
+        String port = args[1];
 
         ConsoleManager consoleManager = new ConsoleManager();
         try {

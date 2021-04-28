@@ -22,7 +22,7 @@ public class ClearCommand extends Command implements Serializable {
 
     @Override
     public void aboutCommand() {
-
+        System.out.println("clear                       - clear collection");
     }
 
     @Override

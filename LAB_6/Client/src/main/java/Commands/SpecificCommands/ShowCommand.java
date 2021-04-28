@@ -20,7 +20,7 @@ public class ShowCommand extends Command implements Serializable {
     }
     @Override
     public void aboutCommand() {
-
+        System.out.println("show                        - display all the elements of the collection");
     }
 
     @Override

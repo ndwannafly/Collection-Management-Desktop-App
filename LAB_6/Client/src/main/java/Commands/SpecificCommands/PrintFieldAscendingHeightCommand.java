@@ -20,6 +20,7 @@ public class PrintFieldAscendingHeightCommand extends Command implements Seriali
     }
     @Override
     public void aboutCommand() {
+        System.out.println("print_field_ascending_height- print field height of all elements in ascending order");
 
     }
 

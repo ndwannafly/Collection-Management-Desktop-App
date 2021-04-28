@@ -22,9 +22,9 @@ public class ConsoleManager {
         }
 
 
-        Sender sender = new Sender(communicator);
+        Sender sender = new Sender(communicator.getSocketAddress());
         Invoker invoker = new Invoker();
-        Receiver receiver = new Receiver(invoker, sender, communicator.getDatagramChannel());
+        Receiver receiver = new Receiver(invoker, sender, communicator);
 
         invoker.register("add", new AddCommand(receiver));
         invoker.register("clear", new ClearCommand(receiver));
@@ -39,15 +39,17 @@ public class ConsoleManager {
         invoker.register("remove_lower", new RemoveLowerCommand(receiver));
         invoker.register("show", new ShowCommand(receiver));
         invoker.register("update", new UpdateCommand(receiver));
+        invoker.register("execute_script", new ExecuteScript(receiver));
 
         Scanner userInput = new Scanner(System.in);
         while(true){
             if(!userInput.hasNextLine()){
-                System.exit(-1);
+                communicator.endCommunication();
+                System.exit(0);
             }
             String[] userCommand = userInput.nextLine().trim().split(" ");
             invoker.executeCommand(userCommand);
-
+            System.out.println("----------------------------------------");
         }
 
     }
