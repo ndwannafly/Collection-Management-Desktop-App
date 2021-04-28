@@ -6,12 +6,9 @@ import Ulties.Receiver;
 import java.io.IOException;
 
 public class ExecuteScript extends Command {
-    private static final long serialVersionUID = 1234567L;
-    private Receiver receiver;
-    private static String path;
-    public ExecuteScript(){
 
-    }
+    private final Receiver receiver;
+
 
     public ExecuteScript(Receiver receiver){
         this.receiver = receiver;
@@ -31,7 +28,7 @@ public class ExecuteScript extends Command {
                 System.out.println("Client: Invalid command's format! Fail to execute ExecuteScriptCommand!");
             }
             else{
-                path = args[1];
+                String path = args[1];
                 receiver.execute_script(path);
             }
         } catch(StackOverflowError e){

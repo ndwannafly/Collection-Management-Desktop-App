@@ -11,7 +11,6 @@ import java.io.ObjectOutputStream;
 import java.net.SocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
-import java.nio.channels.Selector;
 
 public class Sender {
     private DatagramChannel datagramChannel;

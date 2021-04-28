@@ -5,8 +5,8 @@ import Commands.Command;
 import java.io.Serializable;
 
 public class SerializedArgumentCommand implements Serializable {
-    private Command command;
-    private String arg;
+    private final Command command;
+    private final String arg;
     private static final long serialVersionUID = 1234567L;
 
     public SerializedArgumentCommand(Command command, String arg){

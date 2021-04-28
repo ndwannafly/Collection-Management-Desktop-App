@@ -8,18 +8,11 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.net.SocketAddress;
-import java.nio.channels.DatagramChannel;
 import java.util.logging.Level;
 
 public class ClearCommand extends Command implements Serializable {
 
     private static final long serialVersionUID = 1234567L;
-
-    public ClearCommand(){
-
-    }
-
 
 
     @Override

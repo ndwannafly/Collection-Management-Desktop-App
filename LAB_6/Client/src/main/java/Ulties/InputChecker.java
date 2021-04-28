@@ -1,7 +1,4 @@
 package Ulties;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Locale;
 
 /**
  * @author Nguyen Ngoc Duc

@@ -1,29 +1,25 @@
 package Ulties;
 
-import Commands.Command;
 import Commands.SerializedCommands.SerializedArgumentCommand;
 import Commands.SerializedCommands.SerializedCombinedCommand;
 import Commands.SerializedCommands.SerializedObjectCommand;
 import Commands.SerializedCommands.SerializedSimplyCommand;
 import Commands.SpecificCommands.*;
 
-import javax.xml.crypto.Data;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.SocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class Receiver {
 
-    private Invoker invoker;
-    private Sender sender;
-    private CommandAsker commandAsker = new CommandAsker(new InputChecker());
-    private Communicator communicator;
+    private final Invoker invoker;
+    private final Sender sender;
+    private final CommandAsker commandAsker = new CommandAsker(new InputChecker());
+    private final Communicator communicator;
     private DatagramChannel datagramChannel;
     private final HashMap<String, Boolean> inStack = new HashMap<>();
 

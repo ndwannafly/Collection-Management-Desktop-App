@@ -9,7 +9,7 @@ import java.util.*;
 
 public class CommandAsker {
     private final InputChecker inputChecker;
-    private static HashSet<Long> idChecker = new HashSet<>();
+    private static final HashSet<Long> idChecker = new HashSet<>();
     public CommandAsker(InputChecker ic){
         this.inputChecker = ic;
     }
@@ -197,9 +197,8 @@ public class CommandAsker {
                 System.out.println("please enter exactly one Long number: ");
             }
             else{
-                long x;
                 try {
-                    x = Long.parseLong(inputNumber[0]);
+                    Long.parseLong(inputNumber[0]);
                     return inputNumber[0];
                 } catch (NumberFormatException e){
                     System.out.println("please insert an Long number");

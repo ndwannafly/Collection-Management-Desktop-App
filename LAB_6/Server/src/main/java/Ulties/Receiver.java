@@ -1,21 +1,19 @@
 package Ulties;
 
 import Data.Person;
-import sun.rmi.runtime.Log;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.logging.Level;
 
 public class Receiver {
 
-    private DatagramSocket datagramSocket;
-    private DatagramPacket datagramPacket;
+    private final DatagramSocket datagramSocket;
+    private final DatagramPacket datagramPacket;
 
     public Receiver(DatagramSocket datagramSocket, DatagramPacket datagramPacket){
         this.datagramSocket = datagramSocket;

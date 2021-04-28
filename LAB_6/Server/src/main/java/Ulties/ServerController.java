@@ -1,17 +1,11 @@
 package Ulties;
 
-import Commands.SerializedCommands.SerializedSimplyCommand;
 
-import javax.xml.crypto.Data;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.*;
-import java.nio.ByteBuffer;
-import java.nio.channels.DatagramChannel;
-import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
-import java.util.Arrays;
 import java.util.logging.Level;
 
 
@@ -21,7 +15,7 @@ import java.util.logging.Level;
  */
 public class ServerController {
 
-    private int port;
+    private final int port;
 
     public ServerController(String p){
         this.port = Integer.parseInt(p);

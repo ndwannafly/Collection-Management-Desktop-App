@@ -5,7 +5,7 @@ import Commands.Command;
 import java.io.Serializable;
 
 public class SerializedArgumentCommand implements Serializable {
-    private Command command;
+    private final Command command;
     private String arg;
     private static final long serialVersionUID = 1234567L;
 

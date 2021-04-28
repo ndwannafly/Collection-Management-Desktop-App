@@ -6,8 +6,8 @@ import java.io.Serializable;
 
 public class SerializedObjectCommand implements Serializable {
 
-    private Command command;
-    private Object object;
+    private final Command command;
+    private final Object object;
     private static final long serialVersionUID = 1234567L;
 
     public SerializedObjectCommand(Command command, Object object){

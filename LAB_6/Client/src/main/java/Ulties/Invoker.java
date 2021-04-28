@@ -8,9 +8,9 @@ import java.util.Deque;
 import java.util.HashMap;
 
 public class Invoker {
-    private HashMap<String, Command> commands = new HashMap<>();
+    private final HashMap<String, Command> commands = new HashMap<>();
 
-    private Deque<String> commandHistory = new ArrayDeque<>();
+    private final Deque<String> commandHistory = new ArrayDeque<>();
 
     public void register(String name, Command command){
         commands.put(name, command);

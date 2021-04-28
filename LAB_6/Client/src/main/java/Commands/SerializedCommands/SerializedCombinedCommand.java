@@ -6,10 +6,10 @@ import java.io.Serializable;
 
 public class SerializedCombinedCommand implements Serializable {
 
-    private Command command;
+    private final Command command;
     private static final long serialVersionUID = 1234567L;
-    private String arg;
-    private Object object;
+    private final String arg;
+    private final Object object;
 
     public SerializedCombinedCommand (Command command, String arg, Object object){
         this.command = command;

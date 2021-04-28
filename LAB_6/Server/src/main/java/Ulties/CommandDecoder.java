@@ -12,8 +12,8 @@ import java.net.DatagramSocket;
 import java.text.ParseException;
 
 public class CommandDecoder {
-    private DatagramSocket datagramSocket;
-    private DatagramPacket datagramPacket;
+    private final DatagramSocket datagramSocket;
+    private final DatagramPacket datagramPacket;
 
     public CommandDecoder(DatagramSocket datagramSocket, DatagramPacket datagramPacket){
         this.datagramSocket = datagramSocket;

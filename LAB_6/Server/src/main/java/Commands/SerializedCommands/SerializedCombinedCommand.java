@@ -6,9 +6,9 @@ import java.io.Serializable;
 
 public class SerializedCombinedCommand implements Serializable {
 
-    private Command command;
-    private Object object;
-    private String arg;
+    private final Command command;
+    private final Object object;
+    private final String arg;
     private static final long serialVersionUID = 1234567L;
 
     public SerializedCombinedCommand (Command command, Object object, String arg){
