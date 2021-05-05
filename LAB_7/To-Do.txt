@@ -1,0 +1,15 @@
+Client side:
+1. switch Communicator to blocking + 
+2. build Login, Register command - testing
+3. Change datagram / channel to be more convenient. +
+
+Server side:
+1. Read about DataBase +
+2. Build khung + 
+3. Run - last
+
+
+--------------------
+Note:
+1. Connect with server on Helios and run
+2. 

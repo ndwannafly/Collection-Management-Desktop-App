@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="42ce1ff8-a9ec-446e-acb3-1118a60fc51a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/Client (1).iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/Client (2).iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/Client.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SerializedCommands/SerializedArgumentCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SerializedCommands/SerializedCombinedCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SpecificCommands/AddCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SpecificCommands/ClearCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SpecificCommands/CountLessThanBirthdayCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SpecificCommands/ExecuteScript.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SpecificCommands/ExitCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SpecificCommands/GroupCountingByIDCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SpecificCommands/HelpCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SpecificCommands/InfoCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SpecificCommands/LoginCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SpecificCommands/PrintFieldAscendingHeightCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SpecificCommands/RegisterCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SpecificCommands/RemoveByIdCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SpecificCommands/RemoveGreaterCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SpecificCommands/RemoveLowerCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SpecificCommands/ShowCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Commands/SpecificCommands/UpdateCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Data/Coordinates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Data/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Data/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Data/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Utils/CommandAsker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Utils/Communicator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Utils/ConsoleManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Utils/InputChecker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Utils/Invoker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Utils/Receiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/Utils/Sender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/Server.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Commands/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Commands/SerializedCommands/SerializedArgumentCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Commands/SerializedCommands/SerializedCombinedCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Commands/SpecificCommands/AddCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Commands/SpecificCommands/ClearCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Commands/SpecificCommands/CountLessThanBirthdayCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Commands/SpecificCommands/GroupCountingByIDCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Commands/SpecificCommands/InfoCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Commands/SpecificCommands/LoginCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Commands/SpecificCommands/PrintFieldAscendingHeightCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Commands/SpecificCommands/RegisterCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Commands/SpecificCommands/RemoveByIdCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Commands/SpecificCommands/RemoveGreaterCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Commands/SpecificCommands/RemoveLowerCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Commands/SpecificCommands/ShowCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Commands/SpecificCommands/UpdateCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Data/Coordinates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Data/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Data/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Data/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Database/DatabaseCommunicator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Database/PersonBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Database/SecretBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Utils/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Utils/CollectionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Utils/CommandDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Utils/Logging.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Utils/Receiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/Utils/ServerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_5/src/main/java/Core/Commander.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_5/src/main/java/Core/Commander.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_6/Client/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/src/main/java/Commands/SpecificCommands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_6/Client/src/main/java/Commands/SpecificCommands/ExecuteScript.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/src/main/java/Ulties/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_6/Client/src/main/java/Ulties/Receiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/src/main/java/Ulties/Sender.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_6/Client/src/main/java/Ulties/Sender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/Client-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_6/Client/target/Client-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/Client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_6/Client/target/Client-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Commands/SerializedCommands/SerializedArgumentCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Commands/SerializedCommands/SerializedCombinedCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Commands/SerializedCommands/SerializedObjectCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Commands/SerializedCommands/SerializedSimplyCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Commands/SpecificCommands/ExecuteScript.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Commands/SpecificCommands/ExitCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Commands/SpecificCommands/HelpCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Commands/SpecificCommands/PrintFieldAscendingHeightCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Commands/SpecificCommands/RemoveByIdCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Ulties/CommandAsker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Ulties/Communicator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Ulties/ConsoleManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Ulties/InputChecker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Ulties/Invoker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Ulties/Receiver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/classes/Ulties/Sender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Client/target/original-Client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_6/Client/target/original-Client-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Server/copy.json" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_6/Server/copy.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Server/myLogServer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_6/Server/myLogServer.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Server/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_6/Server/src/main/java/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Server/src/main/java/Ulties/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_6/Server/src/main/java/Ulties/ServerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Server/target/Server-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_6/Server/target/Server-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Server/target/Server-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_6/Server/target/Server-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Server/target/classes/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_6/Server/target/classes/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Server/target/classes/Ulties/ServerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_6/Server/target/classes/Ulties/ServerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB_6/Server/target/original-Server-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB_6/Server/target/original-Server-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5_TakeNote.docx" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1rxEkSpRc8A2cGYcZnKnmIQSoBX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="15" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Serialization/Client" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\first course 2020-2021\semester 2\Programming\LAB_7\Server\src\main\java" />
+      <recent name="D:\first course 2020-2021\semester 2\Programming\LAB_7\Server\src\main\java\Data" />
+      <recent name="D:\first course 2020-2021\semester 2\Programming\LAB_7\Client\src\main\java\Data" />
+      <recent name="D:\first course 2020-2021\semester 2\Programming\LAB_7\Client\src\main\java\Commands" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="42ce1ff8-a9ec-446e-acb3-1118a60fc51a" name="Default Changelist" comment="" />
+      <created>1619909485720</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619909485720</updated>
+      <workItem from="1619909486844" duration="50000" />
+      <workItem from="1619909547409" duration="2320000" />
+      <workItem from="1620056397372" duration="9209000" />
+      <workItem from="1620119500609" duration="12051000" />
+      <workItem from="1620212244390" duration="5171000" />
+      <workItem from="1620233480111" duration="18722000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="201" y="35" key="#Project_Structure" timestamp="1620214602959">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="201" y="35" key="#Project_Structure/0.0.1440.920@0.0.1440.920" timestamp="1620214602959" />
+    <state x="2509" y="721" key="#SQL_Dialects" timestamp="1620079479310">
+      <screen x="2160" y="360" width="1920" height="1040" />
+    </state>
+    <state x="2509" y="721" key="#SQL_Dialects/0.0.1440.920/2160.360.1920.1040@2160.360.1920.1040" timestamp="1620079479310" />
+    <state x="2712" y="538" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620253606817">
+      <screen x="2160" y="360" width="1920" height="1040" />
+    </state>
+    <state x="2712" y="538" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.920/2160.360.1920.1040@2160.360.1920.1040" timestamp="1620253606817" />
+    <state x="2925" y="586" key="#com.intellij.ide.util.MemberChooser" timestamp="1620250571217">
+      <screen x="2160" y="360" width="1920" height="1040" />
+    </state>
+    <state x="2925" y="586" key="#com.intellij.ide.util.MemberChooser/0.0.1440.920/2160.360.1920.1040@2160.360.1920.1040" timestamp="1620250571217" />
+    <state x="2903" y="749" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1620248445743">
+      <screen x="2160" y="360" width="1920" height="1040" />
+    </state>
+    <state x="2903" y="749" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1440.920/2160.360.1920.1040@2160.360.1920.1040" timestamp="1620248445743" />
+    <state x="2740" y="360" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1620119761671">
+      <screen x="2160" y="360" width="1920" height="1040" />
+    </state>
+    <state x="2740" y="360" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.920/2160.360.1920.1040@2160.360.1920.1040" timestamp="1620119761671" />
+    <state x="2850" y="627" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1620253485100">
+      <screen x="2160" y="360" width="1920" height="1040" />
+    </state>
+    <state x="2850" y="627" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.920/2160.360.1920.1040@2160.360.1920.1040" timestamp="1620253485100" />
+    <state x="554" y="279" key="FileChooserDialogImpl" timestamp="1620218194931">
+      <screen x="0" y="0" width="1440" height="920" />
+    </state>
+    <state x="2899" y="675" key="FileChooserDialogImpl/0.0.1440.920/2160.360.1920.1040@2160.360.1920.1040" timestamp="1619909947677" />
+    <state x="554" y="279" key="FileChooserDialogImpl/0.0.1440.920@0.0.1440.920" timestamp="1620218194931" />
+    <state x="2502" y="541" key="new project wizard" timestamp="1619909665160">
+      <screen x="2160" y="360" width="1920" height="1040" />
+    </state>
+    <state x="2502" y="541" key="new project wizard/0.0.1440.920/2160.360.1920.1040@2160.360.1920.1040" timestamp="1619909665160" />
+    <state x="2783" y="585" width="672" height="678" key="search.everywhere.popup" timestamp="1620241732425">
+      <screen x="2160" y="360" width="1920" height="1040" />
+    </state>
+    <state x="2783" y="585" width="672" height="678" key="search.everywhere.popup/0.0.1440.920/2160.360.1920.1040@2160.360.1920.1040" timestamp="1620241732425" />
+    <state x="467" y="199" width="672" height="600" key="search.everywhere.popup/0.0.1440.920@0.0.1440.920" timestamp="1620215115418" />
+  </component>
+</project>
