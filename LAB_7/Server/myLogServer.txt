@@ -1,0 +1,6 @@
+May 22, 2021 7:57:38 PM Utils.Logging log
+WARNING: Port must be int number! Please notice about it!
+May 22, 2021 7:57:39 PM Utils.Logging log
+INFO: Successfully connect to DataBase!
+May 22, 2021 7:57:39 PM Utils.Logging log
+INFO: Server has started listening on port 3436

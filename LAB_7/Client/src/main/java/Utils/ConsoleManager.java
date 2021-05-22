@@ -49,6 +49,11 @@ public class ConsoleManager {
                 communicator.endCommunication();
                 System.exit(0);
             }
+            String strCommand = userInput.nextLine();
+            if(strCommand.contains(";") | strCommand.contains("'") | strCommand.contains("\"")){
+                System.out.println("Please insert request without character ; ' \" ");
+                continue;
+            }
             String[] userCommand = userInput.nextLine().trim().split(" ");
             invoker.executeCommand(userCommand);
             System.out.println("----------------------------------------");
