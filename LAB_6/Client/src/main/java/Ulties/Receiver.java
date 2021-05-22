@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -62,8 +63,9 @@ public class Receiver {
         datagramChannel = communicator.selectReadChannel();
         if(datagramChannel == null) return;
         datagramChannel.receive(responseBuffer);
-        //System.out.println("length: " + responseBytes.length);
-        //System.out.println(Arrays.toString(responseBytes));
+        System.out.println("length: " + responseBytes.length);
+        System.out.println(Arrays.toString(responseBytes));
+        System.out.println("--------------------");
         String response = new String(responseBytes);
         response = response.substring(7);
         response = response.trim();
@@ -93,7 +95,7 @@ public class Receiver {
         System.out.println(response);
     }
 
-    public void execute_script(String fileName) throws IOException {
+    public void executeScript(String fileName) throws IOException {
         if(inStack.get(fileName) != null){
             if(inStack.get(fileName)){
                 System.out.println("To avoid infinite recursion. File " + fileName + " can't be executed!");

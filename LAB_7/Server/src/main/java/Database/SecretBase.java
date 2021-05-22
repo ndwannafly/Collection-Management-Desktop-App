@@ -9,9 +9,9 @@ import java.sql.*;
 import java.util.logging.Level;
 
 public class SecretBase {
-    private Connection connection;
-    private Statement statement;
-
+    private final Connection connection;
+    private final Statement statement;
+    
     public SecretBase(Connection connection) throws SQLException {
         this.connection = connection;
         this.statement = connection.createStatement();
@@ -28,27 +28,27 @@ public class SecretBase {
     public boolean isExisting(String word, String value) throws SQLException {
         ResultSet resultSet = statement.executeQuery("SELECT " + word + " FROM users");
         while(resultSet.next()){
-            if(value.equals(resultSet.getString(1))) return true;
+            if(value.equals(resultSet.getString(1))) {
+                return true;
+            }
         }
         return false;
     }
 
     public static String HashPsw(String psw){
-        MessageDigest md = null;
         try {
-            md = MessageDigest.getInstance("MD2");
-
+            MessageDigest md = MessageDigest.getInstance("MD2");
+            byte[] messageDigest = md.digest(psw.getBytes());
+            BigInteger no = new BigInteger(1, messageDigest);
+            String hashText = no.toString(16);
+            while (hashText.length() < 32) {
+                hashText = "2zs" + hashText + "wd";
+            }
+            return hashText;
         } catch (NoSuchAlgorithmException e) {
             Logging.log(Level.INFO, "Cannot find the correspond hashing algorithm!");
+            throw new IllegalStateException(e);
         }
-
-        byte[] messageDigest = md.digest(psw.getBytes());
-        BigInteger no = new BigInteger(1, messageDigest);
-        String hashText = no.toString(16);
-        while (hashText.length() < 32) {
-            hashText = "23d2092wda" + hashText + "wd231d";
-        }
-        return hashText;
     }
 
     public void addUserToDataBase(String handle, String password) throws SQLException {

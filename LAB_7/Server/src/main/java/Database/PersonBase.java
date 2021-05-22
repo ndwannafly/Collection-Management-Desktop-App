@@ -9,11 +9,8 @@ import Utils.Logging;
 
 import java.sql.*;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.HashSet;
-import java.util.Locale;
 import java.util.Set;
 import java.util.logging.Level;
 
@@ -68,7 +65,7 @@ public class PersonBase {
     }
 
     public static void clearCollectionOnDataBase(String owner) throws SQLException, ParseException {
-        String sql = "DELETE FROM users WHERE owner = '" + owner + "';";
+        String sql = "DELETE FROM listperson WHERE owner = '" + owner + "';";
         Statement statement = connection.createStatement();
         statement.execute(sql);
         PersonBase.loadCollection(CollectionManager.getCollection());

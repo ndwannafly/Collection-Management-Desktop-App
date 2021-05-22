@@ -43,7 +43,7 @@ public class Invoker {
             }
         } catch(NullPointerException e){
             System.out.println("Command is not supported! Insert help to see the guideline!");
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 

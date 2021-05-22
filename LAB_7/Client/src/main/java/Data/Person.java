@@ -128,12 +128,13 @@ public class Person implements Comparable<Person>, Serializable {
         info += ("location: \n");
         info += ("           x: " + getLocation().getX() + '\n');
         info += ("           y: " + getLocation().getY() + '\n');
-        info += ("           name: " + getLocation().getName() + "\n\n");
+        info += ("           name: " + getLocation().getName() + "\n");
+        info += ("owner: " + owner + "\n\n");
         return info;
     }
 
     @Override
     public int compareTo(Person o) {
-        return (int) (height - o.getHeight());
+        return  (height - o.getHeight());
     }
 }

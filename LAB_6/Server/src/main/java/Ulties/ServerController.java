@@ -1,6 +1,7 @@
 package Ulties;
 
 
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -24,6 +25,10 @@ public class ServerController {
 
     public void run(){
         try {
+            if(port < 0){
+                Logging.log(Level.INFO, "Invalid port! Port must be non-negative!");
+                System.exit(-1);
+            }
             DatagramSocket serverSocket = new DatagramSocket(port);
 
             while(true) {

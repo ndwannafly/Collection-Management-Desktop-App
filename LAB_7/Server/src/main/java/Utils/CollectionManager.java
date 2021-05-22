@@ -9,7 +9,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.*;
-import java.util.logging.Level;
 
 public class CollectionManager {
 
@@ -59,7 +58,7 @@ public class CollectionManager {
     public static String countLessThanBirthDay(String birthdayStr) throws ParseException {
         SimpleDateFormat birthdayFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
         Date birthdayDate = birthdayFormatter.parse(birthdayStr);
-        System.out.println(birthdayDate);
+        //System.out.println(birthdayDate);
         return String.valueOf(listPerson.stream().filter(p -> {
             try {
                  return birthdayDate.after(birthdayFormatter.parse(p.getBirthday()));
@@ -85,15 +84,17 @@ public class CollectionManager {
     }
 
     public static String removeByID(long id) throws SQLException, ParseException {
-        for(Iterator<Person> iterator = listPerson.iterator(); iterator.hasNext();){
-            Person person = iterator.next();
-            if(person.getId() == id){
+        String response = "";
+        for (Person person : listPerson) {
+            if (person.getId() == id) {
                 DatabaseCommunicator.getPersonBase().deleteOrganizationFromDataBase((int) id);
-                PersonBase.loadCollection(getCollection());
-                return "Person has ID = " + id + " is removed!";
+                response = "Person has ID = " + id + " is removed!";
+                break;
             }
         }
-        return "ID doesn't exist!";
+        PersonBase.loadCollection(getCollection());
+        if(response.equals("")) return "ID doesn't exist!";
+        else return  response;
     }
 
     public static String removeGreater(Person p, String owner) throws SQLException, ParseException {

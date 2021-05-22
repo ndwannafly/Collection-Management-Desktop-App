@@ -9,7 +9,7 @@ public enum Country implements Serializable {
     CHINA("CHINA"),
     ITALY("ITALY");
 
-    private String string;
+    private final String string;
 
     Country(String string){
         this.string = string;

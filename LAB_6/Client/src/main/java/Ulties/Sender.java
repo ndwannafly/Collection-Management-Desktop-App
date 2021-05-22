@@ -36,7 +36,7 @@ public class Sender {
         byte[] dataBytes = byteStream.toByteArray();
         ByteBuffer dataBuffer = ByteBuffer.wrap(dataBytes);
         datagramChannel.send(dataBuffer, socketAddress);
-        //System.out.println("Client: message sent " + dataBytes);
+        System.out.println("Client: message sent " + dataBytes);
     }
 
     public void sendObject(SerializedCombinedCommand serializedCommand) throws IOException {
@@ -46,6 +46,7 @@ public class Sender {
         out.flush();
         byte[] dataBytes = byteStream.toByteArray();
         ByteBuffer dataBuffer = ByteBuffer.wrap(dataBytes);
+        System.out.println("here " + dataBytes);
         datagramChannel.send(dataBuffer, socketAddress);
     }
 

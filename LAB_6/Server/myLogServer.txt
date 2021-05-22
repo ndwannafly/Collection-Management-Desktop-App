@@ -1,44 +1,28 @@
-Apr 29, 2021 12:26:31 AM Ulties.Logging log
+May 01, 2021 1:41:51 AM Ulties.Logging log
 WARNING: Port must be int number! Please notice about it!
-Apr 29, 2021 12:26:31 AM Ulties.Logging log
-INFO: Server has started listening on port 5000
-Apr 29, 2021 12:26:35 AM Ulties.Logging log
+May 01, 2021 1:41:52 AM Ulties.Logging log
+INFO: Server has started listening on port 9943
+May 01, 2021 1:42:07 AM Ulties.Logging log
 INFO: Server received request from Client!
-Apr 29, 2021 12:26:35 AM Ulties.Logging log
-INFO: Server is executing InfoCommand....
-Apr 29, 2021 12:26:35 AM Ulties.Logging log
-INFO: Server executed InfoCommand!
-Apr 29, 2021 12:26:35 AM Ulties.Logging log
-INFO: Server has started listening on port 5000
-Apr 29, 2021 12:26:36 AM Ulties.Logging log
-INFO: Server received request from Client!
-Apr 29, 2021 12:26:36 AM Ulties.Logging log
+May 01, 2021 1:42:07 AM Ulties.Logging log
 INFO: Server is executing ShowCommand....
-Apr 29, 2021 12:26:36 AM Ulties.Logging log
+May 01, 2021 1:42:07 AM Ulties.Logging log
 INFO: Server executed ShowCommand!
-Apr 29, 2021 12:26:36 AM Ulties.Logging log
-INFO: Server has started listening on port 5000
-Apr 29, 2021 12:26:58 AM Ulties.Logging log
+May 01, 2021 1:42:07 AM Ulties.Logging log
+INFO: Server has started listening on port 9943
+May 01, 2021 1:43:17 AM Ulties.Logging log
 INFO: Server received request from Client!
-Apr 29, 2021 12:26:58 AM Ulties.Logging log
-INFO: Server is executing RemoveGreaterCommand....
-Apr 29, 2021 12:26:58 AM Ulties.Logging log
-INFO: Server executed RemoveLowerCommand!
-Apr 29, 2021 12:26:58 AM Ulties.Logging log
-INFO: Server has started listening on port 5000
-Apr 29, 2021 12:27:01 AM Ulties.Logging log
-INFO: Server received request from Client!
-Apr 29, 2021 12:27:01 AM Ulties.Logging log
-INFO: Server is executing InfoCommand....
-Apr 29, 2021 12:27:01 AM Ulties.Logging log
-INFO: Server executed InfoCommand!
-Apr 29, 2021 12:27:01 AM Ulties.Logging log
-INFO: Server has started listening on port 5000
-Apr 29, 2021 12:27:02 AM Ulties.Logging log
-INFO: Server received request from Client!
-Apr 29, 2021 12:27:02 AM Ulties.Logging log
+May 01, 2021 1:43:17 AM Ulties.Logging log
 INFO: Server is executing ShowCommand....
-Apr 29, 2021 12:27:02 AM Ulties.Logging log
+May 01, 2021 1:43:17 AM Ulties.Logging log
 INFO: Server executed ShowCommand!
-Apr 29, 2021 12:27:02 AM Ulties.Logging log
-INFO: Server has started listening on port 5000
+May 01, 2021 1:43:17 AM Ulties.Logging log
+INFO: Server has started listening on port 9943
+May 01, 2021 1:44:02 AM Ulties.Logging log
+INFO: Server received request from Client!
+May 01, 2021 1:44:02 AM Ulties.Logging log
+INFO: Server is executing ShowCommand....
+May 01, 2021 1:44:02 AM Ulties.Logging log
+INFO: Server executed ShowCommand!
+May 01, 2021 1:44:02 AM Ulties.Logging log
+INFO: Server has started listening on port 9943

@@ -37,28 +37,35 @@ public class Receiver {
     }
 
     public void info() throws IOException {
-        sender.sendObject(new SerializedArgumentCommand(new InfoCommand(), handle + " " + password));
-        byte[] responseBytes = new byte[256];
-        DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
-        sender.getDatagramSocket().setSoTimeout(5000);
-        sender.getDatagramSocket().receive(datagramPacket);
-/*        datagramSocket.setSoTimeout(5000);
-        datagramSocket.receive(datagramPacket);*/
-        String response = new String(responseBytes);
-        //response = response.substring(7);
-        response = response.trim();
-        System.out.println(response);
+            sender.sendObject(new SerializedArgumentCommand(new InfoCommand(), handle + " " + password));
+            byte[] responseBytes = new byte[256];
+            DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
+            try {
+                sender.getDatagramSocket().setSoTimeout(5000);
+                sender.getDatagramSocket().receive(datagramPacket);
+            } catch(SocketException | SocketTimeoutException e){
+                System.out.println("Problem occurred on the server!");
+            }
+            /*
+            datagramSocket.setSoTimeout(5000);
+            datagramSocket.receive(datagramPacket);*/
+            String response = new String(responseBytes);
+            //response = response.substring(7);
+            response = response.trim();
+            System.out.println(response);
     }
 
     public void login(String acc, String pass) throws IOException {
 
-        try {
             sender.sendObject(new SerializedArgumentCommand(new LoginCommand(), acc + " " + pass));
             byte[] responseBytes = new byte[256];
             DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
-            sender.getDatagramSocket().setSoTimeout(5000);
-            sender.getDatagramSocket().receive(datagramPacket);
-
+            try {
+                sender.getDatagramSocket().setSoTimeout(5000);
+                sender.getDatagramSocket().receive(datagramPacket);
+            } catch(SocketException | SocketTimeoutException e){
+                System.out.println("Problem occurred on the server!");
+            }
             String response = new String(responseBytes);
             System.out.println(response);
             //response = response.substring(7);
@@ -72,36 +79,33 @@ public class Receiver {
                 handle = acc;
                 password = pass;
             }
-        } catch (SocketException e) {
-            System.out.println("Problem occurred on the server! Login unsuccessfully!");
-        }
     }
 
     public void register(String login, String password) throws IOException {
-        try {
             sender.sendObject(new SerializedArgumentCommand(new RegisterCommand(), login + " " + password));
             byte[] responseBytes = new byte[256];
             DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
-            sender.getDatagramSocket().setSoTimeout(5000);
-            sender.getDatagramSocket().receive(datagramPacket);
+            try {
+                sender.getDatagramSocket().setSoTimeout(5000);
+                sender.getDatagramSocket().receive(datagramPacket);
+            } catch(SocketException | SocketTimeoutException e){
+                System.out.println("Problem occurred on the server!");
+            }
             String response = new String(responseBytes);
-            //response = response.substring(7);
             response = response.trim();
             System.out.println(response);
-            if (response.equals("Unsuccessfully!")) {
-                System.exit(0);
-            }
-        } catch (SocketTimeoutException e){
-            System.out.println("Problem occurred on the server, login unsuccessfully!");
-        }
     }
     public void show() throws IOException {
         sender.sendObject(new SerializedArgumentCommand(new ShowCommand(), handle + " " + password));
         byte[] responseBytes = new byte[2048];
         DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
-        sender.getDatagramSocket().setSoTimeout(5000);
-        sender.getDatagramSocket().receive(datagramPacket);
-/*        datagramSocket.setSoTimeout(5000);
+        try {
+            sender.getDatagramSocket().setSoTimeout(5000);
+            sender.getDatagramSocket().receive(datagramPacket);
+        } catch(SocketException | SocketTimeoutException e){
+            System.out.println("Problem occurred on the server!");
+        }
+        /*        datagramSocket.setSoTimeout(5000);
         datagramSocket.receive(datagramPacket);*/
         String response = new String(responseBytes);
         //response = response.substring(7);
@@ -118,9 +122,13 @@ public class Receiver {
         sender.sendObject(new SerializedArgumentCommand(new ClearCommand(), handle + " " + password));
         byte[] responseBytes = new byte[256];
         DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
-        sender.getDatagramSocket().setSoTimeout(5000);
-        sender.getDatagramSocket().receive(datagramPacket);
-/*        datagramSocket.setSoTimeout(5000);
+        try {
+            sender.getDatagramSocket().setSoTimeout(5000);
+            sender.getDatagramSocket().receive(datagramPacket);
+        } catch(SocketException | SocketTimeoutException e){
+            System.out.println("Problem occurred on the server!");
+        }
+        /*        datagramSocket.setSoTimeout(5000);
         datagramSocket.receive(datagramPacket);*/
         String response = new String(responseBytes);
         //response = response.substring(7);
@@ -163,8 +171,12 @@ public class Receiver {
         sender.sendObject(new SerializedCombinedCommand(new AddCommand(), handle + " " + password, person));
         byte[] responseBytes = new byte[1024];
         DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
-        sender.getDatagramSocket().setSoTimeout(5000);
-        sender.getDatagramSocket().receive(datagramPacket);
+        try {
+            sender.getDatagramSocket().setSoTimeout(5000);
+            sender.getDatagramSocket().receive(datagramPacket);
+        } catch(SocketException | SocketTimeoutException e){
+            System.out.println("Problem occurred on the server!");
+        }
         String response = new String(responseBytes);
         //response = response.substring(7);
         response = response.trim();
@@ -182,9 +194,13 @@ public class Receiver {
         ));
         byte[] responseBytes = new byte[256];
         DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
-        sender.getDatagramSocket().setSoTimeout(5000);
-        sender.getDatagramSocket().receive(datagramPacket);
-/*        datagramSocket.setSoTimeout(5000);
+        try {
+            sender.getDatagramSocket().setSoTimeout(5000);
+            sender.getDatagramSocket().receive(datagramPacket);
+        } catch(SocketException | SocketTimeoutException e){
+            System.out.println("Problem occurred on the server!");
+        }
+        /*        datagramSocket.setSoTimeout(5000);
         datagramSocket.receive(datagramPacket);*/
         String response = new String(responseBytes);
         //response = response.substring(7);
@@ -196,9 +212,13 @@ public class Receiver {
         sender.sendObject(new SerializedArgumentCommand(new GroupCountingByIDCommand(), handle + " " + password));
         byte[] responseBytes = new byte[1024];
         DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
-        sender.getDatagramSocket().setSoTimeout(5000);
-        sender.getDatagramSocket().receive(datagramPacket);
-/*        datagramSocket.setSoTimeout(5000);
+        try {
+            sender.getDatagramSocket().setSoTimeout(5000);
+            sender.getDatagramSocket().receive(datagramPacket);
+        } catch(SocketException | SocketTimeoutException e){
+            System.out.println("Problem occurred on the server!");
+        }
+        /*        datagramSocket.setSoTimeout(5000);
         datagramSocket.receive(datagramPacket);*/
         String response = new String(responseBytes);
         //response = response.substring(7);
@@ -210,9 +230,13 @@ public class Receiver {
         sender.sendObject(new SerializedArgumentCommand(new PrintFieldAscendingHeightCommand(), handle + " " + password));
         byte[] responseBytes = new byte[1024];
         DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
-        sender.getDatagramSocket().setSoTimeout(5000);
-        sender.getDatagramSocket().receive(datagramPacket);
-/*        datagramSocket.setSoTimeout(5000);
+        try {
+            sender.getDatagramSocket().setSoTimeout(5000);
+            sender.getDatagramSocket().receive(datagramPacket);
+        } catch(SocketException | SocketTimeoutException e){
+            System.out.println("Problem occurred on the server!");
+        }
+        /*        datagramSocket.setSoTimeout(5000);
         datagramSocket.receive(datagramPacket);*/
         String response = new String(responseBytes);
         //response = response.substring(7);
@@ -224,8 +248,12 @@ public class Receiver {
         sender.sendObject(new SerializedArgumentCommand(new RemoveByIdCommand(), handle + " " + password + " " + arg));
         byte[] responseBytes = new byte[256];
         DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
-        sender.getDatagramSocket().setSoTimeout(5000);
-        sender.getDatagramSocket().receive(datagramPacket);
+        try {
+            sender.getDatagramSocket().setSoTimeout(5000);
+            sender.getDatagramSocket().receive(datagramPacket);
+        } catch(SocketException | SocketTimeoutException e){
+            System.out.println("Problem occurred on the server!");
+        }
         String response = new String(responseBytes);
         //response = response.substring(7);
         response = response.trim();
@@ -238,8 +266,12 @@ public class Receiver {
         sender.sendObject(new SerializedCombinedCommand(new RemoveGreaterCommand(), handle + " " + password, person));
         byte[] responseBytes = new byte[256];
         DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
-        sender.getDatagramSocket().setSoTimeout(5000);
-        sender.getDatagramSocket().receive(datagramPacket);
+        try {
+            sender.getDatagramSocket().setSoTimeout(5000);
+            sender.getDatagramSocket().receive(datagramPacket);
+        } catch(SocketException | SocketTimeoutException e){
+            System.out.println("Problem occurred on the server!");
+        }
         String response = new String(responseBytes);
         response = response.trim();
         System.out.println(response);
@@ -252,7 +284,11 @@ public class Receiver {
         byte[] responseBytes = new byte[256];
         DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
         sender.getDatagramSocket().setSoTimeout(5000);
-        sender.getDatagramSocket().receive(datagramPacket);
+        try {
+            sender.getDatagramSocket().receive(datagramPacket);
+        } catch(SocketException e){
+            System.out.println("Problem occurred on the server!");
+        }
         String response = new String(responseBytes);
         response = response.trim();
         System.out.println(response);
@@ -268,7 +304,11 @@ public class Receiver {
         byte[] responseBytes = new byte[256];
         DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
         sender.getDatagramSocket().setSoTimeout(5000);
-        sender.getDatagramSocket().receive(datagramPacket);
+        try {
+            sender.getDatagramSocket().receive(datagramPacket);
+        } catch(SocketException e){
+            System.out.println("Problem occurred on the server!");
+        }
         String response = new String(responseBytes);
         response = response.trim();
         System.out.println(response);

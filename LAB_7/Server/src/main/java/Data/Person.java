@@ -2,7 +2,6 @@ package Data;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class Person implements Comparable<Person>, Serializable {
     private long id;
@@ -129,11 +128,12 @@ public class Person implements Comparable<Person>, Serializable {
         info += ("           x: " + getLocation().getX() + '\n');
         info += ("           y: " + getLocation().getY() + '\n');
         info += ("           name: " + getLocation().getName() + "\n\n");
+        info += ("owner: " + owner + "\n\n");
         return info;
     }
 
     @Override
     public int compareTo(Person o) {
-        return (int) (height - o.getHeight());
+        return (height - o.getHeight());
     }
 }

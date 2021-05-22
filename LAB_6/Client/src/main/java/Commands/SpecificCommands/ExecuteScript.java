@@ -29,7 +29,7 @@ public class ExecuteScript extends Command {
             }
             else{
                 String path = args[1];
-                receiver.execute_script(path);
+                receiver.executeScript(path);
             }
         } catch(StackOverflowError e){
             System.out.println("Client: Infinite loop when executing script file!");

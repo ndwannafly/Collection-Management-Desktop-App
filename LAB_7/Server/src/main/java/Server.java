@@ -21,7 +21,7 @@ public class Server {
             ServerController serverController = new ServerController(port);
             serverController.run();
         } catch(ArrayIndexOutOfBoundsException e){
-            Logging.log(Level.INFO, "Invalid fileName and port!");
+            Logging.log(Level.INFO, "Invalid port!");
         } catch (InterruptedException | SQLException | ParseException e) {
             e.printStackTrace();
         }

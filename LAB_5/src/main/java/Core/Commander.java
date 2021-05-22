@@ -30,6 +30,7 @@ public class Commander {
             if(userCommand[0].equals("Exit")) {
                 System.exit(0);
             }
+            System.out.println(userCommand[0]);
             if(categorizeCommand(userCommand)){
                 System.out.println("Command is invalid. Can't execute!");
                 continue;
