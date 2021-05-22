@@ -52,9 +52,10 @@ public class ConsoleManager {
             String strCommand = userInput.nextLine();
             if(strCommand.contains(";") | strCommand.contains("'") | strCommand.contains("\"")){
                 System.out.println("Please insert request without character ; ' \" ");
+                System.out.println("----------------------------------------");
                 continue;
             }
-            String[] userCommand = userInput.nextLine().trim().split(" ");
+            String[] userCommand = strCommand.trim().split(" ");
             invoker.executeCommand(userCommand);
             System.out.println("----------------------------------------");
         }

@@ -4,3 +4,7 @@ May 22, 2021 7:57:39 PM Utils.Logging log
 INFO: Successfully connect to DataBase!
 May 22, 2021 7:57:39 PM Utils.Logging log
 INFO: Server has started listening on port 3436
+May 22, 2021 9:10:14 PM Utils.Logging log
+INFO: Server: Received data!
+May 22, 2021 9:10:14 PM Utils.Logging log
+INFO: Receiving data is argument command!
