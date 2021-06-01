@@ -4,11 +4,9 @@ import Commands.Command;
 import Utils.Logging;
 import Utils.Receiver;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.net.SocketAddress;
 import java.nio.channels.DatagramChannel;
-import java.sql.SQLException;
 import java.util.logging.Level;
 
 public class GroupCountingByIDCommand extends Command implements Serializable {
@@ -17,7 +15,7 @@ public class GroupCountingByIDCommand extends Command implements Serializable {
 
 
     @Override
-    public void execute(Object o, DatagramChannel datagramChannel, SocketAddress socketAddress) throws IOException, SQLException {
+    public void execute(Object o, DatagramChannel datagramChannel, SocketAddress socketAddress){
         Receiver receiver = new Receiver(datagramChannel);
         Logging.log(Level.INFO, "Server is executing GroupCountingByIDCommand....");
         receiver.groupByCountingID((String) o, socketAddress);

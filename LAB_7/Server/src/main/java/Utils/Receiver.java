@@ -37,7 +37,7 @@ public class Receiver {
                 else{
                     datagramChannel.send(wrap("User is not logged in".getBytes()), socketAddress);
                 }
-            } catch (SQLException | ParseException | IOException e) {
+            } catch (SQLException | IOException e) {
                 e.printStackTrace();
             }
         });
@@ -58,7 +58,7 @@ public class Receiver {
                 else{
                     datagramChannel.send(wrap("User is not logged in".getBytes()), socketAddress);
                 }
-            } catch (SQLException | ParseException | IOException e) {
+            } catch (SQLException | IOException e) {
                 e.printStackTrace();
             }
         });
@@ -153,7 +153,7 @@ public class Receiver {
                 else{
                     datagramChannel.send(wrap("User is not logged in".getBytes()), socketAddress);
                 }
-            } catch (SQLException | ParseException | IOException e) {
+            } catch (SQLException | IOException e) {
                 e.printStackTrace();
             }
         });
@@ -170,7 +170,7 @@ public class Receiver {
                 else{
                     datagramChannel.send(wrap("User is not logged in".getBytes()), socketAddress);
                 }
-            } catch (SQLException | ParseException | IOException e) {
+            } catch (SQLException | IOException e) {
                 e.printStackTrace();
             }
         });
@@ -189,7 +189,7 @@ public class Receiver {
                 else{
                     datagramChannel.send(wrap("User is not logged in".getBytes()), socketAddress);
                 }
-            } catch (SQLException | ParseException | IOException e) {
+            } catch (SQLException | IOException e) {
                 e.printStackTrace();
             }
         });
@@ -231,7 +231,7 @@ public class Receiver {
                 else{
                     datagramChannel.send(wrap("User is not logged in".getBytes()), socketAddress);
                 }
-            } catch (SQLException | ParseException | IOException e) {
+            } catch (SQLException | IOException e) {
                 e.printStackTrace();
             }
         });

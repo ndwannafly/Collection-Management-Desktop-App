@@ -5,12 +5,9 @@ import Commands.SerializedCommands.SerializedCombinedCommand;
 import Utils.Logging;
 import Utils.Receiver;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.net.SocketAddress;
 import java.nio.channels.DatagramChannel;
-import java.sql.SQLException;
-import java.text.ParseException;
 import java.util.logging.Level;
 
 public class AddCommand extends Command implements Serializable {
@@ -19,7 +16,7 @@ public class AddCommand extends Command implements Serializable {
 
 
     @Override
-    public void execute(Object o, DatagramChannel datagramChannel, SocketAddress socketAddress) throws IOException, SQLException, ParseException {
+    public void execute(Object o, DatagramChannel datagramChannel, SocketAddress socketAddress){
         SerializedCombinedCommand combinedCommand = (SerializedCombinedCommand) o;
         Object obj = combinedCommand.getObject();
         String arg = combinedCommand.getArg();

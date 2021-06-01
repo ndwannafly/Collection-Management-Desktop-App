@@ -8,7 +8,6 @@ import Utils.CollectionManager;
 import Utils.Logging;
 
 import java.sql.*;
-import java.text.ParseException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Set;
@@ -16,12 +15,11 @@ import java.util.logging.Level;
 
 public class PersonBase {
 
-    private Statement statement;
     private static Connection connection;
 
     public PersonBase(Connection connection) throws SQLException {
         PersonBase.connection = connection;
-        this.statement = connection.createStatement();
+        Statement statement = connection.createStatement();
         String createTableSQL = "CREATE TABLE IF NOT EXISTS listperson " +
                 "(id  BIGSERIAL NOT NULL PRIMARY KEY, " +
                 "owner  VARCHAR(50) NOT NULL, " +
@@ -40,6 +38,14 @@ public class PersonBase {
     }
 
     public static boolean validation(String handle, String password) throws SQLException {
+/*
+        CallableStatement callableStatement = connection.prepareCall("{? = call getNumberOfPerson()}");
+        callableStatement.registerOutParameter(1, Types.INTEGER);
+        callableStatement.execute();
+        int res = callableStatement.getInt(1);
+        System.out.println(res);
+*/
+
         String query = "SELECT * FROM users;";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
@@ -64,14 +70,17 @@ public class PersonBase {
         return false;
     }
 
-    public static void clearCollectionOnDataBase(String owner) throws SQLException, ParseException {
-        String sql = "DELETE FROM listperson WHERE owner = '" + owner + "';";
-        Statement statement = connection.createStatement();
-        statement.execute(sql);
+    public static void clearCollectionOnDataBase(String owner) throws SQLException {
+        String sql = "DELETE FROM listperson Where owner = ?;";
+        //String sql = "DELETE FROM listperson WHERE owner = '" + owner + "';";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, owner);
+        //Statement statement = connection.createStatement();
+        preparedStatement.executeUpdate();
         PersonBase.loadCollection(CollectionManager.getCollection());
     }
 
-    public static void loadCollection(Set<Person> listPerson) throws SQLException, ParseException {
+    public static void loadCollection(Set<Person> listPerson) throws SQLException {
         String query = " SELECT * FROM listperson ORDER by id";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
@@ -104,8 +113,8 @@ public class PersonBase {
             Logging.log(Level.INFO, strDate);
             preparedStatement.setString(5, strDate);
             preparedStatement.setInt(6, person.getHeight());
-            Logging.log(Level.INFO, person.getBirthday().toString());
-            preparedStatement.setString(7, person.getBirthday().toString());
+            Logging.log(Level.INFO, person.getBirthday());
+            preparedStatement.setString(7, person.getBirthday());
             preparedStatement.setInt(8, person.getWeight());
             preparedStatement.setString(9, person.getNationality().getString());
             preparedStatement.setInt(10, person.getLocation().getX());
@@ -126,7 +135,7 @@ public class PersonBase {
             String strDate = localDate.format(dtf);
             preparedStatement.setString(6, strDate);
             preparedStatement.setInt(7, person.getHeight());
-            preparedStatement.setString(8, person.getBirthday().toString());
+            preparedStatement.setString(8, person.getBirthday());
             preparedStatement.setInt(9, person.getWeight());
             preparedStatement.setString(10, person.getNationality().getString());
             preparedStatement.setInt(11, person.getLocation().getX());
@@ -136,8 +145,17 @@ public class PersonBase {
         }
     }
 
-    public void deleteOrganizationFromDataBase(int id) throws SQLException {
-        String sql = "DELETE FROM listperson WHERE ID = '" + id + "';";
-        statement.execute(sql);
+    public void deleteOrganizationFromDataBase(int deleteId) throws SQLException {
+        String sql = "CALL deleteBYID(?)";
+        CallableStatement callableStatement = connection.prepareCall(sql);
+        callableStatement.setInt(1, deleteId);
+        callableStatement.execute();
+        callableStatement.close();
+
+/*        String sql = "DELETE FROM listperson WHERE id = ?;";
+        //String sql = "DELETE FROM listperson WHERE ID = '" + id + "';";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1, deleteId);
+        preparedStatement.executeUpdate();*/
     }
 }

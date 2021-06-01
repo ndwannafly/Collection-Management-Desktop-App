@@ -5,12 +5,9 @@ import Commands.SerializedCommands.SerializedCombinedCommand;
 import Utils.Logging;
 import Utils.Receiver;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.net.SocketAddress;
 import java.nio.channels.DatagramChannel;
-import java.sql.SQLException;
-import java.text.ParseException;
 import java.util.logging.Level;
 
 public class RemoveGreaterCommand extends Command implements Serializable {
@@ -18,7 +15,7 @@ public class RemoveGreaterCommand extends Command implements Serializable {
     private static final long serialVersionUID = 1234567L;
 
     @Override
-    public void execute(Object o, DatagramChannel datagramChannel, SocketAddress socketAddress) throws IOException, SQLException, ParseException {
+    public void execute(Object o, DatagramChannel datagramChannel, SocketAddress socketAddress){
         SerializedCombinedCommand combinedCommand = (SerializedCombinedCommand) o;
         String arg = combinedCommand.getArg();
         Object obj = combinedCommand.getObject();

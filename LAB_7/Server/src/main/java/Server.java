@@ -22,7 +22,7 @@ public class Server {
             serverController.run();
         } catch(ArrayIndexOutOfBoundsException e){
             Logging.log(Level.INFO, "Invalid port!");
-        } catch (InterruptedException | SQLException | ParseException e) {
+        } catch (InterruptedException | SQLException e) {
             e.printStackTrace();
         }
     }

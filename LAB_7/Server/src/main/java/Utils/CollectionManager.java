@@ -46,11 +46,11 @@ public class CollectionManager {
         return String.valueOf(str);
     }
 
-    public static void clearCollectionOnDataBase(String owner) throws SQLException, ParseException {
+    public static void clearCollectionOnDataBase(String owner) throws SQLException {
         PersonBase.clearCollectionOnDataBase(owner);
     }
 
-    public static String add() throws SQLException, ParseException {
+    public static String add() throws SQLException {
         PersonBase.loadCollection(getCollection());
         return "New element was added into Collection!";
     }
@@ -83,7 +83,7 @@ public class CollectionManager {
         return String.valueOf(stringBuilder);
     }
 
-    public static String removeByID(long id) throws SQLException, ParseException {
+    public static String removeByID(long id) throws SQLException {
         String response = "";
         for (Person person : listPerson) {
             if (person.getId() == id) {
@@ -97,7 +97,7 @@ public class CollectionManager {
         else return  response;
     }
 
-    public static String removeGreater(Person p, String owner) throws SQLException, ParseException {
+    public static String removeGreater(Person p, String owner) throws SQLException {
 
         for (Person person : listPerson) {
             //Logging.log(Level.INFO, person.getOwner() + " " + owner);
@@ -110,7 +110,7 @@ public class CollectionManager {
         return "Removed all greater people!";
     }
 
-    public static String removeLower(Person p, String owner) throws SQLException, ParseException {
+    public static String removeLower(Person p, String owner) throws SQLException {
 
         for (Person person : listPerson) {
             if (person.getOwner().equals(owner) && person.compareTo(p) < 0) {
@@ -124,7 +124,7 @@ public class CollectionManager {
         return "Removed all lower people";
     }
 
-    public static String update(long id) throws SQLException, ParseException {
+    public static String update(long id) throws SQLException {
         PersonBase.loadCollection(getCollection());
         return "Person has id = " + id + " was updated";
     }
