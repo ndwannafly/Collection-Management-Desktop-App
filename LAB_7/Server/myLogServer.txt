@@ -4,3 +4,35 @@ Jun 01, 2021 3:29:04 AM Utils.Logging log
 INFO: Connecting to database ....... !
 Jun 01, 2021 3:29:04 AM Utils.Logging log
 INFO: Enter your account:
+Jun 01, 2021 3:29:09 AM Utils.Logging log
+INFO: Enter your password:
+Jun 01, 2021 3:29:11 AM Utils.Logging log
+INFO: Successfully connect to DataBase!
+Jun 01, 2021 3:29:11 AM Utils.Logging log
+INFO: Server has started listening on port 3436
+Jun 01, 2021 3:29:15 AM Utils.Logging log
+INFO: Server: Received data!
+Jun 01, 2021 3:29:15 AM Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 01, 2021 3:29:26 AM Utils.Logging log
+INFO: Server: Received data!
+Jun 01, 2021 3:29:26 AM Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 01, 2021 3:29:27 AM Utils.Logging log
+INFO: Server: Received data!
+Jun 01, 2021 3:29:27 AM Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 01, 2021 3:29:27 AM Utils.Logging log
+INFO: Server is executing InfoCommand....
+Jun 01, 2021 3:29:28 AM Utils.Logging log
+INFO: Server: Received data!
+Jun 01, 2021 3:29:28 AM Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 01, 2021 3:29:28 AM Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 01, 2021 3:29:51 AM Utils.Logging log
+INFO: Server: Received data!
+Jun 01, 2021 3:29:51 AM Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 01, 2021 3:29:51 AM Utils.Logging log
+INFO: Server is executing PrintFieldAscendingHeightCommand....
