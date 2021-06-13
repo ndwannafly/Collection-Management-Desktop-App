@@ -8,15 +8,16 @@ public class Person implements Comparable<Person>, Serializable {
     private String name;
     private Coordinates coordinates;
     private LocalDateTime creationDate;
-    private Integer height;
+    private Long height;
     private String birthday;
     private Integer weight;
     private Country nationality;
     private Location location;
     private String owner;
     private String color;
-    public Person(long id, String owner, String name, Coordinates coordinates, LocalDateTime localDateTime, int height,
-                  String birthday, int weight, Country nationality, Location location, String color){
+
+    public Person(long id, String owner, String name, Coordinates coordinates, LocalDateTime localDateTime, Long height,
+                  String birthday, Integer weight, Country nationality, Location location, String color){
         this.id = id;
         this.owner = owner;
         this.name = name;
@@ -29,6 +30,7 @@ public class Person implements Comparable<Person>, Serializable {
         this.location = location;
         this.color = color;
     }
+
     public Person(){
 
     }
@@ -57,11 +59,11 @@ public class Person implements Comparable<Person>, Serializable {
         this.birthday = birthday;
     }
 
-    public int getHeight() {
+    public Long getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(Long height) {
         this.height = height;
     }
 
@@ -137,13 +139,13 @@ public class Person implements Comparable<Person>, Serializable {
         info += ("location: \n");
         info += ("           x: " + getLocation().getX() + '\n');
         info += ("           y: " + getLocation().getY() + '\n');
-        info += ("           name: " + getLocation().getName() + "\n\n");
+        info += ("           name: " + getLocation().getName() + "\n");
         info += ("owner: " + owner + "\n\n");
         return info;
     }
 
     @Override
     public int compareTo(Person o) {
-        return (height - o.getHeight());
+        return (int) (height - o.getHeight());
     }
 }

@@ -16,9 +16,11 @@ public class Server {
             Logging.log(Level.WARNING, "Port must be int number! Please notice about it!");
             DatabaseCommunicator databaseCommunicator = new DatabaseCommunicator();
             databaseCommunicator.start();
-            CollectionManager.initializeCollection();
+            //CollectionManager.initializeCollection();
             //System.exit(0);
             PersonBase.loadCollection(CollectionManager.getCollection());
+            CollectionManager.setFileName("copy.json");
+            CollectionManager.save();
             ServerController serverController = new ServerController(port);
             serverController.run();
         } catch(ArrayIndexOutOfBoundsException e){

@@ -24,15 +24,15 @@ public class PersonBase {
                 "(id  BIGSERIAL NOT NULL PRIMARY KEY, " +
                 "owner  VARCHAR(50) NOT NULL, " +
                 "person_name VARCHAR(50) NOT NULL, " +
-                "x INT NOT NULL, " +
+                "x DECIMAL(5,2) NOT NULL, " +
                 "y DECIMAL(5,2) NOT NULL, " +
                 "creationDate VARCHAR(50) NOT NULL, " +
                 "height INT NOT NULL, " +
                 "birthday VARCHAR(50) NOT NULL, " +
                 "weight INT NOT NULL, " +
                 "nationality VARCHAR(50) NOT NULL, " +
-                "location_x INT NOT NULL, " +
-                "location_y INT NOT NULL, " +
+                "location_x DECIMAL(5,2) NOT NULL, " +
+                "location_y DECIMAL(5,2) NOT NULL, " +
                 "location_name VARCHAR(50) NOT NULL," +
                 "color VARCHAR(50) NOT NULL )";
         statement.execute(createTableSQL);
@@ -89,11 +89,11 @@ public class PersonBase {
         while(resultSet.next()){
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
             listPerson.add(new Person(resultSet.getLong(1), resultSet.getString(2), resultSet.getString(3),
-                    new Coordinates(resultSet.getInt(4), resultSet.getDouble(5)),
+                    new Coordinates(resultSet.getDouble(4), resultSet.getDouble(5)),
                     LocalDateTime.parse(resultSet.getString(6), dtf),
                     resultSet.getInt(7), resultSet.getString(8),
                     resultSet.getInt(9), Country.valueOf(resultSet.getString(10)),
-                    new Location(resultSet.getInt(11), resultSet.getLong(12),
+                    new Location(resultSet.getDouble(11), resultSet.getDouble(12),
                             resultSet.getString(13)), resultSet.getString(14)));
         }
     }
@@ -106,7 +106,7 @@ public class PersonBase {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, person.getOwner());
             preparedStatement.setString(2, person.getName());
-            preparedStatement.setInt(3, person.getCoordinates().getX());
+            preparedStatement.setDouble(3, person.getCoordinates().getX());
             preparedStatement.setDouble(4, person.getCoordinates().getY());
             LocalDateTime localDate = person.getCreationDate();
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
@@ -118,8 +118,8 @@ public class PersonBase {
             preparedStatement.setString(7, person.getBirthday());
             preparedStatement.setInt(8, person.getWeight());
             preparedStatement.setString(9, person.getNationality().getString());
-            preparedStatement.setInt(10, person.getLocation().getX());
-            preparedStatement.setLong(11, person.getLocation().getY());
+            preparedStatement.setDouble(10, person.getLocation().getX());
+            preparedStatement.setDouble(11, person.getLocation().getY());
             preparedStatement.setString(12, person.getLocation().getName());
             preparedStatement.setString(13, person.getColor());
             preparedStatement.execute();
@@ -130,7 +130,7 @@ public class PersonBase {
             preparedStatement.setLong(1, id);
             preparedStatement.setString(2, person.getOwner());
             preparedStatement.setString(3, person.getName());
-            preparedStatement.setInt(4, person.getCoordinates().getX());
+            preparedStatement.setDouble(4, person.getCoordinates().getX());
             preparedStatement.setDouble(5, person.getCoordinates().getY());
             LocalDateTime localDate = person.getCreationDate();
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
@@ -140,8 +140,8 @@ public class PersonBase {
             preparedStatement.setString(8, person.getBirthday());
             preparedStatement.setInt(9, person.getWeight());
             preparedStatement.setString(10, person.getNationality().getString());
-            preparedStatement.setInt(11, person.getLocation().getX());
-            preparedStatement.setLong(12, person.getLocation().getY());
+            preparedStatement.setDouble(11, person.getLocation().getX());
+            preparedStatement.setDouble(12, person.getLocation().getY());
             preparedStatement.setString(13, person.getLocation().getName());
             preparedStatement.setString(14, person.getColor());
             preparedStatement.execute();

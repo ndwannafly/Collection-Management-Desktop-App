@@ -3,17 +3,23 @@ package lab8.Utils;
 import lab8.Data.Person;
 import lab8.Database.DatabaseCommunicator;
 import lab8.Database.PersonBase;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class CollectionManager {
 
     private static Set<Person> listPerson = Collections.synchronizedSet(new HashSet<>());
     private static final LocalDateTime creationDate = LocalDateTime.now();
+    private static String fileName;
 
     public static int getNumberOfPerson(){
         return listPerson.size();
@@ -28,6 +34,14 @@ public class CollectionManager {
 
     public static Set<Person> getCollection(){
         return listPerson;
+    }
+
+    public static void setFileName(String fileName) {
+        CollectionManager.fileName = fileName;
+    }
+
+    public static String getFileName() {
+        return fileName;
     }
 
     public static String info() {
@@ -127,5 +141,60 @@ public class CollectionManager {
     public static String update(long id) throws SQLException {
         PersonBase.loadCollection(getCollection());
         return "Person has id = " + id + " was updated";
+    }
+
+    @SuppressWarnings("unchecked")
+    public static void save() {
+        JSONArray personList = new JSONArray();
+        for(Person person : listPerson){
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("id", person.getId());
+            jsonObject.put("owner", person.getOwner());
+            jsonObject.put("name", person.getName());
+
+            // write coordinate objects into file
+            JSONObject coordinatesObj = new JSONObject();
+            coordinatesObj.put("x", person.getCoordinates().getX());
+            coordinatesObj.put("y", person.getCoordinates().getY());
+            jsonObject.put("coordinates", coordinatesObj);
+
+            //write creation date into file
+            LocalDateTime date = person.getCreationDate();
+            DateTimeFormatter fmt = DateTimeFormatter.ISO_DATE_TIME;
+            String stringDateTime = date.format(fmt);
+            jsonObject.put("creationDate", stringDateTime);
+
+            // height
+            jsonObject.put("height", person.getHeight());
+
+            // write Date birthday into file
+            jsonObject.put("birthday", person.getBirthday());
+
+            //weight
+            jsonObject.put("weight", person.getWeight());
+
+            //nationality
+            jsonObject.put("nationality", person.getNationality().toString());
+
+            JSONObject locationObj = new JSONObject();
+            locationObj.put("x", person.getLocation().getX());
+            locationObj.put("y", person.getLocation().getY());
+            locationObj.put("name", person.getLocation().getName());
+            jsonObject.put("location", locationObj);
+
+            jsonObject.put("color", person.getColor());
+
+            personList.add(jsonObject);
+        }
+
+        // write into file
+        try{
+            PrintWriter printWriter = new PrintWriter(fileName);
+            printWriter.write(personList.toJSONString());
+            printWriter.flush();
+            printWriter.close();
+        } catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
     }
 }

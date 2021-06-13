@@ -1,38 +1,32 @@
-Jun 01, 2021 3:29:04 AM Utils.Logging log
+Jun 11, 2021 1:50:33 AM Utils.Logging log
 WARNING: Port must be int number! Please notice about it!
-Jun 01, 2021 3:29:04 AM Utils.Logging log
+Jun 11, 2021 1:50:33 AM Utils.Logging log
 INFO: Connecting to database ....... !
-Jun 01, 2021 3:29:04 AM Utils.Logging log
+Jun 11, 2021 1:50:33 AM Utils.Logging log
 INFO: Enter your account:
-Jun 01, 2021 3:29:09 AM Utils.Logging log
+Jun 11, 2021 1:50:35 AM Utils.Logging log
 INFO: Enter your password:
-Jun 01, 2021 3:29:11 AM Utils.Logging log
+Jun 11, 2021 1:50:38 AM Utils.Logging log
 INFO: Successfully connect to DataBase!
-Jun 01, 2021 3:29:11 AM Utils.Logging log
+Jun 11, 2021 1:50:38 AM Utils.Logging log
 INFO: Server has started listening on port 3436
-Jun 01, 2021 3:29:15 AM Utils.Logging log
+Jun 11, 2021 1:50:57 AM Utils.Logging log
 INFO: Server: Received data!
-Jun 01, 2021 3:29:15 AM Utils.Logging log
+Jun 11, 2021 1:50:57 AM Utils.Logging log
 INFO: Receiving data is argument command!
-Jun 01, 2021 3:29:26 AM Utils.Logging log
+Jun 11, 2021 1:50:59 AM Utils.Logging log
 INFO: Server: Received data!
-Jun 01, 2021 3:29:26 AM Utils.Logging log
+Jun 11, 2021 1:50:59 AM Utils.Logging log
 INFO: Receiving data is argument command!
-Jun 01, 2021 3:29:27 AM Utils.Logging log
-INFO: Server: Received data!
-Jun 01, 2021 3:29:27 AM Utils.Logging log
-INFO: Receiving data is argument command!
-Jun 01, 2021 3:29:27 AM Utils.Logging log
+Jun 11, 2021 1:50:59 AM Utils.Logging log
 INFO: Server is executing InfoCommand....
-Jun 01, 2021 3:29:28 AM Utils.Logging log
+Jun 11, 2021 1:51:49 AM Utils.Logging log
 INFO: Server: Received data!
-Jun 01, 2021 3:29:28 AM Utils.Logging log
-INFO: Receiving data is argument command!
-Jun 01, 2021 3:29:28 AM Utils.Logging log
-INFO: Server is executing ShowCommand....
-Jun 01, 2021 3:29:51 AM Utils.Logging log
-INFO: Server: Received data!
-Jun 01, 2021 3:29:51 AM Utils.Logging log
-INFO: Receiving data is argument command!
-Jun 01, 2021 3:29:51 AM Utils.Logging log
-INFO: Server is executing PrintFieldAscendingHeightCommand....
+Jun 11, 2021 1:51:49 AM Utils.Logging log
+INFO: Receiving data is combined command!
+Jun 11, 2021 1:51:49 AM Utils.Logging log
+INFO: Server is executing AddCommand....
+Jun 11, 2021 1:51:49 AM Utils.Logging log
+INFO: 11-06-2021 01:51
+Jun 11, 2021 1:51:49 AM Utils.Logging log
+INFO: 20-12-2000

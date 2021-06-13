@@ -8,6 +8,8 @@ import lab8.Database.SecretBase;
 import java.io.IOException;
 import java.net.SocketAddress;
 import java.nio.channels.DatagramChannel;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.concurrent.ForkJoinPool;
@@ -201,7 +203,15 @@ public class Receiver {
             String[] str = arg.split(" ");
             try {
                 if(PersonBase.validation(str[0], str[1])){
-                    byte[] response = CollectionManager.show().getBytes();
+                    //byte[] response = CollectionManager.show().getBytes();
+                    //datagramChannel.send(wrap(response), socketAddress);
+                    PersonBase.loadCollection(CollectionManager.getCollection());
+                    // parse collection to json file
+                    CollectionManager.save();
+                    // send content of json file
+                    String contents = readUsingFiles(CollectionManager.getFileName());
+                    System.out.println(contents);
+                    byte[] response = contents.getBytes();
                     datagramChannel.send(wrap(response), socketAddress);
                 }
                 else{
@@ -277,5 +287,9 @@ public class Receiver {
                 e.printStackTrace();
             }
         });
+    }
+
+    private static String readUsingFiles(String fileName) throws IOException {
+        return new String(Files.readAllBytes(Paths.get(fileName)));
     }
 }
