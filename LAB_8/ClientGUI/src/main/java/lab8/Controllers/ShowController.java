@@ -16,7 +16,6 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import jdk.javadoc.internal.doclets.formats.html.markup.Table;
 import lab8.Client.ConsoleManager;
 import lab8.Client.Receiver;
 import lab8.Data.Person;
@@ -84,7 +83,7 @@ public class ShowController {
             Stage stage = new Stage();
             Parent root = null;
             try{
-                root = FXMLLoader.load(Main.class.getResource("add.fxml"));
+                root = FXMLLoader.load(Main.class.getResource("/add.fxml"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -97,7 +96,7 @@ public class ShowController {
             Stage stage = new Stage();
             Parent root = null;
             try{
-                root = FXMLLoader.load(Main.class.getResource("update.fxml"));
+                root = FXMLLoader.load(Main.class.getResource("/update.fxml"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -147,6 +146,7 @@ public class ShowController {
         });
 
         groupCountingByIdButton.setOnAction(actionEvent -> {
+
             try {
                 ConsoleManager.invoke("group_counting_by_id");
             } catch (IOException e) {
@@ -189,6 +189,7 @@ public class ShowController {
         ObservableList<Person> personObservableList = FXCollections.observableArrayList(
                 CollectionManager.getCollection()
         );
+
         TableView<Person> table = new TableView<>(personObservableList);
         Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
         table.setPrefWidth(primaryScreenBounds.getWidth());
@@ -196,7 +197,7 @@ public class ShowController {
         table.setColumnResizePolicy(CONSTRAINED_RESIZE_POLICY);
 
         // id
-        TableColumn<Person, String> idColumn = new TableColumn<>("ID");
+        TableColumn<Person, Long> idColumn = new TableColumn<>("ID");
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         table.getColumns().add(idColumn);
 
@@ -214,13 +215,13 @@ public class ShowController {
 
         // x
         TableColumn<Person, Double> xCoordinateColumn = new TableColumn<>("X");
-        xCoordinateColumn.setCellValueFactory(new PropertyValueFactory<>("X"));
+        xCoordinateColumn.setCellValueFactory(new PropertyValueFactory<>("x"));
         table.getColumns().add(xCoordinateColumn);
         xCoordinateColumn.setEditable(true);
 
         // y
         TableColumn<Person, Double> yCoordinateColumn = new TableColumn<>("Y");
-        yCoordinateColumn.setCellValueFactory(new PropertyValueFactory<>("Y"));
+        yCoordinateColumn.setCellValueFactory(new PropertyValueFactory<>("y"));
         table.getColumns().add(yCoordinateColumn);
         yCoordinateColumn.setEditable(true);
 
@@ -243,7 +244,7 @@ public class ShowController {
 
         // weight
         TableColumn<Person, Double> weightColumn = new TableColumn<>(resourceBundle.getString("weight"));
-        birthdayColumn.setCellValueFactory(new PropertyValueFactory<>("weight"));
+        weightColumn.setCellValueFactory(new PropertyValueFactory<>("weight"));
         table.getColumns().add(weightColumn);
         weightColumn.setEditable(true);
 
@@ -267,7 +268,7 @@ public class ShowController {
 
         //name_location
         TableColumn<Person, String> nameLocationColumn = new TableColumn<>(resourceBundle.getString("name location"));
-        nameLocationColumn.setCellValueFactory(new PropertyValueFactory<>("name location"));
+        nameLocationColumn.setCellValueFactory(new PropertyValueFactory<>("nameLocation"));
         table.getColumns().add(nameLocationColumn);
         nameLocationColumn.setEditable(true);
 

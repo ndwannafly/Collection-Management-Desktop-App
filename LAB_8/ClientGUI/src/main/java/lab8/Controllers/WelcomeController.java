@@ -52,7 +52,7 @@ public class WelcomeController {
     void initialize() {
         ObservableList<String> types = FXCollections.observableArrayList("English", "Polish", "Norwegian", "Russian");
         language.setItems(types);
-        language.setValue("Russian");
+        language.setValue("English");
         logInButton.setText(resourceBundle.getString("login"));
         registerButton.setText(resourceBundle.getString("registration"));
         title1.setText(resourceBundle.getString("welcome"));

@@ -25,6 +25,7 @@ import lab8.Controllers.RegisterController;
 import lab8.Controllers.ShowController;
 import lab8.Data.Person;
 import lab8.Main;
+import lab8.Properties.Bundle;
 import lab8.Utils.CollectionManager;
 
 import java.io.File;
@@ -36,6 +37,7 @@ import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class Receiver {
@@ -48,6 +50,8 @@ public class Receiver {
     private final Sender sender;
     //private final CommandAsker commandAsker = new CommandAsker(new InputChecker());
     private final HashMap<String, Boolean> inStack = new HashMap<>();
+
+    ResourceBundle resourceBundle = Bundle.getResourceBundle();
 
     public Receiver(Invoker invoker, Sender sender) {
         this.invoker = invoker;
@@ -78,6 +82,15 @@ public class Receiver {
         try {
             sender.getDatagramSocket().setSoTimeout(5000);
             sender.getDatagramSocket().receive(datagramPacket);
+            String response = new String(responseBytes);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle(resourceBundle.getString("info"));
+            alert.setHeaderText(resourceBundle.getString("info"));
+            response = response.replace("Collection's type:", resourceBundle.getString("Type of collection:"));
+            response = response.replace("Initialization date:", resourceBundle.getString("Initialization date:"));
+            response = response.replace("Collection's size:", resourceBundle.getString("Number of elements:"));
+            alert.setContentText(response);
+            alert.showAndWait();
         } catch(SocketException | SocketTimeoutException e){
             System.out.println("Problem occurred on the server!");
         }

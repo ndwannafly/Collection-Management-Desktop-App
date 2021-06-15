@@ -1,2 +1,5 @@
-- doing show
+- doing show (+)
+
+- print_field_ascending_height
 - open_sort
+- warning on receiver

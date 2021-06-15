@@ -79,6 +79,13 @@ public class FileParser {
             CollectionManager.IDChecker.add(newID);
             p.setId(newID);
         }*/
+
+        // set ID
+        p.setId((Long) jsonObject.get("id"));
+
+        // set owner
+        p.setOwner((String) jsonObject.get("owner"));
+
         //set Name
         p.setName((String)jsonObject.get("name"));
 

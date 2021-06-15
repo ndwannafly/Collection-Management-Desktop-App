@@ -12,6 +12,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lab8.Client.ConsoleManager;
 import lab8.Client.Receiver;
+import lab8.Main;
 import lab8.Properties.Bundle;
 
 import java.io.IOException;
@@ -96,7 +97,7 @@ public class LoginController {
     public void success() {
         Stage stage = new Stage();
         try {
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("mainn.fxml"));
+            Parent root = FXMLLoader.load(Main.class.getResource("/mainn.fxml"));
             Scene scene = new Scene(root);
             stage.setTitle("organization database");
             stage.setScene(scene);

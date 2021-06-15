@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 public class Person implements Comparable<Person>, Serializable {
-    private long id;
+    private Long id;
     private String name;
     private Coordinates coordinates;
     private LocalDateTime creationDate;
@@ -16,7 +16,7 @@ public class Person implements Comparable<Person>, Serializable {
     private String owner;
     private String color;
 
-    public Person(long id, String owner, String name, Coordinates coordinates, LocalDateTime localDateTime, Long height,
+    public Person(Long id, String owner, String name, Coordinates coordinates, LocalDateTime localDateTime, Long height,
                   String birthday, Integer weight, Country nationality, Location location, String color){
         this.id = id;
         this.owner = owner;
@@ -33,6 +33,26 @@ public class Person implements Comparable<Person>, Serializable {
 
     public Person(){
 
+    }
+
+    public String getNameLocation(){
+        return this.location.getName();
+    }
+
+    public Double getXl(){
+        return this.location.getX();
+    }
+
+    public Double getYl(){
+        return this.location.getY();
+    }
+
+    public Double getY(){
+        return this.coordinates.getY();
+    }
+
+    public Double getX(){
+        return this.coordinates.getX();
     }
 
     public String getColor() {
@@ -91,7 +111,7 @@ public class Person implements Comparable<Person>, Serializable {
         return creationDate;
     }
 
-    public int getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
@@ -99,7 +119,7 @@ public class Person implements Comparable<Person>, Serializable {
         return location;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -111,7 +131,7 @@ public class Person implements Comparable<Person>, Serializable {
         this.creationDate = creationDate;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
