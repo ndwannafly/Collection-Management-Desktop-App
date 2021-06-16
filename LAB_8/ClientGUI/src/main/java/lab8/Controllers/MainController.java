@@ -10,6 +10,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lab8.Client.ConsoleManager;
 import lab8.Client.Receiver;
+import lab8.Main;
 import lab8.Properties.Bundle;
 
 import java.io.IOException;
@@ -75,7 +76,7 @@ public class MainController {
                 ConsoleManager.invoke("logout");
                 Stage stage = new Stage();
                 try {
-                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("welcome.fxml"));
+                    Parent root = FXMLLoader.load(Main.class.getResource("/welcome.fxml"));
                     Scene scene = new Scene(root, 700, 400);
                     stage.setTitle(resourceBundle.getString("authorization"));
                     stage.setScene(scene);

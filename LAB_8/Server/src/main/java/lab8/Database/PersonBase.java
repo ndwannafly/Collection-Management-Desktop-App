@@ -91,7 +91,7 @@ public class PersonBase {
             listPerson.add(new Person(resultSet.getLong(1), resultSet.getString(2), resultSet.getString(3),
                     new Coordinates(resultSet.getDouble(4), resultSet.getDouble(5)),
                     LocalDateTime.parse(resultSet.getString(6), dtf),
-                    resultSet.getInt(7), resultSet.getString(8),
+                    resultSet.getLong(7), resultSet.getString(8),
                     resultSet.getInt(9), Country.valueOf(resultSet.getString(10)),
                     new Location(resultSet.getDouble(11), resultSet.getDouble(12),
                             resultSet.getString(13)), resultSet.getString(14)));
@@ -113,7 +113,7 @@ public class PersonBase {
             String strDate = localDate.format(dtf);
             Logging.log(Level.INFO, strDate);
             preparedStatement.setString(5, strDate);
-            preparedStatement.setInt(6, person.getHeight());
+            preparedStatement.setLong(6, person.getHeight());
             Logging.log(Level.INFO, person.getBirthday());
             preparedStatement.setString(7, person.getBirthday());
             preparedStatement.setInt(8, person.getWeight());
@@ -136,7 +136,7 @@ public class PersonBase {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
             String strDate = localDate.format(dtf);
             preparedStatement.setString(6, strDate);
-            preparedStatement.setInt(7, person.getHeight());
+            preparedStatement.setLong(7, person.getHeight());
             preparedStatement.setString(8, person.getBirthday());
             preparedStatement.setInt(9, person.getWeight());
             preparedStatement.setString(10, person.getNationality().getString());

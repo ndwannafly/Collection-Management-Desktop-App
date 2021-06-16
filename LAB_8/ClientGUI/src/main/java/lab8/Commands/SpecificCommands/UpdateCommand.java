@@ -25,11 +25,11 @@ public class UpdateCommand extends Command implements Serializable {
 
     @Override
     public void execute(String[] args) throws IOException {
-        if(args.length != 1){
+        if(args.length != 2){
             System.out.println("Client: Invalid command's format! Fail to execute UpdateCommand!");
         }
         else{
-            //receiver.update();
+            receiver.update(args[1]);
         }
     }
 }

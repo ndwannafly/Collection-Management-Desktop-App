@@ -29,7 +29,7 @@ public class AddCommand extends Command implements Serializable {
             System.out.println("Client: Invalid command's format! Fail to execute AddCommand!");
         }
         else{
-            //receiver.add();
+            receiver.add();
         }
     }
 }

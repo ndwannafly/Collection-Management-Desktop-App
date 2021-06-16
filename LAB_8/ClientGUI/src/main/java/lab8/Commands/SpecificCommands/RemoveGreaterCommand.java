@@ -30,7 +30,7 @@ public class RemoveGreaterCommand extends Command implements Serializable {
             System.out.println("Client: Invalid command's format! Fail to execute RemoveGreaterCommand!");
         }
         else{
-            //receiver.removeGreater();
+            receiver.removeGreater();
         }
     }
 }

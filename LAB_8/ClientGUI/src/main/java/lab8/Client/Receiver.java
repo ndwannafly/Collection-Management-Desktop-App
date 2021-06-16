@@ -19,10 +19,7 @@ import javafx.util.Duration;
 import lab8.Commands.SerializedCommands.SerializedArgumentCommand;
 import lab8.Commands.SerializedCommands.SerializedCombinedCommand;
 import lab8.Commands.SpecificCommands.*;
-import lab8.Controllers.AddController;
-import lab8.Controllers.LoginController;
-import lab8.Controllers.RegisterController;
-import lab8.Controllers.ShowController;
+import lab8.Controllers.*;
 import lab8.Data.Person;
 import lab8.Main;
 import lab8.Properties.Bundle;
@@ -45,6 +42,9 @@ public class Receiver {
     public static RegisterController registerController;
     public static AddController addController;
     public static ShowController showController;
+    public static UpdateController updateController;
+    public static RemoveLowerController removeLowerController;
+    public static RemoveGreaterController removeGreaterController;
 
     private final Invoker invoker;
     private final Sender sender;
@@ -62,6 +62,22 @@ public class Receiver {
     public static String handle = "";
     public static String password = "";
     public static String color = "";
+
+    public void history(){
+        String result = "";
+        if(invoker.getCommandHistory().isEmpty()){
+            result = result.concat("history is empty");
+        } else{
+            for(String s : invoker.getCommandHistory()){
+                result = result.concat(s + '\n');
+            }
+        }
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("History");
+        alert.setHeaderText(resourceBundle.getString("Recent teams:"));
+        alert.setContentText(result);
+        alert.showAndWait();
+    }
 
     public void help(){
         StringBuilder response = new StringBuilder();
@@ -94,13 +110,6 @@ public class Receiver {
         } catch(SocketException | SocketTimeoutException e){
             System.out.println("Problem occurred on the server!");
         }
-            /*
-            datagramSocket.setSoTimeout(5000);
-            datagramSocket.receive(datagramPacket);*/
-        String response = new String(responseBytes);
-        //response = response.substring(7);
-        response = response.trim();
-        System.out.println(response);
     }
 
     public void login(String acc, String pass) throws IOException {
@@ -247,49 +256,48 @@ public class Receiver {
         inStack.put(fileName, false);
     }
 
-/*    public void add() throws IOException {
-        Person person = commandAsker.createPerson();
-        person.setId(-1);
-        person.setOwner(handle);
+    public void add() throws IOException {
+        Person person = addController.createPerson();
+        person.setId((long) -1);
+        System.out.println("sending....");
         sender.sendObject(new SerializedCombinedCommand(new AddCommand(), handle + " " + password, person));
         byte[] responseBytes = new byte[1024];
         DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
         try {
             sender.getDatagramSocket().setSoTimeout(5000);
             sender.getDatagramSocket().receive(datagramPacket);
+            String response = new String(responseBytes);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("!");
+            alert.setHeaderText(response);
+            alert.showAndWait();
         } catch(SocketException | SocketTimeoutException e){
             System.out.println("Problem occurred on the server!");
         }
-        String response = new String(responseBytes);
+/*        String response = new String(responseBytes);
         //response = response.substring(7);
         response = response.trim();
-        System.out.println(response);
-    }*/
+        System.out.println(response);*/
+    }
 
-/*    public void countLessThanBirthDay(String args) throws IOException {
-        if(!commandAsker.birthdayValidCheck(args)){
-            System.out.println("Birthday is inserted in incorrect format! Please check for validness!");
-            return;
-        }
-
-        sender.sendObject(new SerializedCombinedCommand(
-                new CountLessThanBirthdayCommand(), handle + " " + password, args
-        ));
-        byte[] responseBytes = new byte[256];
-        DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
+    public void countLessThanBirthDay(String args) throws IOException {
         try {
+            sender.sendObject(new SerializedCombinedCommand(
+                    new CountLessThanBirthdayCommand(), handle + " " + password, args
+            ));
+            byte[] responseBytes = new byte[256];
+            DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
             sender.getDatagramSocket().setSoTimeout(5000);
             sender.getDatagramSocket().receive(datagramPacket);
+            String response = new String(responseBytes);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("!");
+            alert.setHeaderText(response);
+            alert.showAndWait();
         } catch(SocketException | SocketTimeoutException e){
             System.out.println("Problem occurred on the server!");
         }
-        *//*        datagramSocket.setSoTimeout(5000);
-        datagramSocket.receive(datagramPacket);*//*
-        String response = new String(responseBytes);
-        //response = response.substring(7);
-        response = response.trim();
-        System.out.println(response);
-    }*/
+    }
 
     public void groupCountingByID() throws IOException {
         sender.sendObject(new SerializedArgumentCommand(new GroupCountingByIDCommand(), handle + " " + password));
@@ -298,15 +306,14 @@ public class Receiver {
         try {
             sender.getDatagramSocket().setSoTimeout(5000);
             sender.getDatagramSocket().receive(datagramPacket);
+            String response = new String(responseBytes);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("!");
+            alert.setHeaderText(response);
+            alert.showAndWait();
         } catch(SocketException | SocketTimeoutException e){
             System.out.println("Problem occurred on the server!");
         }
-        /*        datagramSocket.setSoTimeout(5000);
-        datagramSocket.receive(datagramPacket);*/
-        String response = new String(responseBytes);
-        //response = response.substring(7);
-        response = response.trim();
-        System.out.println(response);
     }
 
     public void printFieldAscendingHeight() throws IOException {
@@ -316,15 +323,14 @@ public class Receiver {
         try {
             sender.getDatagramSocket().setSoTimeout(5000);
             sender.getDatagramSocket().receive(datagramPacket);
+            String response = new String(responseBytes);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("!");
+            alert.setHeaderText(response);
+            alert.showAndWait();
         } catch(SocketException | SocketTimeoutException e){
             System.out.println("Problem occurred on the server!");
         }
-        /*        datagramSocket.setSoTimeout(5000);
-        datagramSocket.receive(datagramPacket);*/
-        String response = new String(responseBytes);
-        //response = response.substring(7);
-        response = response.trim();
-        System.out.println(response);
     }
 
     public void removeByID(String arg) throws IOException {
@@ -334,34 +340,46 @@ public class Receiver {
         try {
             sender.getDatagramSocket().setSoTimeout(5000);
             sender.getDatagramSocket().receive(datagramPacket);
+            String response = new String(responseBytes);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("!");
+            alert.setHeaderText(response);
+            alert.showAndWait();
         } catch(SocketException | SocketTimeoutException e){
             System.out.println("Problem occurred on the server!");
         }
-        String response = new String(responseBytes);
+/*        String response = new String(responseBytes);
         //response = response.substring(7);
         response = response.trim();
-        System.out.println(response);
+        System.out.println(response);*/
     }
 
-/*    public void removeGreater() throws IOException {
-        Person person = commandAsker.createPerson();
+    public void removeGreater() throws IOException {
+        System.out.println("here");
+        Person person = removeGreaterController.createPerson();
+        System.out.println("doing...");
         person.setOwner(handle);
         sender.sendObject(new SerializedCombinedCommand(new RemoveGreaterCommand(), handle + " " + password, person));
         byte[] responseBytes = new byte[256];
         DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
+        sender.getDatagramSocket().setSoTimeout(5000);
         try {
-            sender.getDatagramSocket().setSoTimeout(5000);
             sender.getDatagramSocket().receive(datagramPacket);
-        } catch(SocketException | SocketTimeoutException e){
+            String response = new String(responseBytes);
+            System.out.println(response);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("!");
+            alert.setHeaderText(response);
+            alert.showAndWait();
+        } catch(SocketException e){
             System.out.println("Problem occurred on the server!");
         }
-        String response = new String(responseBytes);
-        response = response.trim();
-        System.out.println(response);
-    }*/
+    }
 
-/*    public void removeLower() throws IOException {
-        Person person = commandAsker.createPerson();
+    public void removeLower() throws IOException {
+        //System.out.println("here");
+        Person person = removeLowerController.createPerson();
+        //System.out.println("doing...");
         person.setOwner(handle);
         sender.sendObject(new SerializedCombinedCommand(new RemoveLowerCommand(), handle + " " + password, person));
         byte[] responseBytes = new byte[256];
@@ -369,19 +387,26 @@ public class Receiver {
         sender.getDatagramSocket().setSoTimeout(5000);
         try {
             sender.getDatagramSocket().receive(datagramPacket);
+            String response = new String(responseBytes);
+            System.out.println(response);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("!");
+            alert.setHeaderText(response);
+            alert.showAndWait();
         } catch(SocketException e){
             System.out.println("Problem occurred on the server!");
         }
-        String response = new String(responseBytes);
+/*        String response = new String(responseBytes);
         response = response.trim();
-        System.out.println(response);
-    }*/
+        System.out.println(response);*/
+    }
 
-/*    public void update() throws IOException{
-        String id = commandAsker.idAsker();
+    public void update(String id) throws IOException{
+/*        String id = commandAsker.idAsker();
         Person person = commandAsker.createPerson();
         person.setOwner(handle);
-        person.setId(Integer.parseInt(id));
+        person.setId(Integer.parseInt(id));*/
+        Person person = updateController.create();
         sender.sendObject(new SerializedCombinedCommand(new UpdateCommand(),
                 handle + " " + password + " " + id, person));
         byte[] responseBytes = new byte[256];
@@ -389,13 +414,15 @@ public class Receiver {
         sender.getDatagramSocket().setSoTimeout(5000);
         try {
             sender.getDatagramSocket().receive(datagramPacket);
+            String response = new String(responseBytes);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("!");
+            alert.setHeaderText(response);
+            alert.showAndWait();
         } catch(SocketException e){
             System.out.println("Problem occurred on the server!");
         }
-        String response = new String(responseBytes);
-        response = response.trim();
-        System.out.println(response);
-    }*/
+    }
 
     public void visualize() throws IOException {
         sender.sendObject(new SerializedArgumentCommand(new ShowCommand(), handle + " " + password));

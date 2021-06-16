@@ -13,7 +13,9 @@ import lab8.Client.ConsoleManager;
 import lab8.Client.Reader;
 import lab8.Client.Receiver;
 import lab8.Data.Country;
+import lab8.Data.Person;
 import lab8.Properties.Bundle;
+import lab8.Utils.Creator;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,7 +34,7 @@ public class AddController {
     private URL location;
 
     @FXML
-    private TextField nameFiled;
+    private TextField nameField;
 
     @FXML
     private TextField xField;
@@ -89,19 +91,19 @@ public class AddController {
     public static String final_name;
     public static Double final_x;
     public static Double final_y;
-    public static Integer final_height;
+    public static Long final_height;
     public static String final_birthday;
     public static Integer final_weight;
     public static Country final_nationality;
-    public static Integer final_xLocation;
-    public static Long final_yLocation;
+    public static Double final_xLocation;
+    public static Double final_yLocation;
     public static String final_nameLocation;
 
     ResourceBundle resourceBundle = Bundle.getResourceBundle();
 
     @FXML
     void initialize() {
-        nameFiled.setPromptText(resourceBundle.getString("enter Name"));
+        nameField.setPromptText(resourceBundle.getString("Enter a name"));
         xField.setPromptText(resourceBundle.getString("Enter x coordinate of the person (must be greater than -801)."));
         yField.setPromptText(resourceBundle.getString("Enter y coordinate of the person (no more than 687)."));
         heightField.setPromptText(resourceBundle.getString("Enter the height."));
@@ -112,13 +114,13 @@ public class AddController {
         nationalityField.setItems(types);
         nationalityField.setValue("FRANCE");
         xLocationField.setPromptText(resourceBundle.getString("Enter the x coordinate of the location."));
-        yLocationField.setPromptText(resourceBundle.getString("Enter the x coordinate of the location."));
-        nameLocationField.setPromptText(resourceBundle.getString("enter the name of the location"));
+        yLocationField.setPromptText(resourceBundle.getString("Enter the y coordinate of the location."));
+        nameLocationField.setPromptText(resourceBundle.getString("Enter the name of the location."));
 
         addText.setText(resourceBundle.getString("add"));
         Receiver.addController = this;
         addButton.setOnAction(actionEvent -> {
-            String name = nameFiled.getText();
+            String name = nameField.getText();
             final_name = Reader.readName(name);
             String x = xField.getText();
             final_x = Reader.readX(x);
@@ -143,16 +145,34 @@ public class AddController {
                     final_birthday != null && final_weight != null && final_nationality != null
                     && final_xLocation != null && final_yLocation != null && final_nameLocation != null) {
                 try {
+                    //System.out.println("here");
                     ConsoleManager.invoke("add");
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             } else {
+              /*  System.out.println(final_name);
+                System.out.println(final_x);
+                System.out.println(final_y);
+                System.out.println(final_height);
+                System.out.println(final_birthday);
+                System.out.println(final_weight);
+                System.out.println(final_nationality);
+                System.out.println(final_xLocation);
+                System.out.println(final_yLocation);
+                System.out.println(final_nameLocation);*/
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle(resourceBundle.getString("Oops!"));
                 alert.setHeaderText(resourceBundle.getString("Please make sure that you entered everything correctly")+"!");
                 alert.showAndWait();
             }
         });
+    }
+
+    public Person createPerson() {
+        return Creator.create(final_name, final_x, final_y, final_height, final_birthday, final_weight, final_nationality,
+                final_xLocation, final_yLocation, final_nameLocation);
+
     }
 }

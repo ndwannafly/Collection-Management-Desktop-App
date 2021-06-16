@@ -28,15 +28,9 @@ public class Invoker {
             }
             if(Receiver.isLogin || userCommand[0].equals("login") ||
                     userCommand[0].equals("register") || userCommand[0].equals("exit")){
-                if(userCommand[0].equals("history")){
-                    commandHistory.forEach(System.out::println);
-                }
-                else {
-                    Command command = commands.get(userCommand[0]);
-                    //System.out.println(userCommand.length + " " + userCommand[0] + " " + userCommand[1] + " " + userCommand[2]);
-                    command.execute(userCommand);
-                    addCommandToHistory(userCommand[0]);
-                }
+                Command command = commands.get(userCommand[0]);
+                command.execute(userCommand);
+                addCommandToHistory(userCommand[0]);
             }
             else{
                 System.out.println("You are not logged in!");
@@ -54,5 +48,9 @@ public class Invoker {
 
     public HashMap<String, Command> getCommands(){
         return this.commands;
+    }
+
+    public Deque<String> getCommandHistory(){
+        return commandHistory;
     }
 }

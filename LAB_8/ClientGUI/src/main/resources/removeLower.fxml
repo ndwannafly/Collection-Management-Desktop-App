@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="560.0" style="-fx-background-color: BBD1EA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab8.Controllers.AddController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="560.0" style="-fx-background-color: BBD1EA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab8.Controllers.RemoveLowerController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="560.0" minWidth="10.0" prefWidth="467.0" />
         <ColumnConstraints />
@@ -71,7 +71,7 @@
             <font>
                 <Font name="Georgia" size="17.0" />
             </font></Text>
-        <Button fx:id="addButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: #507DBC;" text="Add!" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+        <Button fx:id="addButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: #507DBC;" text="Remove!" GridPane.columnSpan="2" GridPane.rowIndex="11" />
         <BorderPane prefHeight="200.0" prefWidth="200.0" />
     </children>
 </GridPane>

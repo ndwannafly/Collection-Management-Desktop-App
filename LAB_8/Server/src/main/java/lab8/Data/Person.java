@@ -4,19 +4,36 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 public class Person implements Comparable<Person>, Serializable {
-    private long id;
+
+    private static final long serialVersionUID = 1234567L;
+    private Long id;
     private String name;
     private Coordinates coordinates;
     private LocalDateTime creationDate;
-    private Integer height;
+    private Long height;
     private String birthday;
     private Integer weight;
     private Country nationality;
     private Location location;
     private String owner;
     private String color;
-    public Person(long id, String owner, String name, Coordinates coordinates, LocalDateTime localDateTime, int height,
-                  String birthday, int weight, Country nationality, Location location, String color){
+
+    public Person(String name, Coordinates coordinates, Long height, String birthday, Integer weight, Country nationality,
+                  Location location, String owner, String color){
+        this.name = name;
+        this.coordinates = coordinates;
+        this.creationDate = LocalDateTime.now();
+        this.height = height;
+        this.birthday = birthday;
+        this.weight = weight;
+        this.nationality = nationality;
+        this.location = location;
+        this.owner = owner;
+        this.color = color;
+    }
+
+    public Person(Long id, String owner, String name, Coordinates coordinates, LocalDateTime localDateTime, Long height,
+                  String birthday, Integer weight, Country nationality, Location location, String color){
         this.id = id;
         this.owner = owner;
         this.name = name;
@@ -57,11 +74,11 @@ public class Person implements Comparable<Person>, Serializable {
         this.birthday = birthday;
     }
 
-    public int getHeight() {
+    public Long getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(Long height) {
         this.height = height;
     }
 
@@ -144,6 +161,6 @@ public class Person implements Comparable<Person>, Serializable {
 
     @Override
     public int compareTo(Person o) {
-        return (height - o.getHeight());
+        return (int) (height - o.getHeight());
     }
 }

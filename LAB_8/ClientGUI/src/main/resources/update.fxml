@@ -31,7 +31,7 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <TextField fx:id="nameFiled" promptText="Введите имя." GridPane.rowIndex="1">
+        <TextField fx:id="nameField" promptText="Введите имя." GridPane.rowIndex="1">
             <font>
                 <Font name="Georgia" size="13.0" />
             </font></TextField>
@@ -43,32 +43,32 @@
             <font>
                 <Font name="Georgia" size="13.0" />
             </font></TextField>
-        <TextField fx:id="turnoverField" promptText="Введите годовой оборот компании (должен быть больше 0)." GridPane.rowIndex="4">
+        <TextField fx:id="heightField" promptText="Введите годовой оборот компании (должен быть больше 0)." GridPane.rowIndex="4">
             <font>
                 <Font name="Georgia" size="13.0" />
             </font></TextField>
-        <TextField fx:id="streetField" promptText="Введите адрес." GridPane.rowIndex="5">
+        <TextField fx:id="birthdayField" promptText="Введите адрес." GridPane.rowIndex="5">
             <font>
                 <Font name="Georgia" size="13.0" />
             </font></TextField>
-        <TextField fx:id="zipcodeField" promptText="Введите почтовый индекс." GridPane.rowIndex="6">
+        <TextField fx:id="weightField" promptText="Введите почтовый индекс." GridPane.rowIndex="6">
             <font>
                 <Font name="Georgia" size="13.0" />
             </font></TextField>
-        <TextField fx:id="lxField" promptText="Введите координату X города." GridPane.rowIndex="7">
+        <TextField fx:id="nameLocationField" promptText="Введите координату X города." GridPane.rowIndex="7">
             <font>
                 <Font name="Georgia" size="13.0" />
             </font></TextField>
-        <TextField fx:id="lyField" promptText="Введите координату Y города." GridPane.rowIndex="8">
+        <TextField fx:id="xLocationField" promptText="Введите координату Y города." GridPane.rowIndex="8">
             <font>
                 <Font name="Georgia" size="13.0" />
             </font></TextField>
-        <TextField fx:id="townField" promptText="Введите название города." GridPane.rowIndex="9">
+        <TextField fx:id="yLocationField" promptText="Введите название города." GridPane.rowIndex="9">
             <font>
                 <Font name="Georgia" size="13.0" />
             </font></TextField>
-        <ChoiceBox fx:id="typeField" prefHeight="27.0" prefWidth="466.0" style="-fx-background-color: #04080F;" GridPane.rowIndex="10" />
-        <Text fx:id="addtext" strokeType="OUTSIDE" strokeWidth="0.0" text="Добавление." wrappingWidth="77.4072265625" GridPane.columnSpan="2">
+        <ChoiceBox fx:id="nationalityField" prefHeight="27.0" prefWidth="466.0" style="-fx-background-color: BBD1EA;" GridPane.rowIndex="10" />
+        <Text fx:id="addText" strokeType="OUTSIDE" strokeWidth="0.0" text="Добавление." wrappingWidth="77.4072265625" GridPane.columnSpan="2">
             <font>
                 <Font name="Georgia" size="13.0" />
             </font></Text>

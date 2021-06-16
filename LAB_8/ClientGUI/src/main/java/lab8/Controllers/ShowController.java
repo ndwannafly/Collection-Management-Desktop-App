@@ -14,6 +14,8 @@ import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import lab8.Client.ConsoleManager;
@@ -63,6 +65,8 @@ public class ShowController {
 
     @FXML
     private FlowPane gridPane2;
+    @FXML
+            private Pane tablePane;
 
     ResourceBundle resourceBundle = Bundle.getResourceBundle();
 
@@ -84,13 +88,13 @@ public class ShowController {
             Parent root = null;
             try{
                 root = FXMLLoader.load(Main.class.getResource("/add.fxml"));
+                Scene scene = new Scene(root);
+                stage.setTitle(resourceBundle.getString("add"));
+                stage.setScene(scene);
+                stage.show();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Scene scene = new Scene(root);
-            stage.setTitle(resourceBundle.getString("add"));
-            stage.setScene(scene);
-            stage.show();
         });
         updateButton.setOnAction(actionEvent -> {
             Stage stage = new Stage();
@@ -115,6 +119,7 @@ public class ShowController {
                 try{
                     String res = result.get();
                     ConsoleManager.invoke("remove_by_id " + res);
+                    //show();
                 } catch(IOException e){
                     e.printStackTrace();
                 }
@@ -130,16 +135,28 @@ public class ShowController {
         });
 
         removeLowerButton.setOnAction(actionEvent -> {
-            try {
-                ConsoleManager.invoke("remove_lower");
+            Stage stage = new Stage();
+            Parent root = null;
+            try{
+                root = FXMLLoader.load(Main.class.getResource("/removeLower.fxml"));
+                Scene scene = new Scene(root);
+                stage.setTitle(resourceBundle.getString("remove_lower"));
+                stage.setScene(scene);
+                stage.show();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         });
 
         removeGreaterButton.setOnAction(actionEvent -> {
-            try {
-                ConsoleManager.invoke("remove_greater");
+            Stage stage = new Stage();
+            Parent root = null;
+            try{
+                root = FXMLLoader.load(Main.class.getResource("/removeGreater.fxml"));
+                Scene scene = new Scene(root);
+                stage.setTitle(resourceBundle.getString("remove_greater"));
+                stage.setScene(scene);
+                stage.show();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -157,7 +174,7 @@ public class ShowController {
         countLessThanBirthdayButton.setOnAction(actionEvent -> {
             TextInputDialog dialog = new TextInputDialog();
             dialog.setTitle(resourceBundle.getString("count_less_than_birthday"));
-            dialog.setHeaderText(resourceBundle.getString("enter birthday"));
+            dialog.setHeaderText(resourceBundle.getString("Enter the birthday."));
             Optional<String> result = dialog.showAndWait();
             result.ifPresent(name ->{
                 try{
@@ -168,7 +185,14 @@ public class ShowController {
                 }
             });
         });
+        printFieldAscendingHeightButton.setOnAction(actionEvent -> {
 
+            try {
+                ConsoleManager.invoke("print_field_ascending_height");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
    /* public void openSort(){
@@ -191,10 +215,10 @@ public class ShowController {
         );
 
         TableView<Person> table = new TableView<>(personObservableList);
-        Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
-        table.setPrefWidth(primaryScreenBounds.getWidth());
-        table.setPrefHeight(primaryScreenBounds.getHeight() - 300);
-        table.setColumnResizePolicy(CONSTRAINED_RESIZE_POLICY);
+//        Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+//        table.setPrefWidth(primaryScreenBounds.getWidth());
+//        table.setPrefHeight(primaryScreenBounds.getHeight() - 300);
+//        table.setColumnResizePolicy(CONSTRAINED_RESIZE_POLICY);
 
         // id
         TableColumn<Person, Long> idColumn = new TableColumn<>("ID");
@@ -272,8 +296,13 @@ public class ShowController {
         table.getColumns().add(nameLocationColumn);
         nameLocationColumn.setEditable(true);
 
-        FlowPane root1 = new FlowPane(500, 500, table);
-        gridPane.add(gridPane2, 0,0,1,2);
-        gridPane.add(root1, 0, 1);
+        table.maxWidth(tablePane.getScene().getWidth());
+        table.prefWidth(tablePane.getScene().getWidth());
+        table.maxHeight(tablePane.getScene().getHeight());
+
+        tablePane.getChildren().add(table);
+//        FlowPane root1 = new FlowPane(500, 500, table);
+//        gridPane.add(gridPane2, 0,0,1,2);
+//        gridPane.add(root1, 0, 1);
     }
 }

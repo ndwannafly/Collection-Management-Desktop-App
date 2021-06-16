@@ -52,6 +52,7 @@ public class Receiver {
             String[] str = arg.split(" ");
             try {
                 if(PersonBase.validation(str[0], str[1])){
+                    //System.out.println(str[0] + " " + str[1]);
                     Person person = (Person) o;
                     DatabaseCommunicator.getPersonBase().addPersonToDataBase(person, -1);
                     byte[] response = CollectionManager.add().getBytes();

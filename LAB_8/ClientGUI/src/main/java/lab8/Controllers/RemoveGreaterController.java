@@ -20,9 +20,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class UpdateController {
+public class RemoveGreaterController {
+
     @FXML
     private ResourceBundle resources;
+
+    @FXML
+    private Text addText;
 
     @FXML
     private URL location;
@@ -58,13 +62,29 @@ public class UpdateController {
     private TextField nameLocationField;
 
     @FXML
+    private Button nameCheck;
+
+    @FXML
+    private Button xCheck;
+
+    @FXML
+    private Button yCheck;
+
+    @FXML
+    private Button heightCheck;
+
+    @FXML
+    private Button birthdayCheck;
+
+    @FXML
+    private Button weightCheck;
+
+    @FXML
+    private Button nationalityCheck;
+
+
+    @FXML
     private Button addButton;
-
-    @FXML
-    private Text addText;
-
-    @FXML
-    private TextField idField;
 
     public static String final_name;
     public static Double final_x;
@@ -80,7 +100,7 @@ public class UpdateController {
     ResourceBundle resourceBundle = Bundle.getResourceBundle();
 
     @FXML
-    void initialize(){
+    void initialize() {
         nameField.setPromptText(resourceBundle.getString("Enter a name"));
         xField.setPromptText(resourceBundle.getString("Enter x coordinate of the person (must be greater than -801)."));
         yField.setPromptText(resourceBundle.getString("Enter y coordinate of the person (no more than 687)."));
@@ -94,9 +114,9 @@ public class UpdateController {
         xLocationField.setPromptText(resourceBundle.getString("Enter the x coordinate of the location."));
         yLocationField.setPromptText(resourceBundle.getString("Enter the y coordinate of the location."));
         nameLocationField.setPromptText(resourceBundle.getString("Enter the name of the location."));
-        idField.setPromptText(resourceBundle.getString("enterID"));
-        addText.setText(resourceBundle.getString("add"));
-        Receiver.updateController = this;
+
+        addText.setText(resourceBundle.getString("remove_greater"));
+        Receiver.removeGreaterController = this;
         addButton.setOnAction(actionEvent -> {
             String name = nameField.getText();
             final_name = Reader.readName(name);
@@ -118,28 +138,38 @@ public class UpdateController {
             final_yLocation = Reader.readYLocation(yLocation);
             String nameLocation = nameLocationField.getText();
             final_nameLocation = Reader.readNameLocation(nameLocation);
-            String ID = idField.getText();
-            if(final_name != null && final_x != null && final_y != null && final_height != null && final_birthday != null
-                && final_weight != null && final_nationality != null && final_xLocation != null && final_yLocation != null
-                &&  final_nameLocation != null && ID != null){
-                create();
+
+            if (final_name != null && final_x != null && final_y != null && final_height != null &&
+                    final_birthday != null && final_weight != null && final_nationality != null
+                    && final_xLocation != null && final_yLocation != null && final_nameLocation != null) {
+                try {
+                    //System.out.println("here");
+                    ConsoleManager.invoke("remove_greater");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             } else {
+              /*  System.out.println(final_name);
+                System.out.println(final_x);
+                System.out.println(final_y);
+                System.out.println(final_height);
+                System.out.println(final_birthday);
+                System.out.println(final_weight);
+                System.out.println(final_nationality);
+                System.out.println(final_xLocation);
+                System.out.println(final_yLocation);
+                System.out.println(final_nameLocation);*/
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Ой!");
-                alert.setHeaderText("Убедитесь, пожалуйста, в том, что вы всё ввели правильно..");
+                alert.setTitle(resourceBundle.getString("Oops!"));
+                alert.setHeaderText(resourceBundle.getString("Please make sure that you entered everything correctly")+"!");
                 alert.showAndWait();
             }
-            try {
-                ConsoleManager.invoke("update " + ID);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         });
-
     }
 
-    public Person create() {
+    public Person createPerson() {
         return Creator.create(final_name, final_x, final_y, final_height, final_birthday, final_weight, final_nationality,
                 final_xLocation, final_yLocation, final_nameLocation);
+
     }
 }

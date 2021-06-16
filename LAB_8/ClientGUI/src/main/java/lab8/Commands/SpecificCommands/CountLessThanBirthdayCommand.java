@@ -31,7 +31,7 @@ public class CountLessThanBirthdayCommand extends Command implements Serializabl
             System.out.println("Client: Invalid command's format! Fail to execute InfoCommand!");
         }
         else{
-            //receiver.countLessThanBirthDay(args[1]);
+            receiver.countLessThanBirthDay(args[1]);
         }
     }
 }

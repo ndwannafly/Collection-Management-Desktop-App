@@ -1,9 +1,7 @@
 package lab8.Client;
 
 import lab8.Data.Country;
-import lab8.Data.Person;
 
-import java.time.LocalDateTime;
 import java.util.Arrays;
 
 public class Reader {
@@ -53,12 +51,12 @@ public class Reader {
         }
     }
 
-    public static Integer readHeight(String args) {
+    public static Long readHeight(String args) {
         String sHeight = args.trim();
-        int resHeight;
+        long resHeight;
         while(true){
             try{
-                resHeight = Integer.parseInt(sHeight);
+                resHeight = Long.parseLong(sHeight);
                 if(resHeight >= 0) return resHeight;
                 else return null;
             } catch(NumberFormatException e){
@@ -87,12 +85,12 @@ public class Reader {
         }
     }
 
-    public static Integer readXLocation(String args) {
+    public static Double readXLocation(String args) {
         String sXLocation = args.trim();
-        int resXLocation;
+        double resXLocation;
         while(true){
             try{
-                resXLocation = Integer.parseInt(sXLocation);
+                resXLocation = Double.parseDouble(sXLocation);
                 return resXLocation;
             } catch(NumberFormatException e){
                 return null;
@@ -100,12 +98,12 @@ public class Reader {
         }
     }
 
-    public static Long readYLocation(String args) {
+    public static Double readYLocation(String args) {
         String sYLocation = args.trim();
-        long resYLocation;
+        double resYLocation;
         while(true){
             try{
-                resYLocation = Long.parseLong(sYLocation);
+                resYLocation = Double.parseDouble(sYLocation);
                 return resYLocation;
             } catch(NumberFormatException e){
                 return null;

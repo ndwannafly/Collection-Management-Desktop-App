@@ -2,50 +2,55 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="843.0" style="-fx-background-color: DAE3E5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab8.Controllers.ShowController">
-    <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    </columnConstraints>
-    <rowConstraints>
-        <RowConstraints maxHeight="212.6666259765625" minHeight="10.0" prefHeight="211.3333536783854" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="392.33327738444007" minHeight="10.0" prefHeight="367.33331298828125" vgrow="SOMETIMES" />
-    </rowConstraints>
-    <children>
-        <GridPane prefHeight="183.0" prefWidth="1020.0">
-            <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            </rowConstraints>
-            <children>
-                <FlowPane alignment="TOP_CENTER" hgap="5.0" prefHeight="83.0" prefWidth="1020.0" vgap="5.0" GridPane.rowIndex="1">
-                    <children>
-                        <Button fx:id="removeByIdButton" mnemonicParsing="false" prefHeight="98.0" prefWidth="196.0" style="-fx-background-color: #507DBC;" text="remove_by_id">
-                            <opaqueInsets>
-                                <Insets />
-                            </opaqueInsets>
-                            <FlowPane.margin>
-                                <Insets bottom="5.0" left="5.0" right="5.0" />
-                            </FlowPane.margin>
+
+<Pane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab8.Controllers.ShowController">
+   <children>
+      <VBox>
+         <children>
+            <HBox>
+               <children>
+                        <Button fx:id="addButton" mnemonicParsing="false" prefHeight="98.0" prefWidth="196.0" style="-fx-background-color: BBD1EA;" text="add">
                             <font>
                                 <Font name="Georgia" size="13.0" />
                             </font>
                         </Button>
-                        <Button fx:id="clearButton" mnemonicParsing="false" prefHeight="98.0" prefWidth="196.0" style="-fx-background-color: BBD1EA;" text="clear">
+                        <Button fx:id="updateButton" mnemonicParsing="false" prefHeight="98.0" prefWidth="196.0" style="-fx-background-color: #507DBC;" text="update">
+                            <font>
+                                <Font name="Georgia" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="removeLowerButton" mnemonicParsing="false" prefHeight="98.0" prefWidth="196.0" style="-fx-background-color: BBD1EA;" text="remove_lower">
+                            <font>
+                                <Font name="Georgia" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="removeGreaterButton" mnemonicParsing="false" prefHeight="98.0" prefWidth="196.0" style="-fx-background-color: #507DBC;" text="remove_greater">
+                            <font>
+                                <Font name="Georgia" size="13.0" />
+                            </font>
+                        </Button>
+               </children>
+            </HBox>
+            <Pane fx:id="tablePane" maxWidth="784.0" prefHeight="400.0" prefWidth="784.0" />
+            <HBox>
+               <children>
+                        <Button fx:id="removeByIdButton" mnemonicParsing="false" prefHeight="98.0" prefWidth="133.0" style="-fx-background-color: #507DBC;" text="remove_by_id">
                             <opaqueInsets>
                                 <Insets />
                             </opaqueInsets>
-                            <FlowPane.margin>
-                                <Insets bottom="5.0" left="5.0" right="5.0" />
-                            </FlowPane.margin>
+                            <font>
+                                <Font name="Georgia" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="clearButton" mnemonicParsing="false" prefHeight="98.0" prefWidth="115.0" style="-fx-background-color: BBD1EA;" text="clear">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
                             <font>
                                 <Font name="Georgia" size="13.0" />
                             </font>
@@ -54,9 +59,6 @@
                             <opaqueInsets>
                                 <Insets />
                             </opaqueInsets>
-                            <FlowPane.margin>
-                                <Insets bottom="5.0" left="5.0" right="5.0" />
-                            </FlowPane.margin>
                             <font>
                                 <Font name="Georgia" size="13.0" />
                             </font>
@@ -65,63 +67,21 @@
                             <opaqueInsets>
                                 <Insets />
                             </opaqueInsets>
-                            <FlowPane.margin>
-                                <Insets bottom="5.0" left="5.0" right="5.0" />
-                            </FlowPane.margin>
                             <font>
                                 <Font name="Georgia" size="13.0" />
                             </font>
                         </Button>
-                    </children>
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets>
-                </FlowPane>
-                <FlowPane fx:id="gridPane2" alignment="TOP_CENTER" columnHalignment="CENTER" hgap="5.0" prefHeight="200.0" prefWidth="200.0" vgap="5.0">
-                    <children>
-                        <Button fx:id="addButton" mnemonicParsing="false" prefHeight="98.0" prefWidth="196.0" style="-fx-background-color: BBD1EA;" text="add">
-                            <FlowPane.margin>
-                                <Insets bottom="5.0" left="5.0" right="5.0" />
-                            </FlowPane.margin>
+                        <Button fx:id="printFieldAscendingHeightButton" mnemonicParsing="false" prefHeight="98.0" prefWidth="143.0" style="-fx-background-color: #507DBC;" text="print_field_ascending_height">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
                             <font>
                                 <Font name="Georgia" size="13.0" />
                             </font>
                         </Button>
-                        <Button fx:id="updateButton" mnemonicParsing="false" prefHeight="98.0" prefWidth="196.0" style="-fx-background-color: #507DBC;" text="update">
-                            <FlowPane.margin>
-                                <Insets bottom="5.0" left="5.0" right="5.0" />
-                            </FlowPane.margin>
-                            <font>
-                                <Font name="Georgia" size="13.0" />
-                            </font>
-                        </Button>
-                        <Button fx:id="removeLowerButton" mnemonicParsing="false" prefHeight="98.0" prefWidth="196.0" style="-fx-background-color: BBD1EA;" text="remove_lower">
-                            <FlowPane.margin>
-                                <Insets bottom="5.0" left="5.0" right="5.0" />
-                            </FlowPane.margin>
-                            <font>
-                                <Font name="Georgia" size="13.0" />
-                            </font>
-                        </Button>
-                        <Button fx:id="removeGreaterButton" mnemonicParsing="false" prefHeight="98.0" prefWidth="196.0" style="-fx-background-color: BBD1EA;" text="remove_greater">
-                            <FlowPane.margin>
-                                <Insets bottom="5.0" left="5.0" right="5.0" />
-                            </FlowPane.margin>
-                            <font>
-                                <Font name="Georgia" size="13.0" />
-                            </font>
-                        </Button>
-                        <Button fx:id="printFieldAscendingHeightButton" mnemonicParsing="false" prefHeight="98.0" prefWidth="196.0" style="-fx-background-color: #507DBC;" text="print_field_ascending_height">
-                            <FlowPane.margin>
-                                <Insets bottom="5.0" left="5.0" right="5.0" />
-                            </FlowPane.margin>
-                            <font>
-                                <Font name="Georgia" size="13.0" />
-                            </font>
-                        </Button>
-                    </children>
-                </FlowPane>
-            </children>
-        </GridPane>
-    </children>
-</GridPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</Pane>

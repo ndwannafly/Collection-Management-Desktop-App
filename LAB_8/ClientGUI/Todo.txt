@@ -1,5 +1,13 @@
-- doing show (+)
+- show (+)
+- print_field_ascending_height (+)
+- add (+)
 
-- print_field_ascending_height
+
+- update (+)
+- remove_lower ( doing)
+- remove_greater
+_ remove_by_id (+)
 - open_sort
 - warning on receiver
+- animation
+- locale fix

@@ -31,6 +31,7 @@ public class ConsoleManager {
         invoker.register("login", new LoginCommand(receiver));
         invoker.register("register", new RegisterCommand(receiver));
         invoker.register("visualize", new VisualizeCommand(receiver));
+        invoker.register("history", new HistoryCommand(receiver));
     }
 
     public static void invoke(String command) throws IOException {
