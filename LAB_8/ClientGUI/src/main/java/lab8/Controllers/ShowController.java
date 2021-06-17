@@ -26,6 +26,7 @@ import lab8.Properties.Bundle;
 import lab8.Utils.CollectionManager;
 
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -82,7 +83,7 @@ public class ShowController {
         groupCountingByIdButton.setText(resourceBundle.getString("group_counting_by_id"));
         countLessThanBirthdayButton.setText(resourceBundle.getString("count_less_than_birthday"));
         printFieldAscendingHeightButton.setText(resourceBundle.getString("print_field_ascending_height"));
-        //openSort();
+        openSort();
         addButton.setOnAction(actionEvent -> {
             Stage stage = new Stage();
             Parent root = null;
@@ -195,25 +196,25 @@ public class ShowController {
         });
     }
 
-   /* public void openSort(){
+    public void openSort(){
         Stage stage = new Stage();
         Parent root = null;
         try{
-            root = FXMLLoader.load(Main.class.getResource("sort.fxml"));
+            root = FXMLLoader.load(Main.class.getResource("/sort.fxml"));
         } catch(IOException e){
             e.printStackTrace();;
         }
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }*/
+    }
 
 
-    public void show() {
+    public void show(Comparator<Person> comparator) {
         ObservableList<Person> personObservableList = FXCollections.observableArrayList(
                 CollectionManager.getCollection()
         );
-
+        personObservableList.sort(comparator);
         TableView<Person> table = new TableView<>(personObservableList);
 //        Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
 //        table.setPrefWidth(primaryScreenBounds.getWidth());
@@ -304,5 +305,10 @@ public class ShowController {
 //        FlowPane root1 = new FlowPane(500, 500, table);
 //        gridPane.add(gridPane2, 0,0,1,2);
 //        gridPane.add(root1, 0, 1);
+    }
+
+    public void death(){
+        Stage stage = (Stage) groupCountingByIdButton.getScene().getWindow();
+        stage.close();
     }
 }

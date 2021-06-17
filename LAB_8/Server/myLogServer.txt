@@ -10,3 +10,455 @@ Jun 16, 2021 11:14:08 PM lab8.Utils.Logging log
 INFO: Successfully connect to DataBase!
 Jun 16, 2021 11:14:08 PM lab8.Utils.Logging log
 INFO: Server has started listening on port 3436
+Jun 16, 2021 11:14:17 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:14:17 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:14:21 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:14:21 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:14:23 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:14:23 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:14:23 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:14:35 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:14:35 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:14:35 PM lab8.Utils.Logging log
+INFO: Server is executing RemoveByIDCommand....
+Jun 16, 2021 11:14:38 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:14:38 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:14:38 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:14:46 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:14:46 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:14:46 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:15:34 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:15:34 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:15:34 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:16:19 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:16:19 PM lab8.Utils.Logging log
+INFO: Receiving data is combined command!
+Jun 16, 2021 11:16:19 PM lab8.Utils.Logging log
+INFO: Server is executing AddCommand....
+Jun 16, 2021 11:16:19 PM lab8.Utils.Logging log
+INFO: 16-06-2021 23:16
+Jun 16, 2021 11:16:19 PM lab8.Utils.Logging log
+INFO: 1-1-2005
+Jun 16, 2021 11:16:21 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:16:21 PM lab8.Utils.Logging log
+INFO: Receiving data is combined command!
+Jun 16, 2021 11:16:21 PM lab8.Utils.Logging log
+INFO: Server is executing AddCommand....
+Jun 16, 2021 11:16:21 PM lab8.Utils.Logging log
+INFO: 16-06-2021 23:16
+Jun 16, 2021 11:16:21 PM lab8.Utils.Logging log
+INFO: 1-1-2005
+Jun 16, 2021 11:16:27 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:16:27 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:16:27 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:16:36 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:16:36 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:16:36 PM lab8.Utils.Logging log
+INFO: Server is executing RemoveByIDCommand....
+Jun 16, 2021 11:16:39 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:16:39 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:16:39 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:17:20 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:17:20 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:17:21 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:17:21 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:17:21 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:17:34 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:17:34 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:17:34 PM lab8.Utils.Logging log
+INFO: Server is executing RemoveByIDCommand....
+Jun 16, 2021 11:17:38 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:17:38 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:17:38 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:21:16 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:21:16 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:21:17 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:21:17 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:21:17 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:21:19 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:21:19 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:21:19 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:26:51 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:26:51 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:26:52 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:26:52 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:26:52 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:27:26 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:27:26 PM lab8.Utils.Logging log
+INFO: Receiving data is combined command!
+Jun 16, 2021 11:27:26 PM lab8.Utils.Logging log
+INFO: Server is executing AddCommand....
+Jun 16, 2021 11:27:26 PM lab8.Utils.Logging log
+INFO: 16-06-2021 23:27
+Jun 16, 2021 11:27:26 PM lab8.Utils.Logging log
+INFO: 20-12-2002
+Jun 16, 2021 11:27:31 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:27:31 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:27:31 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:30:39 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:30:39 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:30:40 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:30:40 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:30:40 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:32:13 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:32:13 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:32:17 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:32:17 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:32:18 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:32:18 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:32:18 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:33:04 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:33:04 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:33:05 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:33:05 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:33:05 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:34:09 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:34:09 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:34:10 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:34:10 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:34:10 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:34:36 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:34:36 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:34:37 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:34:37 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:34:37 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:50:03 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:50:03 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:50:04 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:50:04 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:50:04 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:55:15 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:55:15 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:55:16 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:55:16 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:55:16 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:57:42 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:57:42 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:57:43 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:57:43 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:57:43 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:58:04 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:58:04 PM lab8.Utils.Logging log
+INFO: Receiving data is combined command!
+Jun 16, 2021 11:58:04 PM lab8.Utils.Logging log
+INFO: Server is executing RemoveGreaterCommand....
+Jun 16, 2021 11:58:09 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:58:09 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:58:09 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 16, 2021 11:58:15 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:58:15 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:58:15 PM lab8.Utils.Logging log
+INFO: Server is executing GroupCountingByIDCommand....
+Jun 16, 2021 11:59:36 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:59:36 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:59:37 PM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 16, 2021 11:59:37 PM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 16, 2021 11:59:37 PM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 17, 2021 12:00:00 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:00:00 AM lab8.Utils.Logging log
+INFO: Receiving data is combined command!
+Jun 17, 2021 12:00:00 AM lab8.Utils.Logging log
+INFO: Server is executing AddCommand....
+Jun 17, 2021 12:00:00 AM lab8.Utils.Logging log
+INFO: 17-06-2021 00:00
+Jun 17, 2021 12:00:00 AM lab8.Utils.Logging log
+INFO: 20-20-2012
+Jun 17, 2021 12:00:03 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:00:03 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:00:03 AM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 17, 2021 12:03:04 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:03:04 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:03:05 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:03:05 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:03:05 AM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 17, 2021 12:05:25 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:05:25 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:05:26 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:05:26 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:05:26 AM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 17, 2021 12:06:11 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:06:11 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:06:12 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:06:12 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:06:12 AM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 17, 2021 12:08:14 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:08:14 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:08:15 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:08:15 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:08:15 AM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 17, 2021 12:10:16 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:10:16 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:10:16 AM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 17, 2021 12:10:19 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:10:19 AM lab8.Utils.Logging log
+INFO: Receiving data is combined command!
+Jun 17, 2021 12:10:19 AM lab8.Utils.Logging log
+INFO: Server is executing RemoveGreaterCommand....
+Jun 17, 2021 12:10:22 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:10:22 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:10:22 AM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 17, 2021 12:10:51 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:10:51 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:10:51 AM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 17, 2021 12:15:01 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:15:01 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:15:03 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:15:03 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:15:03 AM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 17, 2021 12:15:06 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:15:06 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:15:06 AM lab8.Utils.Logging log
+INFO: Server is executing ClearCommand....
+Jun 17, 2021 12:15:12 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:15:12 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:15:12 AM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 17, 2021 12:15:15 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:15:15 AM lab8.Utils.Logging log
+INFO: Receiving data is combined command!
+Jun 17, 2021 12:15:15 AM lab8.Utils.Logging log
+INFO: Server is executing CountLessThanBirthDayCommand....
+Jun 17, 2021 12:15:26 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:15:26 AM lab8.Utils.Logging log
+INFO: Receiving data is combined command!
+Jun 17, 2021 12:15:26 AM lab8.Utils.Logging log
+INFO: Server is executing CountLessThanBirthDayCommand....
+Jun 17, 2021 12:15:30 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:15:30 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:15:30 AM lab8.Utils.Logging log
+INFO: Server is executing PrintFieldAscendingHeightCommand....
+Jun 17, 2021 12:15:34 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:15:34 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:15:34 AM lab8.Utils.Logging log
+INFO: Server is executing RemoveByIDCommand....
+Jun 17, 2021 12:15:37 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:15:37 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:15:37 AM lab8.Utils.Logging log
+INFO: Server is executing RemoveByIDCommand....
+Jun 17, 2021 12:15:38 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:15:38 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:15:38 AM lab8.Utils.Logging log
+INFO: Server is executing GroupCountingByIDCommand....
+Jun 17, 2021 12:15:41 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:15:41 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:15:41 AM lab8.Utils.Logging log
+INFO: Server is executing InfoCommand....
+Jun 17, 2021 12:19:40 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:19:40 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:19:40 AM lab8.Utils.Logging log
+INFO: Server is executing InfoCommand....
+Jun 17, 2021 12:19:42 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 12:19:42 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 12:19:42 AM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 17, 2021 1:38:39 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 1:38:39 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 1:38:39 AM lab8.Utils.Logging log
+INFO: Server is executing InfoCommand....
+Jun 17, 2021 1:38:48 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 1:38:48 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 1:38:48 AM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 17, 2021 1:39:13 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 1:39:13 AM lab8.Utils.Logging log
+INFO: Receiving data is combined command!
+Jun 17, 2021 1:39:13 AM lab8.Utils.Logging log
+INFO: Server is executing AddCommand....
+Jun 17, 2021 1:39:13 AM lab8.Utils.Logging log
+INFO: 17-06-2021 01:39
+Jun 17, 2021 1:39:13 AM lab8.Utils.Logging log
+INFO: 20-12-2000
+Jun 17, 2021 1:39:41 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 1:39:41 AM lab8.Utils.Logging log
+INFO: Receiving data is combined command!
+Jun 17, 2021 1:39:41 AM lab8.Utils.Logging log
+INFO: Server is executing AddCommand....
+Jun 17, 2021 1:39:41 AM lab8.Utils.Logging log
+INFO: 17-06-2021 01:39
+Jun 17, 2021 1:39:41 AM lab8.Utils.Logging log
+INFO: 20-12-2003
+Jun 17, 2021 1:39:43 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 1:39:43 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 1:39:43 AM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 17, 2021 1:40:26 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 17, 2021 1:40:26 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 17, 2021 1:40:26 AM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....

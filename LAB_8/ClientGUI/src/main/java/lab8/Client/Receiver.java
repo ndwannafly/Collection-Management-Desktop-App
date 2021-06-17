@@ -24,6 +24,7 @@ import lab8.Data.Person;
 import lab8.Main;
 import lab8.Properties.Bundle;
 import lab8.Utils.CollectionManager;
+import lab8.Utils.Comparators.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -32,10 +33,7 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.ResourceBundle;
-import java.util.Scanner;
+import java.util.*;
 
 public class Receiver {
     public static LoginController loginController;
@@ -45,6 +43,7 @@ public class Receiver {
     public static UpdateController updateController;
     public static RemoveLowerController removeLowerController;
     public static RemoveGreaterController removeGreaterController;
+    public static SortController sortController;
 
     private final Invoker invoker;
     private final Sender sender;
@@ -194,7 +193,7 @@ public class Receiver {
             Parent root = FXMLLoader.load(Main.class.getResource("/show.fxml"));
             System.out.println("waiting...");
             Scene scene = new Scene(root);
-            showController.show();
+            showController.show(new IDComparator());
             stage.setTitle("show");
             stage.setScene(scene);
             stage.show();;
@@ -505,5 +504,174 @@ public class Receiver {
         });
         scene.setRoot(root);
         stage.show();
+    }
+
+    public void sortById() throws IOException {
+        showController.death();
+        sortController.death();
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Main.class.getResource("/show.fxml"));
+        Scene scene = new Scene(root);
+        showController.show(new IDComparator());
+        stage.setTitle("show");
+        stage.setScene(scene);
+        stage.show();
+        showController.show(new IDComparator());
+    }
+
+    public void sortByHeight() throws IOException {
+        showController.death();
+        sortController.death();
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Main.class.getResource("/show.fxml"));
+        Scene scene = new Scene(root);
+        showController.show(new HeightComparator());
+        stage.setTitle("show");
+        stage.setScene(scene);
+        stage.show();
+        showController.show(new HeightComparator());
+    }
+
+    public void sortByWeight() throws IOException {
+        showController.death();
+        sortController.death();
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Main.class.getResource("/show.fxml"));
+        Scene scene = new Scene(root);
+        showController.show(new WeightComparator());
+        stage.setTitle("show");
+        stage.setScene(scene);
+        stage.show();
+        showController.show(new WeightComparator());
+    }
+
+    public void sortByBirthday() throws IOException {
+        showController.death();
+        sortController.death();
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Main.class.getResource("/show.fxml"));
+        Scene scene = new Scene(root);
+        showController.show(new BirthdayComparator());
+        stage.setTitle("show");
+        stage.setScene(scene);
+        stage.show();
+        showController.show(new BirthdayComparator());
+    }
+
+    public void sortByDate() throws IOException {
+        showController.death();
+        sortController.death();
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Main.class.getResource("/show.fxml"));
+        Scene scene = new Scene(root);
+        showController.show(new DateComparator());
+        stage.setTitle("show");
+        stage.setScene(scene);
+        stage.show();
+        showController.show(new DateComparator());
+    }
+
+    public void sortByName() throws IOException {
+        showController.death();
+        sortController.death();
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Main.class.getResource("/show.fxml"));
+        Scene scene = new Scene(root);
+        showController.show(new NameComparator());
+        stage.setTitle("show");
+        stage.setScene(scene);
+        stage.show();
+        showController.show(new NameComparator());
+    }
+
+    public void sortByNameLocation() throws IOException {
+        showController.death();
+        sortController.death();
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Main.class.getResource("/show.fxml"));
+        Scene scene = new Scene(root);
+        showController.show(new NameLocationComparator());
+        stage.setTitle("show");
+        stage.setScene(scene);
+        stage.show();
+        showController.show(new NameLocationComparator());
+    }
+
+    public void sortByNationality() throws IOException {
+        showController.death();
+        sortController.death();
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Main.class.getResource("/show.fxml"));
+        Scene scene = new Scene(root);
+        showController.show(new NationalityComparator());
+        stage.setTitle("show");
+        stage.setScene(scene);
+        stage.show();
+        showController.show(new NationalityComparator());
+    }
+
+    public void sortByOwner() throws IOException {
+        showController.death();
+        sortController.death();
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Main.class.getResource("/show.fxml"));
+        Scene scene = new Scene(root);
+        showController.show(new OwnerComparator());
+        stage.setTitle("show");
+        stage.setScene(scene);
+        stage.show();
+        showController.show(new OwnerComparator());
+    }
+
+    public void sortByX() throws IOException {
+        showController.death();
+        sortController.death();
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Main.class.getResource("/show.fxml"));
+        Scene scene = new Scene(root);
+        showController.show(new XComparator());
+        stage.setTitle("show");
+        stage.setScene(scene);
+        stage.show();
+        showController.show(new XComparator());
+    }
+
+    public void sortByXLocation() throws IOException {
+        showController.death();
+        sortController.death();
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Main.class.getResource("/show.fxml"));
+        Scene scene = new Scene(root);
+        showController.show(new XLocationComparator());
+        stage.setTitle("show");
+        stage.setScene(scene);
+        stage.show();
+        showController.show(new XLocationComparator());
+    }
+
+    public void sortByYLocation() throws IOException {
+        showController.death();
+        sortController.death();
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Main.class.getResource("/show.fxml"));
+        Scene scene = new Scene(root);
+        showController.show(new YLocationComparator());
+        stage.setTitle("show");
+        stage.setScene(scene);
+        stage.show();
+        showController.show(new YLocationComparator());
+    }
+
+    public void sortByY() throws IOException {
+        showController.death();
+        sortController.death();
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(Main.class.getResource("/show.fxml"));
+        Scene scene = new Scene(root);
+        showController.show(new YComparator());
+        stage.setTitle("show");
+        stage.setScene(scene);
+        stage.show();
+        showController.show(new YComparator());
     }
 }

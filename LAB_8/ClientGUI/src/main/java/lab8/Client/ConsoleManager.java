@@ -32,6 +32,21 @@ public class ConsoleManager {
         invoker.register("register", new RegisterCommand(receiver));
         invoker.register("visualize", new VisualizeCommand(receiver));
         invoker.register("history", new HistoryCommand(receiver));
+        invoker.register("sort_by_id", new SortByID(receiver));
+        invoker.register("sort_by_height", new SortByHeight(receiver));
+        invoker.register("sort_by_weight", new SortByWeight(receiver));
+        invoker.register("sort_by_birthday", new SortByBirthday(receiver));
+        invoker.register("sort_by_date", new SortByDate(receiver));
+        invoker.register("sort_by_name", new SortByName(receiver));
+        invoker.register("sort_by_name_location", new SortByNameLocation(receiver));
+        invoker.register("sort_by_nationality", new SortByNationality(receiver));
+        invoker.register("sort_by_owner", new SortByOwner(receiver));
+        invoker.register("sort_by_weight", new SortByWeight(receiver));
+        invoker.register("sort_by_x", new SortByX(receiver));
+        invoker.register("sort_by_xl", new SortByXLocation(receiver));
+        invoker.register("sort_by_y", new SortByY(receiver));
+        invoker.register("sort_by_yl", new SortByYLocation(receiver));
+
     }
 
     public static void invoke(String command) throws IOException {
