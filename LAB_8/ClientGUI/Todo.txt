@@ -4,10 +4,10 @@
 
 
 - update (+)
-- remove_lower ( doing)
-- remove_greater
+- remove_lower (+)
+- remove_greater (+)
 _ remove_by_id (+)
-- open_sort
-- warning on receiver
+- open_sort (+)
+- warning on receiver (doing)
 - animation
 - locale fix

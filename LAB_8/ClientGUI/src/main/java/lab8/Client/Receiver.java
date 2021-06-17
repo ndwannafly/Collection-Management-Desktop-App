@@ -85,7 +85,7 @@ public class Receiver {
         });
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Help");
-        alert.setHeaderText("Информация о командах:");
+        alert.setHeaderText("Information about commands:");
         alert.setContentText(String.valueOf(response));
         alert.showAndWait();
     }
@@ -107,7 +107,7 @@ public class Receiver {
             alert.setContentText(response);
             alert.showAndWait();
         } catch(SocketException | SocketTimeoutException e){
-            System.out.println("Problem occurred on the server!");
+            warningAboutServerError();
         }
     }
 
@@ -198,7 +198,7 @@ public class Receiver {
             stage.setScene(scene);
             stage.show();;
         } catch(SocketException | SocketTimeoutException e){
-            System.out.println("Problem occurred on the server!");
+            warningAboutServerError();
         }
         /*        datagramSocket.setSoTimeout(5000);
         datagramSocket.receive(datagramPacket);*/
@@ -217,14 +217,14 @@ public class Receiver {
             sender.getDatagramSocket().setSoTimeout(5000);
             sender.getDatagramSocket().receive(datagramPacket);
         } catch(SocketException | SocketTimeoutException e){
-            System.out.println("Problem occurred on the server!");
+            warningAboutServerError();
         }
         /*        datagramSocket.setSoTimeout(5000);
         datagramSocket.receive(datagramPacket);*/
-        String response = new String(responseBytes);
+/*        String response = new String(responseBytes);
         //response = response.substring(7);
         response = response.trim();
-        System.out.println(response);
+        System.out.println(response);*/
     }
 
     public void executeScript(String fileName) throws IOException {
@@ -271,7 +271,7 @@ public class Receiver {
             alert.setHeaderText(response);
             alert.showAndWait();
         } catch(SocketException | SocketTimeoutException e){
-            System.out.println("Problem occurred on the server!");
+            warningAboutServerError();
         }
 /*        String response = new String(responseBytes);
         //response = response.substring(7);
@@ -294,7 +294,7 @@ public class Receiver {
             alert.setHeaderText(response);
             alert.showAndWait();
         } catch(SocketException | SocketTimeoutException e){
-            System.out.println("Problem occurred on the server!");
+            warningAboutServerError();
         }
     }
 
@@ -311,7 +311,7 @@ public class Receiver {
             alert.setHeaderText(response);
             alert.showAndWait();
         } catch(SocketException | SocketTimeoutException e){
-            System.out.println("Problem occurred on the server!");
+            warningAboutServerError();
         }
     }
 
@@ -328,7 +328,7 @@ public class Receiver {
             alert.setHeaderText(response);
             alert.showAndWait();
         } catch(SocketException | SocketTimeoutException e){
-            System.out.println("Problem occurred on the server!");
+            warningAboutServerError();
         }
     }
 
@@ -345,7 +345,7 @@ public class Receiver {
             alert.setHeaderText(response);
             alert.showAndWait();
         } catch(SocketException | SocketTimeoutException e){
-            System.out.println("Problem occurred on the server!");
+            warningAboutServerError();
         }
 /*        String response = new String(responseBytes);
         //response = response.substring(7);
@@ -371,7 +371,7 @@ public class Receiver {
             alert.setHeaderText(response);
             alert.showAndWait();
         } catch(SocketException e){
-            System.out.println("Problem occurred on the server!");
+            warningAboutServerError();
         }
     }
 
@@ -393,7 +393,7 @@ public class Receiver {
             alert.setHeaderText(response);
             alert.showAndWait();
         } catch(SocketException e){
-            System.out.println("Problem occurred on the server!");
+            warningAboutServerError();
         }
 /*        String response = new String(responseBytes);
         response = response.trim();
@@ -419,7 +419,7 @@ public class Receiver {
             alert.setHeaderText(response);
             alert.showAndWait();
         } catch(SocketException e){
-            System.out.println("Problem occurred on the server!");
+            warningAboutServerError();
         }
     }
 
@@ -439,7 +439,7 @@ public class Receiver {
             System.out.println("size " +  CollectionManager.getCollection().size());
             painObjects(CollectionManager.getCollection());
         } catch(SocketException | SocketTimeoutException e){
-            System.out.println("Problem occurred on the server!");
+            warningAboutServerError();
         }
     }
 
@@ -673,5 +673,12 @@ public class Receiver {
         stage.setScene(scene);
         stage.show();
         showController.show(new YComparator());
+    }
+
+    public void warningAboutServerError(){
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Ой!");
+        alert.setHeaderText("Problem occurred on the server!");
+        alert.showAndWait();
     }
 }
