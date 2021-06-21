@@ -99,7 +99,7 @@ public class LoginController {
         try {
             Parent root = FXMLLoader.load(Main.class.getResource("/mainn.fxml"));
             Scene scene = new Scene(root);
-            stage.setTitle("organization database");
+            stage.setTitle("Person database");
             stage.setScene(scene);
             stage.show();
             stage.setMinHeight(500);

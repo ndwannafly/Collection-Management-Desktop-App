@@ -9,6 +9,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lab8.Client.ConsoleManager;
 import lab8.Client.Receiver;
+import lab8.Main;
 import lab8.Properties.Bundle;
 
 import java.io.IOException;
@@ -77,6 +78,7 @@ public class RegisterController {
             Receiver.registerController = this;
             if (!login.equals("") && !password.equals("")) {
                 try {
+                    System.out.println("invoke " + login + " " + password + " " + color);
                     ConsoleManager.invoke("register " + login + " " + password + " " + color);
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -98,9 +100,11 @@ public class RegisterController {
     public void success() {
         Stage stage = new Stage();
         try {
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("mainn.fxml"));
+            System.out.println("here");
+            Parent root = FXMLLoader.load(Main.class.getResource("/mainn.fxml"));
+            System.out.println("mainn.fxml loaded");
             Scene scene = new Scene(root);
-            stage.setTitle("organization database");
+            stage.setTitle("Person database");
             stage.setScene(scene);
             stage.show();
             stage.setMinHeight(500);

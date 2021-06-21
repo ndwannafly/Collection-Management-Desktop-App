@@ -163,6 +163,7 @@ public class Receiver {
                 registerController.warning2();
             }
             else{
+                System.out.println("Successfully registered");
                 isLogin = true;
                 handle = login;
                 password = pass;

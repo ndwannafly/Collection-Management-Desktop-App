@@ -26,6 +26,7 @@ public class RegisterCommand extends Command implements Serializable {
     @Override
     public void execute(String[] args) throws IOException {
         if(args.length != 4){
+            System.out.println("executing...");
             System.out.println("Client: Invalid command's format! Fail to execute LoginCommand!");
         }
         else{

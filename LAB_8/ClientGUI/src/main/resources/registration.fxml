@@ -36,7 +36,7 @@
             <children>
                 <AnchorPane prefHeight="54.0" prefWidth="681.0" style="-fx-background-color: #A1C6EA;">
                     <children>
-                        <Text fill="#04080f" layoutX="183.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Organization Base" textAlignment="CENTER" wrappingWidth="295.47007751464844">
+                        <Text fill="#04080f" layoutX="183.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Person Base" textAlignment="CENTER" wrappingWidth="295.47007751464844">
                             <font>
                                 <Font name="Georgia" size="31.0" />
                             </font>
