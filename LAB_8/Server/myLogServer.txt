@@ -1,0 +1,28 @@
+Jun 22, 2021 1:29:46 AM lab8.Utils.Logging log
+WARNING: Port must be int number! Please notice about it!
+Jun 22, 2021 1:29:46 AM lab8.Utils.Logging log
+INFO: Connecting to database ....... !
+Jun 22, 2021 1:29:46 AM lab8.Utils.Logging log
+INFO: Enter your account:
+Jun 22, 2021 1:29:48 AM lab8.Utils.Logging log
+INFO: Enter your password:
+Jun 22, 2021 1:29:51 AM lab8.Utils.Logging log
+INFO: Successfully connect to DataBase!
+Jun 22, 2021 1:29:51 AM lab8.Utils.Logging log
+INFO: Server has started listening on port 3436
+Jun 22, 2021 1:29:58 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 22, 2021 1:29:58 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 22, 2021 1:30:03 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 22, 2021 1:30:03 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 22, 2021 1:30:03 AM lab8.Utils.Logging log
+INFO: Server is executing ShowCommand....
+Jun 22, 2021 1:30:33 AM lab8.Utils.Logging log
+INFO: Server: Received data!
+Jun 22, 2021 1:30:33 AM lab8.Utils.Logging log
+INFO: Receiving data is argument command!
+Jun 22, 2021 1:30:33 AM lab8.Utils.Logging log
+INFO: Server is executing InfoCommand....

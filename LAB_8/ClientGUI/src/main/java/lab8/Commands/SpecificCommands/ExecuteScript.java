@@ -17,13 +17,13 @@ public class ExecuteScript extends Command {
 
     @Override
     public String aboutCommand() {
-        return "execute_script file_name    - read and execute script from corresponding file. The script\n" +
-                "                              contains commands in the same form in which the user enters them interactively.\n";
+        return "execute_script file_name";
     }
 
     @Override
     public void execute(String[] args) throws IOException {
         try{
+            System.out.println(args.length);
             if(args.length != 2){
                 System.out.println("Client: Invalid command's format! Fail to execute ExecuteScriptCommand!");
             }

@@ -16,7 +16,7 @@ public class HistoryCommand extends Command implements Serializable {
 
     @Override
     public String aboutCommand() {
-        return "history:                   - display last 14 commands.\n";
+        return "history";
     }
 
     @Override

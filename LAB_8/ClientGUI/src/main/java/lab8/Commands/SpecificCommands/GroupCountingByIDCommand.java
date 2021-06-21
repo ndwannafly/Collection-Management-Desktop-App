@@ -20,7 +20,7 @@ public class GroupCountingByIDCommand extends Command implements Serializable {
     }
     @Override
     public String aboutCommand() {
-        return "group_counting_by_id        - group elements by their ID, print number of element of each group\n";
+        return "group_counting_by_id";
     }
 
     @Override

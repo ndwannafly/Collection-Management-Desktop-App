@@ -17,7 +17,7 @@ public class ExitCommand extends Command implements Serializable {
 
     @Override
     public String aboutCommand() {
-        return "exit                        - exit the program without saving to file\n";
+        return "exit";
     }
 
     @Override

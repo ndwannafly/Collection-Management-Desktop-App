@@ -21,8 +21,7 @@ public class CountLessThanBirthdayCommand extends Command implements Serializabl
 
     @Override
     public String aboutCommand() {
-        return "count_less_than_birthday    - print number of elements, which have field birthday less than " +
-                "specific birthday\n";
+        return "count_less_than_birthday";
     }
 
     @Override

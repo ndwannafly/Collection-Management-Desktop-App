@@ -80,6 +80,9 @@ public class FileParser {
             p.setId(newID);
         }*/
 
+        // set color
+        p.setColor((String) jsonObject.get("color"));
+
         // set ID
         p.setId((Long) jsonObject.get("id"));
 

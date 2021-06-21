@@ -20,8 +20,7 @@ public class RemoveLowerCommand extends Command implements Serializable {
     }
     @Override
     public String aboutCommand() {
-        return "remove_lower {element}      - remove all elements from the collection, which are lower than " +
-                "specific element\n";
+        return "remove_lower {element}";
     }
 
     @Override

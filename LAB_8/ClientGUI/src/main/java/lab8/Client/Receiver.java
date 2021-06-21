@@ -81,7 +81,7 @@ public class Receiver {
     public void help(){
         StringBuilder response = new StringBuilder();
         invoker.getCommands().forEach((name, command) -> {
-            response.append(command.aboutCommand());
+            response.append(command.aboutCommand()).append('\n');
         });
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Help");
@@ -120,7 +120,7 @@ public class Receiver {
             sender.getDatagramSocket().setSoTimeout(5000);
             sender.getDatagramSocket().receive(datagramPacket);
             String response = new String(responseBytes);
-            System.out.println(response);
+            //System.out.println(response);
             //response = response.substring(7);
             response = response.trim();
             String[] resultArray = response.split(" ");
@@ -154,7 +154,7 @@ public class Receiver {
             sender.getDatagramSocket().receive(datagramPacket);
             String response = new String(responseBytes);
             response = response.trim();
-            System.out.println(response);
+            //System.out.println(response);
             if(response.equals("Unsuccessfully")){
                 isLogin = false;
                 handle = "";
@@ -189,9 +189,9 @@ public class Receiver {
             writer.flush();
             CollectionManager.readInputFromJsonFile("copy.json");
             Stage stage = new Stage();
-            System.out.println("showing...");
+            //System.out.println("showing...");
             Parent root = FXMLLoader.load(Main.class.getResource("/show.fxml"));
-            System.out.println("waiting...");
+            //System.out.println("waiting...");
             Scene scene = new Scene(root);
             showController.show(new IDComparator());
             stage.setTitle("show");
@@ -258,7 +258,7 @@ public class Receiver {
     public void add() throws IOException {
         Person person = addController.createPerson();
         person.setId((long) -1);
-        System.out.println("sending....");
+        //System.out.println("sending....");
         sender.sendObject(new SerializedCombinedCommand(new AddCommand(), handle + " " + password, person));
         byte[] responseBytes = new byte[1024];
         DatagramPacket datagramPacket = new DatagramPacket(responseBytes, responseBytes.length);
@@ -354,9 +354,9 @@ public class Receiver {
     }
 
     public void removeGreater() throws IOException {
-        System.out.println("here");
+        //System.out.println("here");
         Person person = removeGreaterController.createPerson();
-        System.out.println("doing...");
+        //System.out.println("doing...");
         person.setOwner(handle);
         sender.sendObject(new SerializedCombinedCommand(new RemoveGreaterCommand(), handle + " " + password, person));
         byte[] responseBytes = new byte[256];
@@ -365,7 +365,7 @@ public class Receiver {
         try {
             sender.getDatagramSocket().receive(datagramPacket);
             String response = new String(responseBytes);
-            System.out.println(response);
+            //System.out.println(response);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("!");
             alert.setHeaderText(response);
@@ -387,7 +387,7 @@ public class Receiver {
         try {
             sender.getDatagramSocket().receive(datagramPacket);
             String response = new String(responseBytes);
-            System.out.println(response);
+            //System.out.println(response);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("!");
             alert.setHeaderText(response);
@@ -431,12 +431,12 @@ public class Receiver {
             sender.getDatagramSocket().setSoTimeout(5000);
             sender.getDatagramSocket().receive(datagramPacket);
             String response = new String(responseBytes);
-            System.out.println(response.trim());
-            //FileWriter writer = new FileWriter("InputData.json", false);
-            //writer.write(response.trim());
-            //writer.flush();
+            //System.out.println(response.trim());
+            FileWriter writer = new FileWriter("InputData.json", false);
+            writer.write(response.trim());
+            writer.flush();
             CollectionManager.readInputFromJsonFile("copy.json");
-            System.out.println("size " +  CollectionManager.getCollection().size());
+            //System.out.println("size " +  CollectionManager.getCollection().size());
             painObjects(CollectionManager.getCollection());
         } catch(SocketException | SocketTimeoutException e){
             warningAboutServerError();
@@ -450,6 +450,7 @@ public class Receiver {
         Scene scene = new Scene(root, primaryScreenBounds.getWidth(), primaryScreenBounds.getHeight());
         stage.setScene(scene);
         listPerson.forEach(person -> {
+            //System.out.println(person.getName());
             double x = person.getCoordinates().getX();
             double y = person.getCoordinates().getY();
 
@@ -461,9 +462,17 @@ public class Receiver {
                 x = Math.ceil(Math.abs(Math.cos(person.getCoordinates().getX())) * primaryScreenBounds.getMaxX());
                 System.out.println(x);
             }
-            Circle circle = new Circle(x, y, person.getHeight());
+
+            Circle circle = new Circle(x, y, (double) person.getHeight() / 10);
+/*            System.out.println("circle_x " + x);
+            System.out.println("circle_y " + y);
+            System.out.println("circle_height " + (double) person.getHeight()/  10);*/
             //System.out.println("duc");
-            person.setColor("0x000000ff");
+            //System.out.println(person.getColor());
+/*
+            System.out.println("----------------");
+*/
+            //person.setColor("0x000000ff");
             circle.setFill(Paint.valueOf(person.getColor()));
             //System.out.println("play");
             PathTransition tt = new PathTransition(Duration.millis(1500), circle);
@@ -471,10 +480,10 @@ public class Receiver {
             tt.setPath(new Line(x, y + 20, x, y));
             tt.setAutoReverse(true);
             tt.setCycleCount(Animation.INDEFINITE);
-            System.out.println("overthere");
+            //System.out.println("overthere");
             root.getChildren().add(circle);
             try{
-                Thread.sleep((int) (Math.random() * 1000));
+                Thread.sleep((int) (Math.random() * 400));
             } catch (InterruptedException e){
                 e.printStackTrace();
             }
@@ -484,20 +493,36 @@ public class Receiver {
             double mouse_x = e.getX();
             double mouse_y = e.getY();
             listPerson.forEach(person -> {
-                double mouse_x_max = mouse_x + person.getHeight();
-                double mouse_x_min = mouse_x - person.getHeight();
-                double mouse_y_max = mouse_y + person.getHeight();
-                double mouse_y_min = mouse_y - person.getHeight();
+                double mouse_x_max = mouse_x + (double) person.getHeight() / 10;
+                double mouse_x_min = mouse_x - (double) person.getHeight() / 10;
+                double mouse_y_max = mouse_y + (double) person.getHeight() / 10;
+                double mouse_y_min = mouse_y - (double) person.getHeight() / 10;
                 double xx = person.getCoordinates().getX();
                 double yy = person.getCoordinates().getY();
                 double alternative_x = Math.ceil(Math.abs(Math.cos(person.getCoordinates().getX())) * primaryScreenBounds.getMaxX());
                 double alternative_y = Math.ceil(Math.abs(Math.cos(person.getCoordinates().getY())) * primaryScreenBounds.getMaxY());
+/*                System.out.println("name " + person.getName());
+                System.out.println("mouse_x_max " + mouse_x_max);
+                System.out.println("mouse_x_min " + mouse_x_min);
+                System.out.println("mouse_y_max " + mouse_y_max);
+                System.out.println("mouse_y_min " + mouse_y_min);
+                System.out.println("xx " + xx);
+                System.out.println("yy " + yy);
+                System.out.println("alternative_x " + alternative_x);
+                System.out.println("alternative_y " + alternative_y);
+                System.out.println("---------------------");*/
                 if ((((xx >= mouse_x_min) && (xx <= mouse_x_max)) || ((alternative_x >= mouse_x_min) &&
                         (alternative_x <= mouse_x_max))) && (((yy >= mouse_y_min) &&
                         (yy <= mouse_y_max)) || ((alternative_y <= mouse_y_max) && (alternative_y >= mouse_y_min)))) {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("!");
-                    alert.setHeaderText(person.getName() + '\n' + person.getHeight() + '\n' + person.getOwner());
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.append("name: ").append(person.getName()).append('\n');
+                    stringBuilder.append("height: ").append(person.getHeight()).append('\n');
+                    stringBuilder.append("owner: ").append(person.getOwner()).append('\n');
+                    stringBuilder.append("X: ").append(person.getX()).append('\n');
+                    stringBuilder.append("Y: ").append(person.getY()).append('\n');
+                    alert.setHeaderText(stringBuilder.toString());
                     alert.showAndWait();
                 }
             });

@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -15,6 +16,7 @@ import lab8.Properties.Bundle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class MainController {
@@ -55,6 +57,7 @@ public class MainController {
     @FXML
     void initialize() {
         ResourceBundle resourceBundle = Bundle.getResourceBundle();
+        executeScriptButton.setText(resourceBundle.getString("execute_script"));
         helpButton.setText(resourceBundle.getString("helpButton"));
         logoutButton.setText(resourceBundle.getString("logoutButton"));
         visualizeButton.setText(resourceBundle.getString("visualizeButton"));
@@ -64,6 +67,20 @@ public class MainController {
         historyButton.setText(resourceBundle.getString("historyButton"));
         loginText.setText(Receiver.handle);
         loginText.setFill(Paint.valueOf(Receiver.color));
+        executeScriptButton.setOnAction(actionEvent -> {
+                TextInputDialog dialog = new TextInputDialog();
+                dialog.setTitle(resourceBundle.getString("execute_script"));
+                dialog.setHeaderText(resourceBundle.getString("Enter file path"));
+                Optional<String> result = dialog.showAndWait();
+                result.ifPresent(name ->{
+                    try {
+                        String res = result.get();
+                        ConsoleManager.invoke("execute_script " + res);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+        });
         exitButton.setOnAction(actionEvent -> {
             try {
                 ConsoleManager.invoke("exit");

@@ -20,7 +20,7 @@ public class RegisterCommand extends Command implements Serializable {
 
     @Override
     public String aboutCommand() {
-        return "register:\n";
+        return "register";
     }
 
     @Override

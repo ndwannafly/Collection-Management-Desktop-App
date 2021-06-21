@@ -23,7 +23,7 @@ public class LoginCommand extends Command implements Serializable {
 
     @Override
     public String aboutCommand() {
-        return "login:\n";
+        return "login";
     }
 
     @Override

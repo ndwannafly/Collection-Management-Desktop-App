@@ -20,7 +20,7 @@ public class RemoveByIdCommand extends Command implements Serializable {
     }
     @Override
     public String aboutCommand() {
-        return "remove_by_id {id}           - remove element has corresponding id from the collection\n";
+        return "remove_by_id {id}";
 
     }
 

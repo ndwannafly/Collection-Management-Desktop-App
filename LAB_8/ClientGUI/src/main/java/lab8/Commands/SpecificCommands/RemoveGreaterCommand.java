@@ -20,8 +20,7 @@ public class RemoveGreaterCommand extends Command implements Serializable {
     }
     @Override
     public String aboutCommand() {
-        return "remove_greater {element}    - remove all elements from the collection, which are greater than " +
-                "specific element\n";
+        return "remove_greater {element}";
     }
 
     @Override

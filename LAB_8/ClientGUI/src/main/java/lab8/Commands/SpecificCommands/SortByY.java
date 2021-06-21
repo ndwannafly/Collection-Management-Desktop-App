@@ -20,7 +20,7 @@ public class SortByY extends Command implements Serializable {
     }
     @Override
     public String aboutCommand() {
-        return "sort_by_height";
+        return "sort_by_y";
     }
 
     @Override

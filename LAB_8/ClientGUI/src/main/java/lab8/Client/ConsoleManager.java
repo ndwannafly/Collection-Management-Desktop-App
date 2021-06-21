@@ -32,6 +32,7 @@ public class ConsoleManager {
         invoker.register("register", new RegisterCommand(receiver));
         invoker.register("visualize", new VisualizeCommand(receiver));
         invoker.register("history", new HistoryCommand(receiver));
+        invoker.register("execute_script", new ExecuteScript(receiver));
         invoker.register("sort_by_id", new SortByID(receiver));
         invoker.register("sort_by_height", new SortByHeight(receiver));
         invoker.register("sort_by_weight", new SortByWeight(receiver));

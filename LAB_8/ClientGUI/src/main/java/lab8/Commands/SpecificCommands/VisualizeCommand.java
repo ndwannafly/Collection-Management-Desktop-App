@@ -21,7 +21,7 @@ public class VisualizeCommand extends Command implements Serializable {
 
     @Override
     public String aboutCommand() {
-        return "Visualize: visualize collection!\n";
+        return "Visualize";
     }
 
     @Override

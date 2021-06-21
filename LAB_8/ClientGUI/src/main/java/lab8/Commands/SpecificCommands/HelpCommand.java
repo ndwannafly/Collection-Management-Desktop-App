@@ -17,7 +17,7 @@ public class HelpCommand extends Command implements Serializable {
 
     @Override
     public String aboutCommand() {
-        return "help:                   - display which commands can be executed.\n";
+        return "help";
     }
 
     @Override

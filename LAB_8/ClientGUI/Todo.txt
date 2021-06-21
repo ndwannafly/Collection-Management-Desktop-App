@@ -1,13 +1,15 @@
 - show (+)
 - print_field_ascending_height (+)
 - add (+)
-
-
 - update (+)
 - remove_lower (+)
 - remove_greater (+)
 _ remove_by_id (+)
 - open_sort (+)
-- warning on receiver (doing)
-- animation
-- locale fix
+- warning on receiver (+)
+- animation (+)
+- execute_script (+)
+
+- locale fix (switch to class ----)
+- run on helios
+- reviewing theory ( ----_)

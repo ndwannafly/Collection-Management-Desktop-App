@@ -20,7 +20,7 @@ public class InfoCommand extends Command implements Serializable {
     }
     @Override
     public String aboutCommand() {
-        return "Info:           Collection's info!\n";
+        return "Info";
     }
 
     @Override
