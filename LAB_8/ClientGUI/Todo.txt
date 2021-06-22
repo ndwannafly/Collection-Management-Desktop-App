@@ -10,6 +10,6 @@ _ remove_by_id (+)
 - animation (+)
 - execute_script (+)
 
-- locale fix (switch to class ----)
+- locale fix (switch to class ---- doing)
 - run on helios
 - reviewing theory ( ----_)
