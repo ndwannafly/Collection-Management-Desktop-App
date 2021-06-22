@@ -17,19 +17,12 @@ import lab8.Properties.Bundle;
 import lab8.Utils.Creator;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RemoveGreaterController {
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
     private Text addText;
-
-    @FXML
-    private URL location;
 
     @FXML
     private TextField nameField;
@@ -60,28 +53,6 @@ public class RemoveGreaterController {
 
     @FXML
     private TextField nameLocationField;
-
-    @FXML
-    private Button nameCheck;
-
-    @FXML
-    private Button xCheck;
-
-    @FXML
-    private Button yCheck;
-
-    @FXML
-    private Button heightCheck;
-
-    @FXML
-    private Button birthdayCheck;
-
-    @FXML
-    private Button weightCheck;
-
-    @FXML
-    private Button nationalityCheck;
-
 
     @FXML
     private Button addButton;

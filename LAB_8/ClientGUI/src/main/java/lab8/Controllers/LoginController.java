@@ -18,7 +18,6 @@ import lab8.Properties.Bundle;
 import java.io.IOException;
 import java.util.ResourceBundle;
 
-//import javax.swing.text.LabelView;
 
 public class LoginController {
 
@@ -99,7 +98,7 @@ public class LoginController {
         try {
             Parent root = FXMLLoader.load(Main.class.getResource("/mainn.fxml"));
             Scene scene = new Scene(root);
-            stage.setTitle("Person database");
+            stage.setTitle(resourceBundle.getString("Person Database"));
             stage.setScene(scene);
             stage.show();
             stage.setMinHeight(500);

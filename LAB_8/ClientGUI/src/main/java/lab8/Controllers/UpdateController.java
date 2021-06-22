@@ -17,15 +17,9 @@ import lab8.Properties.Bundle;
 import lab8.Utils.Creator;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ResourceBundle;
 
 public class UpdateController {
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
 
     @FXML
     private TextField nameField;

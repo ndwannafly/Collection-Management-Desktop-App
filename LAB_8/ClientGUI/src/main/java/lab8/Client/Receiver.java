@@ -50,7 +50,11 @@ public class Receiver {
     //private final CommandAsker commandAsker = new CommandAsker(new InputChecker());
     private final HashMap<String, Boolean> inStack = new HashMap<>();
 
-    ResourceBundle resourceBundle = Bundle.getResourceBundle();
+    private static ResourceBundle resourceBundle;
+
+    public static void setResourceBundle(ResourceBundle resourceBundle) {
+        Receiver.resourceBundle = resourceBundle;
+    }
 
     public Receiver(Invoker invoker, Sender sender) {
         this.invoker = invoker;
@@ -85,7 +89,9 @@ public class Receiver {
         });
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Help");
-        alert.setHeaderText("Information about commands:");
+        //alert.setHeaderText("Information about commands:");
+        System.out.println(resourceBundle.getLocale());
+        alert.setHeaderText(resourceBundle.getString("Information about commands"));
         alert.setContentText(String.valueOf(response));
         alert.showAndWait();
     }
@@ -102,7 +108,7 @@ public class Receiver {
             alert.setTitle(resourceBundle.getString("info"));
             alert.setHeaderText(resourceBundle.getString("info"));
             response = response.replace("Collection's type:", resourceBundle.getString("Type of collection:"));
-            response = response.replace("Initialization date:", resourceBundle.getString("Initialization date:"));
+            response = response.replace("Initialization date", resourceBundle.getString("Initialization date:"));
             response = response.replace("Collection's size:", resourceBundle.getString("Number of elements:"));
             alert.setContentText(response);
             alert.showAndWait();
@@ -125,6 +131,7 @@ public class Receiver {
             response = response.trim();
             String[] resultArray = response.split(" ");
             if(resultArray[0].equals("Unsuccessfully")){
+                //System.out.println(resourceBundle.getLocale());
                 isLogin = false;
                 handle = "";
                 password = "";
@@ -229,6 +236,7 @@ public class Receiver {
     }
 
     public void executeScript(String fileName) throws IOException {
+        System.out.println(resourceBundle.getLocale());
         if(inStack.get(fileName) != null){
             if(inStack.get(fileName)){
                 System.out.println("To avoid infinite recursion. File " + fileName + " can't be executed!");
@@ -518,9 +526,9 @@ public class Receiver {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("!");
                     StringBuilder stringBuilder = new StringBuilder();
-                    stringBuilder.append("name: ").append(person.getName()).append('\n');
-                    stringBuilder.append("height: ").append(person.getHeight()).append('\n');
-                    stringBuilder.append("owner: ").append(person.getOwner()).append('\n');
+                    stringBuilder.append(resourceBundle.getString("name") + ": ").append(person.getName()).append("\n");
+                    stringBuilder.append(resourceBundle.getString("height") + ": ").append(person.getHeight()).append("\n");
+                    stringBuilder.append(resourceBundle.getString("owner") + ": ").append(person.getOwner()).append("\n");
                     stringBuilder.append("X: ").append(person.getX()).append('\n');
                     stringBuilder.append("Y: ").append(person.getY()).append('\n');
                     alert.setHeaderText(stringBuilder.toString());

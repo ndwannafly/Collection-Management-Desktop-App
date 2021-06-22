@@ -13,18 +13,10 @@ import lab8.Main;
 import lab8.Properties.Bundle;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ResourceBundle;
 
-//import javax.swing.text.LabelView;
 
 public class RegisterController {
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
 
     @FXML
     private Button submitButton;
@@ -53,10 +45,12 @@ public class RegisterController {
     private ColorPicker colorPicker;
 
 
-    ResourceBundle resourceBundle = Bundle.getResourceBundle();
+    ResourceBundle resourceBundle;
 
     @FXML
     void initialize() {
+        resourceBundle = Bundle.getResourceBundle();
+        System.out.println(resourceBundle.getLocale());
         loginField.setPromptText(resourceBundle.getString("Enter your username"));
         passwordField.setPromptText(resourceBundle.getString("Enter the password"));
         logintext.setText(resourceBundle.getString("login"));
@@ -74,11 +68,11 @@ public class RegisterController {
             String login = loginField.getText();
             String password = passwordField.getText();
             String color = colorPicker.getValue().toString();
-            System.out.println("color: " + color);
+            //System.out.println("color: " + color);
             Receiver.registerController = this;
             if (!login.equals("") && !password.equals("")) {
                 try {
-                    System.out.println("invoke " + login + " " + password + " " + color);
+                    //System.out.println("invoke " + login + " " + password + " " + color);
                     ConsoleManager.invoke("register " + login + " " + password + " " + color);
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -100,11 +94,12 @@ public class RegisterController {
     public void success() {
         Stage stage = new Stage();
         try {
-            System.out.println("here");
+            resourceBundle = Bundle.getResourceBundle();
+            //System.out.println("here");
             Parent root = FXMLLoader.load(Main.class.getResource("/mainn.fxml"));
-            System.out.println("mainn.fxml loaded");
+            //System.out.println("mainn.fxml loaded");
             Scene scene = new Scene(root);
-            stage.setTitle("Person database");
+            stage.setTitle(resourceBundle.getString("Person Database"));
             stage.setScene(scene);
             stage.show();
             stage.setMinHeight(500);

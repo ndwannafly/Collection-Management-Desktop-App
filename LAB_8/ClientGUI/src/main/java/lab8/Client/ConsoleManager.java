@@ -13,7 +13,7 @@ public class ConsoleManager {
         Communicator communicator = new Communicator(host, Integer.parseInt(port));
         communicator.startCommunication();
         Sender sender = new Sender(communicator);
-        Receiver receiver = new Receiver(invoker, sender );
+        Receiver receiver = new Receiver(invoker, sender);
 
         invoker.register("add", new AddCommand(receiver));
         invoker.register("clear", new ClearCommand(receiver));

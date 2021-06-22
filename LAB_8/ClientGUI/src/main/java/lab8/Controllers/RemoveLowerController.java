@@ -23,13 +23,7 @@ import java.util.ResourceBundle;
 public class RemoveLowerController {
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
     private Text addText;
-
-    @FXML
-    private URL location;
 
     @FXML
     private TextField nameField;
@@ -60,28 +54,6 @@ public class RemoveLowerController {
 
     @FXML
     private TextField nameLocationField;
-
-    @FXML
-    private Button nameCheck;
-
-    @FXML
-    private Button xCheck;
-
-    @FXML
-    private Button yCheck;
-
-    @FXML
-    private Button heightCheck;
-
-    @FXML
-    private Button birthdayCheck;
-
-    @FXML
-    private Button weightCheck;
-
-    @FXML
-    private Button nationalityCheck;
-
 
     @FXML
     private Button addButton;

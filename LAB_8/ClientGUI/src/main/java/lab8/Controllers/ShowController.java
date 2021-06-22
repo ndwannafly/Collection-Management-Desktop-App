@@ -4,7 +4,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -12,11 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import lab8.Client.ConsoleManager;
 import lab8.Client.Receiver;
@@ -30,12 +25,8 @@ import java.util.Comparator;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-import static javafx.scene.control.TableView.CONSTRAINED_RESIZE_POLICY;
 
 public class ShowController {
-
-    @FXML
-    private GridPane gridPane;
 
     @FXML
     private Button addButton;
@@ -64,8 +55,6 @@ public class ShowController {
     @FXML
     private Button printFieldAscendingHeightButton;
 
-    @FXML
-    private FlowPane gridPane2;
     @FXML
             private Pane tablePane;
 

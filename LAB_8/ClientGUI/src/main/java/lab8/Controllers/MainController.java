@@ -15,17 +15,10 @@ import lab8.Main;
 import lab8.Properties.Bundle;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class MainController {
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
 
     @FXML
     private Text loginText;
@@ -57,6 +50,7 @@ public class MainController {
     @FXML
     void initialize() {
         ResourceBundle resourceBundle = Bundle.getResourceBundle();
+        System.out.println("Main: " + resourceBundle.getLocale());
         executeScriptButton.setText(resourceBundle.getString("execute_script"));
         helpButton.setText(resourceBundle.getString("helpButton"));
         logoutButton.setText(resourceBundle.getString("logoutButton"));

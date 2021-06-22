@@ -10,19 +10,19 @@ public class Bundle {
     public static void setResourceBundle(String language){
         if(language.equals("English")){
             resourceBundle = ResourceBundle.getBundle("resources",
-                    new Locale("en", "UK"));
+                    new Locale("en", "CA"));
 
         }
 
-        if(language.equals("Polish")){
+        if(language.equals("Slovak")){
             resourceBundle = ResourceBundle.getBundle("resources",
-                    new Locale("pl", "POL"));
+                    new Locale("sk", "SK"));
 
         }
 
-        if(language.equals("Norwegian")){
+        if(language.equals("Albanian")){
             resourceBundle = ResourceBundle.getBundle("resources",
-                    new Locale("no", "NOR"));
+                    new Locale("sq", "AL"));
 
         }
 

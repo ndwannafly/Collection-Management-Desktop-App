@@ -10,26 +10,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lab8.Client.Receiver;
 import lab8.Main;
 import lab8.Properties.Bundle;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ResourceBundle;
 
 public class WelcomeController {
-    @FXML // ResourceBundle that was given to the FXMLLoader
-    private ResourceBundle resources;
-
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
-    private URL location;
-
-    @FXML // fx:id="welcomeText"
-    private Text welcomeText; // Value injected by FXMLLoader
-
-    @FXML // fx:id="pleaseLogInText"
-    private Text pleaseLogInText; // Value injected by FXMLLoader
-
     @FXML // fx:id="logInButton"
     private Button logInButton; // Value injected by FXMLLoader
 
@@ -50,7 +38,7 @@ public class WelcomeController {
     @FXML
         // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
-        ObservableList<String> types = FXCollections.observableArrayList("English", "Polish", "Norwegian", "Russian");
+        ObservableList<String> types = FXCollections.observableArrayList("English", "Slovak", "Albanian", "Russian");
         language.setItems(types);
         language.setValue("English");
         logInButton.setText(resourceBundle.getString("login"));
@@ -60,6 +48,8 @@ public class WelcomeController {
         logInButton.setOnAction(actionEvent -> {
             String ll = language.getValue();
             Bundle.setResourceBundle(ll);
+            Receiver.setResourceBundle(Bundle.getResourceBundle());
+            //System.out.println("Bundle: " + Bundle.getResourceBundle().getLocale());
             Stage stage = new Stage();
             try {
                 Parent root = FXMLLoader.load(Main.class.getResource("/login.fxml"));
@@ -77,6 +67,7 @@ public class WelcomeController {
         registerButton.setOnAction(actionEvent -> {
             String ll = language.getValue();
             Bundle.setResourceBundle(ll);
+            Receiver.setResourceBundle(Bundle.getResourceBundle());
             Stage stage = new Stage();
             try {
                 Parent root = FXMLLoader.load(Main.class.getResource("/registration.fxml"));
