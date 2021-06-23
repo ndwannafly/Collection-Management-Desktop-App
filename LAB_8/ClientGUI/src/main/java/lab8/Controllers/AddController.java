@@ -14,7 +14,7 @@ import lab8.Client.Reader;
 import lab8.Client.Receiver;
 import lab8.Data.Country;
 import lab8.Data.Person;
-import lab8.Properties.Bundle;
+import lab8.Bundles.Bundle;
 import lab8.Utils.Creator;
 
 import java.io.IOException;

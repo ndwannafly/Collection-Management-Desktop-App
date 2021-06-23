@@ -22,7 +22,7 @@ import lab8.Commands.SpecificCommands.*;
 import lab8.Controllers.*;
 import lab8.Data.Person;
 import lab8.Main;
-import lab8.Properties.Bundle;
+import lab8.Bundles.Bundle;
 import lab8.Utils.CollectionManager;
 import lab8.Utils.Comparators.*;
 
@@ -444,7 +444,7 @@ public class Receiver {
             FileWriter writer = new FileWriter("InputData.json", false);
             writer.write(response.trim());
             writer.flush();
-            CollectionManager.readInputFromJsonFile("copy.json");
+            CollectionManager.readInputFromJsonFile("InputData.json");
             //System.out.println("size " +  CollectionManager.getCollection().size());
             painObjects(CollectionManager.getCollection());
         } catch(SocketException | SocketTimeoutException e){

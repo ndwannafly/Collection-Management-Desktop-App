@@ -17,7 +17,7 @@ import lab8.Client.ConsoleManager;
 import lab8.Client.Receiver;
 import lab8.Data.Person;
 import lab8.Main;
-import lab8.Properties.Bundle;
+import lab8.Bundles.Bundle;
 import lab8.Utils.CollectionManager;
 
 import java.io.IOException;

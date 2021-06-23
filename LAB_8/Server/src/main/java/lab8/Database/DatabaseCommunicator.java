@@ -6,13 +6,14 @@ import lab8.Utils.Logging;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 import java.util.logging.Level;
 
 public class DatabaseCommunicator {
 
     // on helios
-    // private static final String DB_URL = "jdbc:postgresql://pg:5432/studs";
+    //private static final String DB_URL = "jdbc:postgresql://pg:5432/studs";
 
     // on local PC
     private static final String DB_URL = "jdbc:postgresql://127.0.0.1:5432/postgres";
@@ -26,18 +27,22 @@ public class DatabaseCommunicator {
         try {
             Scanner scanner = new Scanner(System.in);
             Logging.log(Level.INFO, "Enter your account:");
-            //System.out.println("Enter your account:");
+            System.out.println("Enter your account:");
             String user = scanner.nextLine();
             Logging.log(Level.INFO, "Enter your password:");
-            //System.out.println("Enter your password:");
+            System.out.println("Enter your password:");
             String pass = scanner.nextLine();
             connection = DriverManager.getConnection(DB_URL, user, pass);
+/*            String query = "DROP TABLE listperson;";
+            Statement statement = connection.createStatement();
+            statement.execute(query);
+            query = "DROP table users;";
+            statement.execute(query);*/
             users = new SecretBase(connection);
             personBase = new PersonBase(connection);
+
         } catch (SQLException e) {
             Logging.log(Level.INFO, "Errors occur!");
-            //e.printStackTrace();
-            //System.exit(0);
         }
 
         if (connection != null){

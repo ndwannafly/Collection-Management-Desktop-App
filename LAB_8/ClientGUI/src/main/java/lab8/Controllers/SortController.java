@@ -9,7 +9,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lab8.Client.ConsoleManager;
 import lab8.Client.Receiver;
-import lab8.Properties.Bundle;
+import lab8.Bundles.Bundle;
 
 import java.io.IOException;
 import java.util.ResourceBundle;
