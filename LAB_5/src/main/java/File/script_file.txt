@@ -1,7 +1,0 @@
-help
-info
-history
-print_field_ascending_height
-execute_script B.txt
-execute_script C.txt
-group_counting_by_id
